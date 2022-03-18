@@ -1,180 +1,165 @@
 ---
 Exercise:
-    title: '模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络'
-    module: '模块 - Azure 虚拟网络简介'
+  title: 模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
+  module: Module - Introduction to Azure Virtual Networks
+ms.openlocfilehash: 934ebb601aa0fb8a66b9493d1cb4b5d913005482
+ms.sourcegitcommit: cc6b12857d97b72310f349592f5d4adbd371cc50
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/10/2022
+ms.locfileid: "138422790"
 ---
-# 模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
+# <a name="m01-unit-8-connect-two-azure-virtual-networks-using-global-virtual-network-peering"></a>模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
 
-## 练习场景 
-在本单元中，你将添加对等互连来允许流量流，从而配置 CoreServicesVnet 和 ManufacturingVnet 之间的连接性。 
+## <a name="exercise-scenario"></a>练习场景 
+在本单元中，你将通过添加对等互连来允许通信流，以配置 CoreServicesVnet 和 ManufacturingVnet 之间的连接。 
 
-在本单元中，你将：
+在本单元中，你将学习以下内容：
 
-+ 任务 1：创建虚拟机来测试配置
++ 任务 1：创建虚拟机以测试配置
 + 任务 2：使用 RDP 连接到测试 VM
-+ 任务 3：测试 VM 之间的连接
-+ 任务 4：在 CoreServicesVnet 与 ManufacturingVnet 之间创建 VNet 对等互连
-+ 任务 5：测试 VM 之间的连接
++ 任务 3：测试 VM 间的连接
++ 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
++ 任务 5：测试 VM 间的连接
 + 任务 6：清理资源
 
-## 任务 1：创建虚拟机来测试配置
+## <a name="task-1-create-a-virtual-machine-to-test-the-configuration"></a>任务 1：创建虚拟机以测试配置
 
-在本部分中，你将在 Manufacturing VNet 上创建一个测试 VM，来测试你能否从 ManufacturingVnet 访问其他 Azure 虚拟网络中的资源。
+在本部分中，你将在 Manufacturing VNet 上创建一个测试 VM，用来测试是否可以从 ManufacturingVnet 访问另一个 Azure 虚拟网络中的资源。
 
-### 创建 ManufacturingVM
+### <a name="create-manufacturingvm"></a>创建 ManufacturingVM
 
-1. 在 Azure 主页上，使用全局搜索类型“**虚拟机**”并选择服务下的虚拟机。
+1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在虚拟机中，选择“**+ 创建; + 虚拟机**”。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 上传到 Cloud Shell 主目录  。
 
-3. 使用下表中的信息创建 VM。
+3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
-| **选项卡**         | **选项**                                                   | **值**                             |
-| --------------- | ------------------------------------------------------------ | ------------------------------------- |
-| 基本          | 资源组                                               | ContosoResourceGroup                  |
-|                 | 虚拟机名称                                         | ManufacturingVM                       |
-|                 | 区域                                                       | 西欧                           |
-|                 | 可用性选项                                         | 无需基础结构冗余 |
-|                 | 映像                                                        | Windows Server 2022 Datacenter- Gen1  |
-|                 | Azure Spot 实例                                          | 未选择                          |
-|                 | 大小                                                         | Standard_D2s_v3 - 2vcpus，8GiB 内存 |
-|                 | 用户名                                                     | TestUser                              |
-|                 | 密码                                                     | TestPa$$w0rd!                         |
-|                 | 公共入站端口                                         | 允许选定的端口                  |
-|                 | 选择入站端口                                         | RDP (3389)                            |
-| 磁盘           | 无需任何更改                                          |                                       |
-| 网络      | 虚拟网络                                              | ManufacturingVnet                     |
-|                 | 子网                                                       | ManufacturingSystemSubnet (10.30.10.0/24)|
-|                 | 公共 IP                                                    | （新）ManufacturingVM-ip              |
-|                 | NIC 网络安全组                                   | 基本                                 |
-|                 | 公共入站端口                                         | 允许选定的端口                  |
-|                 | 选择入站端口                                         | RDP (3389)                            |
-|                 | 负载均衡                                               | 未选择                          |
-| 管理      | 无需任何更改                                          |                                       |
-| 高级        | 无需任何更改                                          |                                       |
-| 标记            | 无需任何更改                                          |                                       |
-| 查看 + 创建 | 检查设置，然后选择“创建”                       |                                       |
+   ```powershell
+   $RGName = "ContosoResourceGroup"
+   
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile ManufacturingVMazuredeploy.json -TemplateParameterFile ManufacturingVMazuredeploy.parameters.json
+   ```
+  
+4. 部署完成后，转到 Azure 门户主页，然后选择“虚拟机”。
 
+5. 验证是否已创建虚拟机。
 
-4. 部署完成后，选择“**前往资源**”。
+## <a name="task-2-connect-to-the-test-vms-using-rdp"></a>任务 2：使用 RDP 连接到测试 VM
 
-## 任务 2：使用 RDP 连接到测试 VM
+1. 在 Azure 门户主页上，选择“虚拟机”。
 
-1. 在 Azure 门户主页上，选择“**虚拟机**”。
+2. 选择“ManufacturingVM”。
 
-2. 选择“**ManufacturingVM**”。
+3. 在“ManufacturingVM”中，选择“连接”&gt;“RDP”。
 
-3. 在 ManufacturingVM 中，选择“**连接**” > “**RDP**”。
-
-4. 在 ManufacturingVM | 连接 中，选择“**下载 RDP 文件**”。
+4. 在“ManufacturingVM | 连接”中，选择“下载 RDP 文件”。
 
 5. 将 RDP 文件保存到桌面。
 
-6. 使用 RDP 文件、用户名 **TestUser** 和密码 **TestPa$w0rd!** 连接到 ManufacturingVM。
+6. 使用 RDP 文件连接到 ManufacturingVM，用户名为 TestUser，密码为 TestPa$$w0rd! 。
 
-7. 在 Azure 门户主页上，选择“**虚拟机**”。
+7. 在 Azure 门户主页上，选择“虚拟机”。
 
-8. 选择“**TestVM1**”。
+8. 选择“TestVM1”。
 
-9. 在 TestVM1 中，选择“**连接**” > “**RDP**”。
+9. 在 TestVM1 中，选择“连接”&gt;“RDP”。
 
-10. 在 TestVM1 | 连接中，选择“**下载 RDP 文件**”。
+10. 在“TestVM1 | 连接”中，选择“下载 RDP 文件”。
 
 11. 将 RDP 文件保存到桌面。
 
-12. 使用 RDP 文件、用户名 **TestUser** 和密码 **TestPa$w0rd!** 连接到 TestVM1。
+12. 使用 RDP 文件连接 TestVM1，用户名为 TestUser，密码为 TestPa$$w0rd! 。
 
-13. 在两个 VM 上的“**为设备选择隐私设置**” 中，选择“**接受**”。
+13. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
 
-14. 在两个 VM 上的“**网络**” 中，选择“**是**”。
+14. 在这两个 VM 上的“网络”中，选择“是”。
 
-15. 在 TestVM1 中，打开 PowerShell 提示符，然后运行以下命令：ipconfig
+15. 在 TestVM1 上，打开 PowerShell 提示符，然后运行以下命令：ipconfig
 
-16. 记下 IPv4 地址。 
-
- 
-
-## 任务 3：测试 VM 之间的连接
-
-1. 在 ManufacturingVM 上打开 PowerShell 提示符。
-
-2. 使用以下命令验证 CoreServicesVnet 上没有到 TestVM1 的连接。请确保为 TestVM1 使用 IPv4 地址。
-
-| PowerShell                               |
-| ---------------------------------------- |
-| Test-NetConnection 10.20.20.4 -port 3389 |
-
-
-3. 测试连接应该会失败，你将看到如下结果：
-   ![Test-NetConnection 10.20.20.4 -port 3389 显示失败的 PowerShell 窗口 ](../media/test-netconnection-fail.png)
+16. 记录 IPv4 地址。 
 
  
 
-## 任务 4：在 CoreServicesVnet 与 ManufacturingVnet 之间创建 VNet 对等互连
+## <a name="task-3-test-the-connection-between-the-vms"></a>任务 3：测试 VM 间的连接
 
-1. 在 Azure 主页中，选择“**虚拟网络**”， 然后选择“**CoreServicesVnet**”。
+1. 在“ManufacturingVM”上，打开 PowerShell 提示符。
 
-2. 在 CoreServicesVnet 中的“**设置**”下，选择“**对等互连**”。
-   ![Core Services VNet 对等互连设置的屏幕截图 ](../media/create-peering-on-coreservicesvnet.png)
+2. 使用以下命令验证 CoreServicesVnet 上是否不存在与 TestVM1 的连接。 请确保对 TestVM1 使用 IPv4 地址。
 
-3. 在 CoreServicesVnet | 对等互连上，选择“**+添加**”。
+   ```powershell
+    Test-NetConnection 10.20.20.4 -port 3389
+    ```
+
+
+3. 测试连接应失败，且你将看到如下所示的结果：![Test-NetConnection 10.20.20.4 - 端口 3389 显示失败的 PowerShell 窗口](../media/test-netconnection-fail.png)
+
+ 
+
+## <a name="task-4-create-vnet-peerings-between-coreservicesvnet-and-manufacturingvnet"></a>任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
+
+1. 在 Azure 主页上，选择“虚拟网络”，然后选择“CoreServicesVnet”。
+
+2. 在“CoreServicesVnet”中的“设置”下，选择“对等互连”。
+   ![CoreServicesVnet 对等互连设置的屏幕截图](../media/create-peering-on-coreservicesvnet.png)
+
+3. 在“CoreServicesVnet”|“对等互连”上，选择“+ 添加”。
 
 4. 使用下表中的信息创建对等互连。
 
-| **部分**                          | **选项**                                    | **值**                             |
+| **节**                          | **选项**                                    | 值                             |
 | ------------------------------------ | --------------------------------------------- | ------------------------------------- |
 | 此虚拟网络                 |                                               |                                       |
-|                                      | 对等互连链接名称                             | CoreServicesVnet-to-ManufacturingVnet |
-|                                      | 流向远程虚拟网络的流量             | 允许（默认）                       |
-|                                      | 从远程虚拟网络转发的流量 | 允许（默认）                       |
-|                                      | 虚拟网络网关或路由服务器       | 无（默认值）                        |
+|                                      | 对等互连链接名称                             | 将 CoreServicesVnet 连接到 ManufacturingVnet |
+|                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
+|                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
+|                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
 | 远程虚拟网络               |                                               |                                       |
-|                                      | 对等互连链接名称                             | ManufacturingVnet-to-CoreServicesVnet |
+|                                      | 对等互连链接名称                             | 将 ManufacturingVnet 连接到 CoreServicesVnet |
 |                                      | 虚拟网络部署模型              | 资源管理器                      |
-|                                      | 我知道我的资源 ID                         | 未选择                          |
-|                                      | 订阅                                  | MOC Subscription-lodxxxxxxxx          |
+|                                      | 我知道我的资源 ID                         | 未选定                          |
+|                                      | 订阅                                  | MOC 订阅-lodxxxxxxxx          |
 |                                      | 虚拟网络                               | ManufacturingVnet                     |
-|                                      | 流向远程虚拟网络的流量             | 允许（默认）                       |
-|                                      | 从远程虚拟网络转发的流量 | 允许（默认）                       |
-|                                      | 虚拟网络网关或路由服务器       | 无（默认值）                        |
+|                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
+|                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
+|                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
 | 检查设置，然后选择“添加”。 |                                               |                                       |
 |                                      |                                               |                                       |
 
 
-5. 在 CoreServicesVnet | 对等互连中，验证是否列出 **CoreServicesVnet-to-ManufacturingVnet** 对等互连。
+5. 在“CoreServicesVnet”|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”对等互连。
 
-6. 在虚拟网络下，选择“**ManufacturingVnet**”，并验证是否列出 **ManufacturingVnet-to-CoreServicesVnet** 对等互连。
-
- 
-
-## 任务 5：测试 VM 之间的连接
-
-1. 在 ManufacturingVM 上打开 PowerShell 提示符。
-
-2. 使用以下命令验证 CoreServicesVnet 上现是否有到 TestVM1 的连接。 
-
-| PowerShell                               |
-| ---------------------------------------- |
-| Test-NetConnection 10.20.20.4 -port 3389 |
-
-
-3. 测试连接应该会成功，你将看到如下结果：
-   ![Test-NetConnection 10.20.20.4 -port 3389 显示 TCP 测试成功：true 的 Powershell 窗口](../media/test-connection-succeeded.png)
+6. 在“虚拟网络”下，选择“ManufacturingVnet”，然后验证是否列出了“将 ManufacturingVnet 连接到 CoreServicesVnet”对等互连。
 
  
 
-恭喜！你已通过添加对等互连成功配置 VNet 之间的连接性。 
+## <a name="task-5-test-the-connection-between-the-vms"></a>任务 5：测试 VM 间的连接
 
-## 任务 6：清理资源
+1. 在“ManufacturingVM”上，打开 PowerShell 提示符。
 
-   >**备注**： 请记得删除不再使用的所有新创建的 Azure 资源。删除未使用的资源，确保不产生意外费用。
+2. 使用以下命令验证 CoreServicesVnet 上现是否存在与 TestVM1 的连接。 
 
-1. 在 Azure 门户中，在 **Cloud Shell** 窗格中打开“**PowerShell**”会话。（如果需要，请使用默认设置创建 Cloud Shell 存储。）
+   ```powershell
+    Test-NetConnection 10.20.20.4 -port 3389
+    ```
 
-1. 运行以下命令，删除在本模块各个实验室中创建的所有资源组：
+
+3. 测试连接应成功，且你将看到如下所示的结果：![Test-NetConnection 10.20.20.4 - 端口 3389 显示 TCP 测试成功: true 的 Powershell 窗口](../media/test-connection-succeeded.png)
+
+ 
+
+祝贺你！ 通过添加对等互连，你已成功配置 VNet 之间的连接。 
+
+## <a name="task-6-clean-up-resources"></a>任务 6：清理资源
+
+   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+
+1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。 （如有必要，使用默认设置创建 Cloud Shell 存储。）
+
+1. 通过运行以下命令，删除在此模块的实验室中创建的所有资源组：
 
    ```powershell
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**备注**： 该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你随后可在同一 PowerShell 会话中立即运行另一个 PowerShell 命令，但实际上要花几分钟才能删除资源组。
+    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。

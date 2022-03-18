@@ -1,171 +1,140 @@
 ---
 Exercise:
-    title: '模块 02 第 3 单元 - 创建和配置虚拟网络网关'
-    module: '模块 - 设计和实现混合网络'
+  title: 模块 02 第 3 单元 - 创建和配置虚拟网络网关
+  module: Module - Design and implement hybrid networking
+ms.openlocfilehash: 85db6e283f4b1bfb8f57c110d3d3eadd9af2d755
+ms.sourcegitcommit: f63ebaa31399a7b2b37abc32ed64f24f3d40608c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/05/2022
+ms.locfileid: "138028507"
 ---
+# <a name="m02-unit-3-create-and-configure-a-virtual-network-gateway"></a>模块 02 第 3 单元 - 创建和配置虚拟网络网关
 
+在本练习中，配置一个虚拟网关以连接 Contoso Core Services VNet 和 Manufacturing VNet。 
 
-# 模块 02 第 3 单元 - 创建和配置虚拟网络网关
-
-在本练习中，你将配置一个虚拟网络网关，来连接 Contoso Core Services VNet 和 Manufacturing VNet。 
-
-在本练习中，你将：
+通过学习本练习，你将能够：
 
 + 任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
-+ 任务 2：创建 CoreServicesTestVM
-+ 任务 3：创建 ManufacturingTestVM
++ 任务 2：创建 CoreServicesVM
++ 任务 3：创建 ManufacturingVM
 + 任务 4：使用 RDP 连接到测试 VM
-+ 任务 5：测试 VM 之间的连接
++ 任务 5：测试 VM 间的连接
 + 任务 6：创建 CoreServicesVnet 网关
 + 任务 7：创建 ManufacturingVnet 网关
 + 任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet 
 + 任务 9：将 ManufacturingVnet 连接到 CoreServicesVnet
-+ 任务 10：验证连接是否连接 
-+ 任务 11：测试 VM 之间的连接
++ 任务 10：验证连接是否成功 
++ 任务 11：测试 VM 间的连接
 
-## 任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
+## <a name="task-1-create-coreservicesvnet-and-manufacturingvnet"></a>任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
 
-1. 在 Azure 门户中，在“**Cloud Shell**”窗格中打开“**PowerShell**”会话。
+1. 在 Azure 门户的“Cloud Shell”窗格内打开“PowerShell”会话。
 
-2. 在“Cloud Shell”窗格的工具栏中单击“上传/下载文件”图标，在下拉菜单中单击“上传”，然后将以下文件上传到 Cloud Shell 主目录中：**azuredeploy.json** 和 **azuredeploy.parameters.json**。
+2. 在“Cloud Shell”窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件上传到 Cloud Shell 主目录中 。
 
 3. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    #create resource group if it doesnt exist
-   New-AzResourceGroup -Name $RGName -Location East US
+   New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
-## 任务 2：创建 CoreServicesTestVM
+## <a name="task-2-create-coreservicesvm"></a>任务 2：创建 CoreServicesVM
 
-1. 在 Azure 主页上，使用全局搜索类型“**虚拟机**”并选择服务下的虚拟机。
+1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在虚拟机中，选择“**+ 创建; + 虚拟机**”。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将文件 CoreServicesVMazuredeploy.json 和 CoreServicesVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 上传到 Cloud Shell 主目录  。
 
-3. 使用下表中的信息创建 VM。
+3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
-   | **选项卡**         | **选项**                                                   | **值**                             |
-   | --------------- | ------------------------------------------------------------ | ------------------------------------- |
-   | 基本          | 资源组                                               | ContosoResourceGroup                  |
-   |                 | 虚拟机名称                                         | CoreServicesTestVM                    |
-   |                 | 区域                                                       | 美国东部                               |
-   |                 | 可用性选项                                         | 无需基础结构冗余 |
-   |                 | 映像                                                        | Windows Server 2022 Datacenter- Gen1  |
-   |                 | Azure Spot 实例                                          | 未选择                          |
-   |                 | 大小                                                         | Standard_D2s_v3 - 2vcpus，8GiB 内存 |
-   |                 | 用户名                                                     | TestUser                              |
-   |                 | 密码                                                     | TestPa$$w0rd!                         |
-   |                 | 公共入站端口                                         | 允许选定的端口                  |
-   |                 | 选择入站端口                                         | RDP (3389)                            |
-   | 磁盘           | 无需任何更改                                          |                                       |
-   | 网络      | 虚拟网络                                              | CoreServicesVnet                      |
-   |                 | 子网                                                       | DatabaseSubnet (10.20.20.0/24)        |
-   |                 | 公共 IP                                                    | （新）CoreServicesTestVM-ip           |
-   |                 | NIC 网络安全组                                   | 基本                                 |
-   |                 | 公共入站端口                                         | 允许选定的端口                  |
-   |                 | 选择入站端口                                         | RDP (3389)                            |
-   |                 | 负载均衡                                               | 未选择                          |
-   | 管理      | 无需任何更改                                          |                                       |
-   | 高级        | 无需任何更改                                          |                                       |
-   | 标记            | 无需任何更改                                          |                                       |
-   | 查看 + 创建 | 检查设置，然后选择“创建”                       |                                       |
+   ```powershell
+   $RGName = "ContosoResourceGroup"
+   
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile CoreServicesVMazuredeploy.json -TemplateParameterFile CoreServicesVMazuredeploy.parameters.json
+   ```
+  
+4. 部署完成后，转到 Azure 门户主页，然后选择“虚拟机”。
 
-4. 部署完成后，选择“**前往资源**”。
+5. 验证是否已创建虚拟机。
 
-## 任务 3：创建 ManufacturingTestVM
+## <a name="task-3-create-manufacturingvm"></a>任务 3：创建 ManufacturingVM
 
-1. 在 Azure 主页上，使用全局搜索类型“**虚拟机**”并选择服务下的虚拟机。
+1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在虚拟机中，选择“**+ 创建; + 虚拟机**”。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 上传到 Cloud Shell 主目录  。
 
-3. 使用下表中的信息创建 VM。
+3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
-   | **选项卡**         | **选项**                                                   | **值**                                 |
-   | --------------- | ------------------------------------------------------------ | ----------------------------------------- |
-   | 基本          | 资源组                                               | ContosoResourceGroup                      |
-   |                 | 虚拟机名称                                         | ManufacturingTestVM                       |
-   |                 | 区域                                                       | 西欧                               |
-   |                 | 可用性选项                                         | 无需基础结构冗余     |
-   |                 | 映像                                                        | Windows Server 2022 Datacenter- Gen1      |
-   |                 | Azure Spot 实例                                          | 未选择                              |
-   |                 | 大小                                                         | Standard_D2s_v3 - 2vcpus，8GiB 内存     |
-   |                 | 用户名                                                     | TestUser                                  |
-   |                 | 密码                                                     | TestPa$$w0rd!                             |
-   |                 | 公共入站端口                                         | 允许选定的端口                      |
-   |                 | 选择入站端口                                         | RDP (3389)                                |
-   | 磁盘           | 无需任何更改                                          |                                           |
-   | 网络      | 虚拟网络                                              | ManufacturingVnet                         |
-   |                 | 子网                                                       | ManufacturingSystemSubnet (10.40.40.0/24) |
-   |                 | 公共 IP                                                    | （新）ManufacturingTestVM-ip              |
-   |                 | NIC 网络安全组                                   | 基本                                     |
-   |                 | 公共入站端口                                         | 允许选定的端口                      |
-   |                 | 选择入站端口                                         | RDP (3389)                                |
-   |                 | 负载均衡                                               | 未选择                              |
-   | 管理      | 无需任何更改                                          |                                           |
-   | 高级        | 无需任何更改                                          |                                           |
-   | 标记            | 无需任何更改                                          |                                           |
-   | 查看 + 创建 | 检查设置，然后选择 “**创建**”                   |                                           |
+   ```powershell
+   $RGName = "ContosoResourceGroup"
+   
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile ManufacturingVMazuredeploy.json -TemplateParameterFile ManufacturingVMazuredeploy.parameters.json
+   ```
+  
+4. 部署完成后，转到 Azure 门户主页，然后选择“虚拟机”。
 
-4. 部署完成后，选择“**前往资源**”。
+5. 验证是否已创建虚拟机。
 
-## 任务 4：使用 RDP 连接到测试 VM
 
-1. 在 Azure 门户主页上，选择“**虚拟机**”。
-2. 选择“**ManufacturingTestVM**”。
-3. 在 **ManufacturingTestVM** 中，选择“**连接” > “RDP**”。
-4. 在“**ManufacturingTestVM | 连接**”中，选择“**下载 RDP 文件**”。
+## <a name="task-4-connect-to-the-test-vms-using-rdp"></a>任务 4：使用 RDP 连接到测试 VM
+
+1. 在 Azure 门户主页上，选择“虚拟机”。
+2. 选择“ManufacturingVM”。
+3. 在“ManufacturingVM”中，选择“连接”&gt;“RDP” 。
+4. 在“ManufacturingVM | 连接”中，选择“下载 RDP 文件” 。
 5. 将 RDP 文件保存到桌面。
-6. 使用 RDP 文件、用户名 **TestUser** 和密码 **TestPa$w0rd!** 连接到 ManufacturingTestVM。
-7. 在 Azure 门户主页上，选择“**虚拟机**”。
-8. 选择“**CoreServicesTestVM**”。
-9. 在 **CoreServicesTestVM** 中，选择“**连接” > “RDP**”。
-10. 在“**CoreServicesTestVM | 连接**” 中，选择“**下载 RDP 文件**”。
+6. 使用 RDP 文件连接到 ManufacturingTestVM，用户名为 TestUser，密码为 TestPa$$w0rd! 。 连接后，最小化 RDP 会话。
+7. 在 Azure 门户主页上，选择“虚拟机”。
+8. 选择 CoreServicesVM。
+9. 在“CoreServicesTestVM”中，选择“连接”&gt;“RDP” 。
+10. 在“CoreServicesTestVM | 连接”中，选择“下载 RDP 文件” 。
 11. 将 RDP 文件保存到桌面。
-12. 使用 RDP 文件、用户名 **TestUser** 和密码 **TestPa$w0rd!** 连接到 CoreServicesTestVM。
-13. 在两个 VM 上的 “**为设备选择隐私设置**” 中，选择“**接受**”。
-14. 在两个 VM 上的“**网络**”中，选择“**是**”。
-15. 在 CoreServicesTestVM 中，打开 PowerShell，然后运行以下命令：ipconfig
-16. 记下 IPv4 地址。 
+12. 使用 RDP 文件连接到 CoreServicesTestVM，用户名为 TestUser，密码为 TestPa$$w0rd! 。
+13. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
+14. 在这两个 VM 上的“网络”中，选择“是”。
+15. 在 CoreServicesTestVM 上，打开 PowerShell 并运行此命令：ipconfig
+16. 记录 IPv4 地址。 
 
  
 
-## 任务 5：测试 VM 之间的连接
+## <a name="task-5-test-the-connection-between-the-vms"></a>任务 5：测试 VM 间的连接
 
-1. 在 **ManufacturingTestVM** 上打开 PowerShell。
+1. 在“ManufacturingTestVM”上，打开 PowerShell。
 
-2. 使用以下命令验证 CoreServicesVnet 上没有到 CoreServicesTestVM 的连接。请确保为 CoreServicesTestVM 使用 IPv4 地址。
+2. 使用以下命令验证 CoreServicesVnet 上是否不存在与 CoreServicesTestVM 的连接。 请务必使用 CoreServicesTestVM 的 IPv4 地址。
 
    ```Powershell
    Test-NetConnection 10.20.20.4 -port 3389
    ```
 
-3. 测试连接应该会失败，你将看到如下结果：
+3. 测试连接应失败，且你将看到如下所示的结果：
 
    ![Test-NetConnection 失败。](../media/test-netconnection-fail.png)
 
  
 
-##  任务 6：创建 CoreServicesVnet 网关
+##  <a name="task-6-create-coreservicesvnet-gateway"></a>任务 6：创建 CoreServicesVnet 网关
 
-1. 在“**搜索资源、服务和文档(G+/)**”中，输入“**虚拟网络网关**”，然后从结果中选择“**虚拟网络网关**”。
-   ![在 Azure 门户中搜索虚拟网络网关。](../media/virtual-network-gateway-search.png)
+1. 在“搜索资源、服务和文档(G+/)”中，输入“虚拟网关”，然后从结果中选择“虚拟网关”。
+   ![在 Azure 门户上搜索虚拟网关。](../media/virtual-network-gateway-search.png)
 
-2. 在虚拟网络网关中，选择“**+创建**”。
+2. 在“虚拟网关”中，选择“+ 创建”。
 
-3. 使用下表中的信息创建虚拟网络网关：
+3. 使用下表中的信息创建虚拟网关：
 
-   | **选项卡**         | **部分**       | **选项**                                  | **值**                    |
+   | Tab         | **节**       | **选项**                                  | **值**                    |
    | --------------- | ----------------- | ------------------------------------------- | ---------------------------- |
-   | 基本          | 项目详细信息   | 订阅                                | 无需任何更改          |
+   | 基本信息          | 项目详细信息   | 订阅                                | 无需更改          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | 实例详细信息  | 名称                                        | CoreServicesVnetGateway      |
    |                 |                   | 区域                                      | 美国东部                      |
    |                 |                   | 网关类型                                | VPN                          |
    |                 |                   | VPN 类型                                    | 基于路由                  |
    |                 |                   | SKU                                         | VpnGw1                       |
-   |                 |                   | 代系                                  | 第 1 代                  |
+   |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | CoreServicesVnet             |
    |                 |                   | 子网                                      | GatewaySubnet (10.20.0.0/27) |
    |                 | 公共 IP 地址 | 公共 IP 地址                           | 新建                   |
@@ -173,30 +142,30 @@ Exercise:
    |                 |                   | 公用 IP 地址 SKU                       | 基本                        |
    |                 |                   | 启用主动-主动模式                   | 已禁用                     |
    |                 |                   | 配置 BGP                               | 已禁用                     |
-   | 查看 + 创建 |                   | 检查设置，然后选择“**创建**”。 |                              |
+   | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |
 
-   > [!备注] 
+   > [!NOTE] 
    >
    > 最多需要 45 分钟就可创建虚拟网络网关。 
 
-## 任务 7：创建 ManufacturingVnet 网关
+## <a name="task-7-create-manufacturingvnet-gateway"></a>任务 7：创建 ManufacturingVnet 网关
 
-1. 在“**搜索资源、服务和文档(G+/)**”中，输入“**虚拟网络网关**”， 然后从结果中选择“**虚拟网络网关**”。
+1. 在“搜索资源、服务和文档(G+/)”中，输入“虚拟网关”，然后从结果中选择“虚拟网关”。
 
-2. 在虚拟网络网关中，选择“**+创建**”。
+2. 在“虚拟网关”中，选择“+ 创建”。
 
-3. 使用下表中的信息创建虚拟网络网关：
+3. 使用下表中的信息创建虚拟网关：
 
-   | **选项卡**         | **部分**       | **选项**                                  | **值**                    |
+   | Tab         | **节**       | **选项**                                  | **值**                    |
    | --------------- | ----------------- | ------------------------------------------- | ---------------------------- |
-   | 基本          | 项目详细信息   | 订阅                                | 无需任何更改          |
+   | 基本信息          | 项目详细信息   | 订阅                                | 无需更改          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | 实例详细信息  | 名称                                        | ManufacturingVnetGateway     |
    |                 |                   | 区域                                      | 西欧                  |
    |                 |                   | 网关类型                                | VPN                          |
    |                 |                   | VPN 类型                                    | 基于路由                  |
    |                 |                   | SKU                                         | VpnGw1                       |
-   |                 |                   | 代系                                  | 第 1 代                  |
+   |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | ManufacturingVnet            |
    |                 |                   | 子网                                      | GatewaySubnet (10.30.0.0/27) |
    |                 | 公共 IP 地址 | 公共 IP 地址                           | 新建                   |
@@ -204,52 +173,52 @@ Exercise:
    |                 |                   | 公用 IP 地址 SKU                       | 基本                        |
    |                 |                   | 启用主动-主动模式                   | 已禁用                     |
    |                 |                   | 配置 BGP                               | 已禁用                     |
-   | 查看 + 创建 |                   | 检查设置，然后选择 “**创建**”。 |                              |
+   | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |
    
-   > [!备注]
+   > [!NOTE]
    >
    > 最多需要 45 分钟就可创建虚拟网络网关。 
 
  
 
-## 任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet 
+## <a name="task-8-connect-coreservicesvnet-to-manufacturingvnet"></a>任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet 
 
-1. 在“**搜索资源、服务和文档(G+/)**”中，输入“**虚拟网络网关**”，然后从结果中选择“**虚拟网络网关**”。
+1. 在“搜索资源、服务和文档(G+/)”中，输入“虚拟网关”，然后从结果中选择“虚拟网关”。
 
-2. 在虚拟网络网关中，选择 “**CoreServicesVnetGateway**”。
+2. 在“虚拟网关”中，选择“CoreServicesVnetGateway”。
 
-3. 在 CoreServicesGateway 中，选择“**连接**”，然后选择“**+添加**”。
+3. 在“CoreServicesGateway”中，选择“连接”，然后选择“+ 添加”。
 
-   > [!备注]
+   > [!NOTE]
    >
-   >  直到虚拟网络网关完全部署后，你才能完成此配置。
+   >  在完全部署虚拟网关后，才能完成此配置。
 
 4. 使用下表中的信息创建连接：
 
    | **选项**                     | **值**                         |
    | ------------------------------ | --------------------------------- |
-   | 名称                           | CoreServicesGW-to-ManufacturingGW |
+   | 名称                           | CoreServicesGW-ManufacturingGW |
    | 连接类型                | VNet 到 VNet                      |
-   | 第一个虚拟网络网关  | CoreServicesVnetGateway           |
-   | 第二个虚拟网络网关 | ManufacturingVnetGateway          |
+   | 第一个虚拟网关  | CoreServicesVnetGateway           |
+   | 第二个虚拟网关 | ManufacturingVnetGateway          |
    | 共享密钥 (PSK)               | abc123                            |
-   | 使用 Azure 专用 IP 地址   | 未选择                      |
-   | 启用 BGP                     | 未选择                      |
+   | 使用 Azure 专用 IP 地址   | 未选定                      |
+   | 启用 BGP                     | 未选定                      |
    | IKE 协议                   | IKEv2                             |
-   | 订阅                   | 无需任何更改               |
-   | 资源组                 | 无需任何更改               |
+   | 订阅                   | 无需更改               |
+   | 资源组                 | 无需更改               |
    | 位置                       | 美国东部                           |
 
-5. 若要创建连接，请选择“**确定**”。
+5. 若要创建连接，请选择“确定”。
    
 
-## 任务 9：将 ManufacturingVnet 连接到 CoreServicesVnet
+## <a name="task-9-connect-manufacturingvnet-to-coreservicesvnet"></a>任务 9：将 ManufacturingVnet 连接到 CoreServicesVnet
 
-1. 在“**搜索资源、服务和文档(G+/)**” 中，输入“**虚拟网络网关**”， 然后从结果中选择“**虚拟网络网关**”。
+1. 在“搜索资源、服务和文档(G+/)”中，输入“虚拟网关”，然后从结果中选择“虚拟网关”。
 
-2. 在虚拟网络网关中，选择“**ManufacturingVnetGateway**”。
+2. 在"虚拟网关"中，选择“ManufacturingVnetGateway”。
 
-3. 在 CoreServicesGateway 中，选择“**连接**”，然后选择“**+添加**”。
+3. 在“CoreServicesGateway”中，选择“连接”，然后选择“+ 添加”。
 
 4. 使用下表中的信息创建连接：
 
@@ -257,42 +226,42 @@ Exercise:
    | ------------------------------ | --------------------------------- |
    | 名称                           | ManufacturingGW-to-CoreServicesGW |
    | 连接类型                | VNet 到 VNet                      |
-   | 第一个虚拟网络网关  | ManufacturingVnetGateway          |
-   | 第二个虚拟网络网关 | CoreServicesVnetGateway           |
+   | 第一个虚拟网关  | ManufacturingVnetGateway          |
+   | 第二个虚拟网关 | CoreServicesVnetGateway           |
    | 共享密钥 (PSK)               | abc123                            |
-   | 使用 Azure 专用 IP 地址   | 未选择                      |
-   | 启用 BGP                     | 未选择                      |
+   | 使用 Azure 专用 IP 地址   | 未选定                      |
+   | 启用 BGP                     | 未选定                      |
    | IKE 协议                   | IKEv2                             |
-   | 订阅                   | 无需任何更改               |
-   | 资源组                 | 无需任何更改               |
+   | 订阅                   | 无需更改               |
+   | 资源组                 | 无需更改               |
    | 位置                       | 西欧                       |
 
-5. 若要创建连接，请选择“**确定**”。
+5. 若要创建连接，请选择“确定”。
 
-## 任务 10：验证连接是否连接 
+## <a name="task-10-verify-that-the-connections-connect"></a>任务 10：验证连接是否成功 
 
-1. 在“**搜索资源、服务和文档(G+/)**”中，输入“**连接**”， 然后从结果中选择“**连接**”。
+1. 在“搜索资源、服务和文档(G+/)”中，输入“连接”，然后从结果中选择“连接”。
 
-2. 请等到两个连接的状态都为“**已连接**”。 可能需要刷新屏幕。 
+2. 等待，直到两个连接的状态都为“已连接”。 你可能需要刷新屏幕。 
 
    ![已成功创建 VPN 网关连接。](../media/connections-status-connected.png)
 
  
 
-## 任务 11：测试 VM 之间的连接
+## <a name="task-11-test-the-connection-between-the-vms"></a>任务 11：测试 VM 间的连接
 
-1. 在 **ManufacturingTestVM** 上打开 PowerShell。
+1. 在“ManufacturingTestVM”上，打开 PowerShell。
 
-2. 使用以下命令验证 CoreServicesVnet 上现是否有到 CoreServicesTestVM 的连接。请确保为 CoreServicesTestVM 使用 IPv4 地址。
+2. 使用以下命令验证 CoreServicesVnet 上现在是否存在与 CoreServicesTestVM 的连接。 请务必使用 CoreServicesTestVM 的 IPv4 地址。
 
    ```Powershell
    Test-NetConnection 10.20.20.4 -port 3389
    ```
 
-3. 测试连接应该会成功，你将看到如下结果：
+3. 测试连接应成功，且你将看到如下所示的结果：
 
    ![Test-NetConnection 成功。](../media/test-connection-succeeded.png)
 
- 
+4. 关闭远程桌面连接。
 
-恭喜！你已使用虚拟网络网关配置了 VNet 到 VNet 连接。
+祝贺你！ 你已使用虚拟网关配置了一个 VNet 到 VNet 连接。

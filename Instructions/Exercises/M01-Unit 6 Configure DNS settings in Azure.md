@@ -1,191 +1,136 @@
 ---
 Exercise:
-    title: '模块 1 第 6 单元 - 在 Azure 中配置 DNS 设置'
-    module: '模块 - Azure 虚拟网络简介'
+  title: 模块 01 - 第 6 单元 在 Azure 中配置 DNS 设置
+  module: Module - Introduction to Azure Virtual Networks
+ms.openlocfilehash: e9def7c4f9c73455fa951706fe250f55f5f79152
+ms.sourcegitcommit: 7f291542d9277fb2ea77561bd0b097ffffbfb815
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/22/2022
+ms.locfileid: "139132633"
 ---
+# <a name="m01---unit-6-configure-dns-settings-in-azure"></a>模块 01 - 第 6 单元 在 Azure 中配置 DNS 设置
 
-# 模块 01 第 6 单元 - 在 Azure 中配置 DNS 设置
+## <a name="exercise-scenario"></a>练习场景 
+在本单元中，你将为 Contoso Ltd 配置 DNS 名称解析。你将创建一个名为 contoso.com 的专用 DNS 区域，链接 VNet 进行注册和解析，然后创建两个虚拟机并测试配置。
 
-## 练习场景 
-在本单元，你将为 Contoso 有限公司配置 DNS 名称解析。你将创建名为 contoso.com 的专用 DNS 区域，为注册和解析链接 VNet，然后创建两个虚拟机并测试配置。
-
-在本练习中，你将：
+通过学习本练习，你将能够：
 
 + 任务 1：创建专用 DNS 区域
-+ 任务 2：为自动注册链接子网
++ 任务 2：链接子网进行自动注册
 + 任务 3：创建虚拟机以测试配置
-+ 任务 4：验证记录是否出现在 DNS 区域中
++ 任务 4：验证 DNS 区域中是否存在记录
 
 
-## 任务 1：创建专用 DNS 区域
+## <a name="task-1-create-a-private-dns-zone"></a>任务 1：创建专用 DNS 区域
 
 1. 转到 [Azure 门户](https://portal.azure.com/)。
 
-2. 在 Azure 主页的搜索栏中，键入 dns，然后选择“**专用 DNS 区域**”。  
+2. 在 Azure 主页上的搜索栏中，输入“dns”，然后选择“专用 DNS 区域”。  
    ‎![具有 dns 搜索的 Azure 门户主页。](../media/create-private-dns-zone.png)
 
-3. 在专用 DNS 区域中，选择“**+ 创建**”。
+3. 在专用 DNS 区域中，选择“+ 创建”。
 
 4. 使用下表中的信息创建专用 DNS 区域。
 
-| **选项卡**         | **选项**                             | **值**            |
+| Tab         | **选项**                             | **值**            |
 | --------------- | -------------------------------------- | -------------------- |
-| 基本          | 资源组                         | ContosoResourceGroup |
+| 基础          | 资源组                         | ContosoResourceGroup |
 |                 | 名称                                   | Contoso.com          |
-| 标记            | 无需任何更改                    |                      |
+| Tags            | 无需更改                    |                      |
 | 查看 + 创建 | 检查设置，然后选择“创建” |                      |
 
 
-5. 等待部署完成，然后选择“**前往资源**”。
+5. 等待部署完成，然后选择“转到资源”。
 
 6. 验证是否已创建区域。
 
-## 任务 2：为自动注册链接子网
+## <a name="task-2-link-subnet-for-auto-registration"></a>任务 2：链接子网进行自动注册
 
-1. 在 Contoso.com 中的“**设置**”下，选择“**虚拟网络链接**”。
+1. 在“Contoso.com”中的“设置”下，选择“虚拟网络链接”。
 
-2. 在 Contoso.com | 虚拟网络链接中，选择“**+ 添加**”。
+2. 在“Contoso.com | 虚拟网络”链接上，选择“+ 添加”。
 
-![contoso.com | 突出显示“+ 添加”的虚拟链接。](../media/add-network-link-dns.png)
+![突出显示了“+ 添加”的“contoso.com | 虚拟网络链接”。](../media/add-network-link-dns.png)
 
 3. 使用下表中的信息添加虚拟网络链接。
 
-| **选项**                          | **值**                               |
+| **选项**                          | 值                               |
 | ----------------------------------- | --------------------------------------- |
 | 链接名称                           | CoreServicesVnetLink                    |
-| 订阅                        | 无需任何更改                     |
+| 订阅                        | 无需更改                     |
 | 虚拟网络                     | CoreServicesVnet (ContosoResourceGroup) |
-| 启用自动注册            | 已选择                                |
+| 启用自动注册            | 选定                                |
 | 检查设置，然后选择“确定”。 |                                         |
 
 
-4. 选择“**刷新**”。
+4. 选择“刷新”。
 
-5. 验证是否已创建 CoreServicesVnetLink，是否启用了该自动注册。
+5. 验证是否已创建 CoreServicesVnetLink，以及是否已启用自动注册。
 
-6. 使用以下表中的信息，为 ManufacturingVnet 重复步骤 2 - 5： 
+6. 使用下表中的信息，对 ManufacturingVnet 重复步骤 2 - 5： 
 
-| **选项**                          | **值**                                |
+| **选项**                          | 值                                |
 | ----------------------------------- | ---------------------------------------- |
 | 链接名称                           | ManufacturingVnetLink                    |
-| 订阅                        | 无需任何更改                      |
+| 订阅                        | 无需更改                      |
 | 虚拟网络                     | ManufacturingVnet (ContosoResourceGroup) |
-| 启用自动注册            | 已选择                                 |
+| 启用自动注册            | 选定                                 |
 | 检查设置，然后选择“确定”。 |                                          |
 
 
-7. 选择“**刷新**”。
+7. 选择“刷新”。
 
-8. 验证是否已创建 ManufacturingVnetLink，是否启用了该自动注册。
+8. 验证是否已创建 ManufacturingVnetLink，以及是否已启用自动注册。
 
-9. 使用以下表中的信息，为 ResearchVnet 重复步骤 2 - 5： 
+9. 使用下表中的信息，对 ResearchVnet 重复步骤 2 - 5： 
 
-| **选项**                          | **值**                           |
+| **选项**                          | 值                           |
 | ----------------------------------- | ----------------------------------- |
 | 链接名称                           | ResearchVnetLink                    |
-| 订阅                        | 无需任何更改                 |
+| 订阅                        | 无需更改                 |
 | 虚拟网络                     | ResearchVnet (ContosoResourceGroup) |
-| 启用自动注册            | 已选择                            |
+| 启用自动注册            | 选定                            |
 | 检查设置，然后选择“确定”。 |                                     |
 
 
-10. 选择“**刷新**”。
+10. 选择“刷新”。
 
-11. 验证是否已创建 ResearchVnetLink，是否启用了该自动注册。
+11. 验证是否已创建 ResearchVnetLink，以及是否已启用自动注册。
 
  
 
-##  任务 3：创建虚拟机以测试配置
+##  <a name="task-3-create-virtual-machines-to-test-the-configuration"></a>任务 3：创建虚拟机以测试配置
 
-在本部分中，你将创建两个测试 VM，以测试专用 DNS 区域配置。
+在本部分中，你将创建两个测试 VM 来测试专用 DNS 区域配置。
 
-### 创建 TestVM1
+1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-1. 在 Azure 主页上，使用全局搜索类型“**虚拟机**”并选择服务下的虚拟机。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 上传到 Cloud Shell 主目录  。
 
-2. 在虚拟机中，选择“**+ 创建; + 虚拟机**”。
+3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
-3. 使用下表中的信息创建你的第一个 VM。
-
-| **选项卡**         | **选项**                                                   | **值**                             |
-| --------------- | ------------------------------------------------------------ | ------------------------------------- |
-| 基本          | 资源组                                               | ContosoResourceGroup                  |
-|                 | 虚拟机名称                                         | 中的机器人 TestVM1                               |
-|                 | 区域                                                       | 美国东部                               |
-|                 | 可用性选项                                         | 无需基础结构冗余 |
-|                 | 映像                                                        | Windows Server 2022 Datacenter- Gen1  |
-|                 | Azure Spot 实例                                          | 未选择                          |
-|                 | 大小                                                         | Standard_D2s_v3 - 2vcpus，8GiB 内存 |
-|                 | 用户名                                                     | TestUser                              |
-|                 | 密码                                                     | TestPa$$w0rd!                         |
-|                 | 公共入站端口                                         | 允许选定的端口                  |
-|                 | 选择入站端口                                         | RDP (3389)                            |
-| 磁盘           | 无需任何更改                                          |                                       |
-| 网络      | 虚拟网络                                              | CoreServicesVnet                      |
-|                 | 子网                                                       | DatabaseSubnet (10.20.20.0/24)        |
-|                 | 公共 IP                                                    | （新）TestVM1-ip                      |
-|                 | NIC 网络安全组                                   | 基本                                 |
-|                 | 公共入站端口                                         | 允许选定的端口                  |
-|                 | 选择入站端口                                         | RDP (3389)                            |
-|                 | 负载均衡                                               | 未选择                          |
-| 管理      | 无需任何更改                                          |                                       |
-| 高级        | 无需任何更改                                          |                                       |
-| 标记            | 无需任何更改                                          |                                       |
-| 查看 + 创建 | 检查设置，然后选择“创建”                       |                                       |
-
-
-4. 部署正在进行时，你可以继续创建 TestVM2。
-
-### 创建 TestVM2
-
-1. 在 Azure 主页上，使用全局搜索类型“**虚拟机**”并选择服务下的虚拟机。
-
-2. 在虚拟机中，选择“**+ 创建; + 虚拟机**”。
-
-3. 使用下表中的信息创建你的第二个 VM。
-
-| **选项卡**         | **选项**                                                   | **值**                             |
-| --------------- | ------------------------------------------------------------ | ------------------------------------- |
-| 基本          | 资源组                                               | ContosoResourceGroup                  |
-|                 | 虚拟机名称                                         | 中的机器人 TestVM2                               |
-|                 | 区域                                                       | 美国东部                               |
-|                 | 可用性选项                                         | 无需基础结构冗余 |
-|                 | 映像                                                        | Windows Server 2022 Datacenter- Gen1  |
-|                 | Azure Spot 实例                                          | 未选择                          |
-|                 | 大小                                                         | Standard_D2s_v3 - 2vcpus，8GiB 内存 |
-|                 | 用户名                                                     | TestUser                              |
-|                 | 密码                                                     | TestPa$$w0rd!                         |
-|                 | 公共入站端口                                         | 允许选定的端口                  |
-|                 | 选择入站端口                                         | RDP (3389)                            |
-| 磁盘           | 无需任何更改                                          |                                       |
-| 网络      | 虚拟网络                                              | CoreServicesVnet                      |
-|                 | 子网                                                       | DatabaseSubnet (10.20.20.0/24)        |
-|                 | 公共 IP                                                    | （新）TestVM2-ip                      |
-|                 | NIC 网络安全组                                   | 基本                                 |
-|                 | 公共入站端口                                         | 允许选定的端口                  |
-|                 | 选择入站端口                                         | RDP (3389)                            |
-|                 | 负载均衡                                               | 未选择                          |
-| 管理      | 无需任何更改                                          |                                       |
-| 高级        | 无需任何更改                                          |                                       |
-| 标记            | 无需任何更改                                          |                                       |
-| 查看 + 创建 | 检查设置，然后选择“**创建**”                   |                                       |
-
-
-4. 完成部署后，转到 Azure 门户主页，然后选择“**虚拟机**”。
+   ```powershell
+   $RGName = "ContosoResourceGroup"
+   
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
+   ```
+  
+4. 部署完成后，转到 Azure 门户主页，然后选择“虚拟机”。
 
 5. 验证是否已创建两个虚拟机。
 
  
 
-## 任务 4：验证记录是否出现在 DNS 区域中
+## <a name="task-4-verify-records-are-present-in-the-dns-zone"></a>任务 4：验证 DNS 区域中是否存在记录
 
-1. 在 Azure 门户主页上，选择“**专用 DNS 区域**”。
+1. 在 Azure 门户主页上，选择“专用 DNS 区域”。
 
-2. 在专用 DNS 区域中，选择“**contoso.com**”。
+2. 在专用 DNS 区域中，选择“contoso.com”。
 
-3. 验证是否已为两个 VM 列出主机 (A) 记录，如下所示：
+3. 验证是否为两个 VM 列出了主机 (A) 记录，如下所示：
 
-![Contoso.com DNS 区域显示自动注册的主机 A 记录。](../media/contoso_com-dns-zone.png)
+![显示已自动注册的主机 A 记录的 Contoso.com DNS 区域。](../media/contoso_com-dns-zone.png)
 
  
 
@@ -193,46 +138,47 @@ Exercise:
 
  
 
-### 使用 RDP 连接到测试 VM
+### <a name="connect-to-the-test-vms-using-rdp"></a>使用 RDP 连接到测试 VM
 
-1. 在 Azure 门户主页上，选择“**虚拟机**”。
+1. 在 Azure 门户主页上，选择“虚拟机”。
 
-2. 选择“**TestVM1**”。
+2. 选择“TestVM1”。
 
-3. 在 TestVM1 中，选择“**连接**” > “**RDP**”。
+3. 在 TestVM1 中，选择“连接”&gt;“RDP”。
 
-![突出显示“连接”和“RDP”的 TestVM1。](../media/connect-to-am.png)
+![突出显示了“连接”和“RDP”的 TestVM1。](../media/connect-to-am.png)
 
-4. 在“TestVM1 | 连接”中，选择“**下载 RDP 文件**”。
+4. 在“TestVM1 | 连接”中，选择“下载 RDP 文件”。
 
 5. 将 RDP 文件保存到桌面。
 
-6. 在 Azure 门户主页上，选择“**虚拟机**”。
+6. 在 Azure 门户主页上，选择“虚拟机”。
 
-7. 选择“**TestVM2**”。
+7. 选择“TestVM2”。
 
-8. 在 TestVM2 中，选择“**连接**” > “**RDP**”。
+8. 在 TestVM2 中，选择“连接”&gt;“RDP”。
 
-9. 在 TestVM2 | 连接”中，选择 “**下载 RDP 文件**”。
+9. 在“TestVM2 | 连接”中，选择“下载 RDP 文件”。
 
 10. 将 RDP 文件保存到桌面。
 
-11. 使用 RDP 文件、用户名 **TestUser** 和密码 **TestPa$w0rd!** 连接到 TestVM1。
+11. 使用 RDP 文件连接 TestVM1，用户名为 TestUser，密码为 TestPa$$w0rd! 。
 
-12. 使用 RDP 文件、用户名 **TestUser** 和密码 **TestPa$w0rd!** 连接到 TestVM2。
+12. 使用 RDP 文件连接 TestVM2，用户名为 TestUser，密码为 TestPa$$w0rd! 。
 
-13. 在两个 VM 上的“**为设备选择隐私设置**”中，选择“**接受**”。
+13. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
 
-14. 如果出现提示，在两个 VM 上的“**网络**”中，选择“**是**”。
+14. 在两个 VM 上，如果出现提示，请在“网络”中选择“是” 。
 
-15. 在 TestVM1 上，打开命令提示符，并输入命令 ipconfig /all。
+15. 在 TestVM1 上，打开命令提示符并输入命令 ipconfig /all。
 
-16. 验证 IP 地址是否与你在 DNS 区域中备注的 IP 地址相同。
+16. 验证 IP 地址是否与在 DNS 区域中记下的地址相同。
 
 17. 输入命令 ping TestVM2.contoso.com。
 
-18. 验证是否收到 TestVM2 的四个副本。
+18. 验证 FQDN 是否解析为你在专用 DNS 区域中记下的 IP 地址。 由于 VM 上启用了 Windows 防火墙，ping 本身将超时。
 
+19. 或者，可以输入命令 nslookup TestVM2.contoso.com，并验证是否收到成功的 VM2 名称解析记录
  
 
-恭喜！你已创建了专用 DNS 区域，添加了解析和自动注册链接，并测试了配置中的名称解析。 
+祝贺你！ 你已经创建了一个专用 DNS 区域、添加了名称解析和自动注册链接，并在配置中测试了名称解析。 
