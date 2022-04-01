@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 04-第 6 单元 使用 Azure 门户创建流量管理器配置文件
   module: Module - Load balancing non-HTTP(S) traffic in Azure
-ms.openlocfilehash: 0dc408c246bd44c0c0f3b6ca7de77a8db9e39f69
-ms.sourcegitcommit: df554624b7c12a0aaa6b55f343b42c46ecfbc88c
+ms.openlocfilehash: 1d04de9c9710cc452220b1f6c6cecc39ff130810
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138132289"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742005"
 ---
 # <a name="m04-unit-6-create-a-traffic-manager-profile-using-the-azure-portal"></a>模块 04-第 6 单元 使用 Azure 门户创建流量管理器配置文件
 
@@ -158,7 +158,7 @@ ms.locfileid: "138132289"
 
 3. 打开 Web 浏览器标签页，在地址栏中粘贴（或输入）DNS 名称条目 (contoso-tmprofile.trafficmanager.net)，然后按 Enter。
 
-4. 应显示 Web 应用的默认网站。
+4. 应显示 Web 应用的默认网站。 如果收到“404 找不到网站”消息，请先从“Contoso-TMProfilexx”流量管理器配置文件概览页面“禁用配置文件”，再“启用配置文件”   。 然后刷新网页。
 
    ![图片 24](../media/tm-webapp-test-1a.png)
 
@@ -192,6 +192,7 @@ ms.locfileid: "138132289"
    ```powershell
 
    Remove-AzResourceGroup -Name 'Contoso-RG-TM1' -Force -AsJob
+   Remove-AzResourceGroup -Name 'Contoso-RG-TM2' -Force -AsJob
 
    ```
 

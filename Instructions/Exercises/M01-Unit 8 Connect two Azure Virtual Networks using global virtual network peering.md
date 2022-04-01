@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
   module: Module - Introduction to Azure Virtual Networks
-ms.openlocfilehash: 934ebb601aa0fb8a66b9493d1cb4b5d913005482
-ms.sourcegitcommit: cc6b12857d97b72310f349592f5d4adbd371cc50
+ms.openlocfilehash: fc423941d69e8a4c4d166aa6896c10506fe239eb
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2022
-ms.locfileid: "138422790"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742038"
 ---
 # <a name="m01-unit-8-connect-two-azure-virtual-networks-using-global-virtual-network-peering"></a>模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
 
@@ -31,7 +31,7 @@ ms.locfileid: "138422790"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 上传到 Cloud Shell 主目录  。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录  。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 

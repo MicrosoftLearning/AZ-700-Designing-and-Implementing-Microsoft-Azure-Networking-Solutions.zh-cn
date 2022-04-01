@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
   module: Module - Design and implement private access to Azure Services
-ms.openlocfilehash: 8c2767e40bf09e4df79012f8944720f53af729ee
-ms.sourcegitcommit: df554624b7c12a0aaa6b55f343b42c46ecfbc88c
+ms.openlocfilehash: 7769b75d3db52a3b802013dcf96cdc5528c33a4c
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138132283"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742047"
 ---
 # <a name="m07-unit-5-restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints"></a>模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
 
@@ -125,7 +125,7 @@ ms.locfileid: "138132283"
    | 目标端口范围 | *                         |
    | 协议                | 任意                       |
    | 操作                  | 允许                     |
-   | 优先级                | 100                       |
+   | 优先度                | 100                       |
    | 名称                    | Allow-Storage-All         |
 
 9. 选择“添加”：
@@ -249,7 +249,7 @@ ms.locfileid: "138132283"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 VMs.json 和 VMs.parameters.json 从源文件夹 F:\Allfiles\Exercises\M07 上传到 Cloud Shell 主目录  。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 VMs.json 和 VMs.parameters.json 从源文件夹 F:\Allfiles\Exercises\M07 逐个上传到 Cloud Shell 主目录  。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 

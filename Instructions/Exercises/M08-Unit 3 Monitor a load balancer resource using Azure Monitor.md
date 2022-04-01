@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
   module: Module - Design and implement network monitoring
-ms.openlocfilehash: 89bd32ceea640043e28d2aabfe1e448562468e16
-ms.sourcegitcommit: df554624b7c12a0aaa6b55f343b42c46ecfbc88c
+ms.openlocfilehash: eefc2e8d1e6092b133c9409cdbdd8635edd1bed6
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138132292"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140741996"
 ---
 # <a name="m08-unit-3-monitor-a-load-balancer-resource-using-azure-monitor"></a>模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
 
@@ -105,6 +105,7 @@ ms.locfileid: "138132292"
    | SKU                   | **标准**             |
    | 类型                  | **内部**             |
    | 前端 IP 配置选项卡 | + 添加前端 IP 配置 |
+   | 名称                  | LoadBalancerFrontEnd |
    | 虚拟网络       | IntLB-VNet           |
    | 子网                | myBackendSubnet      |
    | IP 地址分配 | **动态**              |
@@ -194,7 +195,7 @@ ms.locfileid: "138132292"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在“Cloud Shell”窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json、azuredeploy.parameters.vm1.json、azuredeploy.parameters.vm2.json 和 azuredeploy.parameters.vm3.json 文件从源文件夹 F:\Allfiles\Exercises\M08 上传到 Cloud Shell 主目录中    。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json、azuredeploy.parameters.vm1.json、azuredeploy.parameters.vm2.json 和 azuredeploy.parameters.vm3.json 文件从源文件夹 F:\Allfiles\Exercises\M08 逐个上传到 Cloud Shell 主目录中    。
 
 3. 部署以下 ARM 模板以创建本练习所需的虚拟网络、子网和 VM：
 

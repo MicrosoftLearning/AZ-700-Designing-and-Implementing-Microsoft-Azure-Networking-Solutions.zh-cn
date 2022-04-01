@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 06-单元 9 使用 Azure 防火墙管理器保护虚拟中心安全
   module: Module - Design and implement network security
-ms.openlocfilehash: bcab244740a8a49f7923a9a8aa782a10c93d13b1
-ms.sourcegitcommit: cc6b12857d97b72310f349592f5d4adbd371cc50
+ms.openlocfilehash: 4ccd864904eda16e2959bcfd31c360df4c0d7efc
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2022
-ms.locfileid: "138422787"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742011"
 ---
 # <a name="m06-unit-9-secure-your-virtual-hub-using-azure-firewall-manager"></a>模块 06-单元 9 使用 Azure 防火墙管理器保护虚拟中心安全
 
@@ -134,7 +134,7 @@ ms.locfileid: "138422787"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 FirewallManager.json 和 FirewallManager.parameters.json 从源文件夹 F:\Allfiles\Exercises\M06 上传到 Cloud Shell 主目录  。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 FirewallManager.json 和 FirewallManager.parameters.json 从源文件夹 F:\Allfiles\Exercises\M06 逐个上传到 Cloud Shell 主目录  。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -307,7 +307,7 @@ ms.locfileid: "138422787"
 
 3. 单击“显示选项”。
 
-4. 在“用户名”框中，输入“MyAdmin”。
+4. 在“用户名”框中，输入“TestUser” 。
 
 5. 单击“连接”  。
 
@@ -347,7 +347,7 @@ ms.locfileid: "138422787"
 
 2. 在“计算机”框中，输入 Srv-workload-02 的“专用 IP 地址”（例如 10.1.1.4）。
 
-3. 在“输入凭据”对话框中，使用用户名 MyAdmin 和密码 TestPa$$w0rd! 登录到 Srv-workload-02 服务器。
+3. 在“输入凭据”对话框中，使用用户名 TestUser 和密码 TestPa$$w0rd! 登录到 Srv-workload-02 服务器。
 
 4. 单击 **“确定”** 。
 

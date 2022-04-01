@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
   module: Module - Design and implement hybrid networking
-ms.openlocfilehash: d89f695085ff1284fa2a94e3875049a0619acaac
-ms.sourcegitcommit: 7e040d6fba448f60ca3262126db60cad96222bbc
+ms.openlocfilehash: 007d533a77a0f8f71d6d38989b4da59664776d18
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "137819829"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140741987"
 ---
 # <a name="m02-unit-7-create-a-virtual-wan-by-using-azure-portal"></a>模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
 
@@ -67,7 +67,7 @@ ms.locfileid: "137819829"
 6. 在“站点到站点”选项卡上填写以下字段：
    - 是否要创建站点到站点(VPN 网关)?：是
    - “AS 编号”字段是无法编辑的。
-   - 网关缩放单元：1 个缩放单元 = 500 Mbps
+   - 网关缩放单元：1 个缩放单元 = 500 Mbps x 2
 7. 选择“查看 + 创建”以进行验证。
 8. 选择“创建”以创建中心。 
 9. 30 分钟后，刷新以在“中心”页上查看该中心。 

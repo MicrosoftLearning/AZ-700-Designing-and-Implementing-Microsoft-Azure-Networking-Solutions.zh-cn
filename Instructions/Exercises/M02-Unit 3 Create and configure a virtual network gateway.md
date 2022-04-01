@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 02 第 3 单元 - 创建和配置虚拟网络网关
   module: Module - Design and implement hybrid networking
-ms.openlocfilehash: 85db6e283f4b1bfb8f57c110d3d3eadd9af2d755
-ms.sourcegitcommit: f63ebaa31399a7b2b37abc32ed64f24f3d40608c
+ms.openlocfilehash: be0108387a6618c00d5e950d6065a286d5694fc5
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138028507"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140741990"
 ---
 # <a name="m02-unit-3-create-and-configure-a-virtual-network-gateway"></a>模块 02 第 3 单元 - 创建和配置虚拟网络网关
 
@@ -31,7 +31,7 @@ ms.locfileid: "138028507"
 
 1. 在 Azure 门户的“Cloud Shell”窗格内打开“PowerShell”会话。
 
-2. 在“Cloud Shell”窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件上传到 Cloud Shell 主目录中 。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件逐个上传到 Cloud Shell 主目录中 。
 
 3. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
 
@@ -46,7 +46,7 @@ ms.locfileid: "138028507"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将文件 CoreServicesVMazuredeploy.json 和 CoreServicesVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 上传到 Cloud Shell 主目录  。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将文件 CoreServicesVMazuredeploy.json 和 CoreServicesVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录  。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -64,7 +64,7 @@ ms.locfileid: "138028507"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 上传到 Cloud Shell 主目录  。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录  。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -137,9 +137,9 @@ ms.locfileid: "138028507"
    |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | CoreServicesVnet             |
    |                 |                   | 子网                                      | GatewaySubnet (10.20.0.0/27) |
+   |                 |                   | 公共 IP 地址类型                      | 基本                        |
    |                 | 公共 IP 地址 | 公共 IP 地址                           | 新建                   |
    |                 |                   | 公共 IP 地址名称                      | CoreServicesVnetGateway-ip   |
-   |                 |                   | 公用 IP 地址 SKU                       | 基本                        |
    |                 |                   | 启用主动-主动模式                   | 已禁用                     |
    |                 |                   | 配置 BGP                               | 已禁用                     |
    | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |
@@ -168,9 +168,9 @@ ms.locfileid: "138028507"
    |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | ManufacturingVnet            |
    |                 |                   | 子网                                      | GatewaySubnet (10.30.0.0/27) |
+   |                 |                   | 公共 IP 地址类型                      | 基本                        |
    |                 | 公共 IP 地址 | 公共 IP 地址                           | 新建                   |
    |                 |                   | 公共 IP 地址名称                      | ManufacturingVnetGateway-ip  |
-   |                 |                   | 公用 IP 地址 SKU                       | 基本                        |
    |                 |                   | 启用主动-主动模式                   | 已禁用                     |
    |                 |                   | 配置 BGP                               | 已禁用                     |
    | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |

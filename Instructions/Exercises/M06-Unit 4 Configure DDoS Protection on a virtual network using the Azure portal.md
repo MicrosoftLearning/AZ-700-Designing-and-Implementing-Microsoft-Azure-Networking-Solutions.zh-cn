@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
   module: Module - Design and implement network security
-ms.openlocfilehash: 8a0e95de6a9dc9cdb26a13fd71719769c9715e95
-ms.sourcegitcommit: cc6b12857d97b72310f349592f5d4adbd371cc50
+ms.openlocfilehash: e8ad8b1a640391e4393082999d50ed36dcc561ac
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2022
-ms.locfileid: "138422799"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742014"
 ---
 # <a name="m06-unit-4-configure-ddos-protection-on-a-virtual-network-using-the-azure-portal"></a>模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
 
@@ -189,7 +189,7 @@ ms.locfileid: "138422799"
 
 1. 在新虚拟机的“概述”页上的“设置”下，单击“网络”。
 
-2. 在“网络接口”旁边，单击“myvirtualmachine-nic” 。
+2. 在“网络接口”旁边，单击“myvirtualmachine-nic” 。 NIC 的名称可能不同。
 
 3. 在“设置”下，单击“IP 配置”。
 

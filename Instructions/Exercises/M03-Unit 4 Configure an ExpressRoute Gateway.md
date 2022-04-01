@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 03-第 4 单元 配置 ExpressRoute 网关
   module: Module - Design and implement Azure ExpressRoute
-ms.openlocfilehash: 2fcf6237ccdedff405f20999dfcfb4aa6027d1ed
-ms.sourcegitcommit: 7e040d6fba448f60ca3262126db60cad96222bbc
+ms.openlocfilehash: 27ff95d931a6ec26dc892af0965158157cabac31
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "137819583"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742035"
 ---
 # <a name="m03-unit-4-configure-an-expressroute-gateway"></a>模块 03-第 4 单元 配置 ExpressRoute 网关
 
@@ -73,7 +73,9 @@ ms.locfileid: "137819583"
 
 1. 在任意 Azure 门户页上的“搜索资源、服务和文档 (G+/)”中，输入“虚拟网络网关”，然后从结果中选择“虚拟网络网关” 。
 
-2. 在“创建虚拟网络网关”页上，使用下表中的信息创建网关：
+2. 在“虚拟网络网关”页上，选择“+ 创建”。
+
+3. 在“创建虚拟网络网关”页上，使用下表中的信息创建网关：
 
    | 设置               | **值**                  |
    | ------------------------- | -------------------------- |
@@ -91,11 +93,11 @@ ms.locfileid: "137819583"
    | 公用 IP 地址 SKU     | 基本                      |
    | 分配                | 不可配置           |
    
-3. 选择“查看 + 创建”  。
+4. 选择“查看 + 创建”  。
 
-4. 确认网关配置通过验证，然后选择“创建”。
+5. 确认网关配置通过验证，然后选择“创建”。
 
-5. 完成部署后，选择“转到资源”。
+6. 完成部署后，选择“转到资源”。
 
 > [!Note] 
 >

@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 05-第 4 单元 部署 Azure 应用程序网关
   module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: 3ada3fed1e452c817bce8f52ee5418695023ab89
-ms.sourcegitcommit: 0717a1bd8290deb682974f4c4447f5fff87c220e
+ms.openlocfilehash: bb7e4a9d6c91177afa8b22c127bc56d61f95ebd3
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2022
-ms.locfileid: "138100343"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140741993"
 ---
 # <a name="m05-unit-4-deploy-azure-application-gateway"></a>模块 05-第 4 单元 部署 Azure 应用程序网关
  
@@ -37,7 +37,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 4. 在“创建应用程序网关”的“基本信息”选项卡上，输入或选择以下信息：
 
-   | 设置         | 值                                    |
+   | **设置**         | 值                                    |
    | ------------------- | -------------------------------------------- |
    | 订阅        | 选择订阅。                    |
    | 资源组      | 选择 " 新建 ContosoResourceGroup"       |
@@ -47,7 +47,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 5. 在“创建虚拟网络”中，输入或选择以下信息：
 
-   | 设置       | **值**                          |
+   | **设置**       | **值**                          |
    | ----------------- | ---------------------------------- |
    | 名称              | ContosoVNet                        |
    | ADDRESS SPACE |                                    |
@@ -72,7 +72,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 12. 在打开的“添加后端池”窗口中，输入以下值以创建空的后端池  ：
 
-    | 设置                      | **值**   |
+    | **设置**                      | **值**   |
     | -------------------------------- | ----------- |
     | 名称                             | BackendPool |
     | 添加没有目标的后端池 | 是         |
@@ -89,7 +89,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 18. 在“侦听器”选项卡上，输入或选择以下信息：
 
-    | 设置   | **值**         |
+    | **设置**   | **值**         |
     | ------------- | ----------------- |
     | 侦听器名称 | 侦听器          |
     | 前端 IP   | 选择“公共” |
@@ -102,14 +102,14 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 21. 在“后端目标”选项卡上，输入或选择以下信息：
 
-    | 设置   | **值**      |
+    | **设置**   | **值**      |
     | ------------- | -------------- |
     | 目标类型   | 后端池   |
     | HTTP 设置 | **新建** |
 
 22. 在“添加 HTTP 设置”中，输入或选择以下信息：
 
-    | 设置        | **值**   |
+    | **设置**        | **值**   |
     | ------------------ | ----------- |
     | HTTP 设置名称 | HTTPSetting |
     | 后端端口       | 80          |
@@ -130,7 +130,7 @@ Azure 可能需要数分钟时间来创建应用程序网关。 请等待部署�
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 backend.json 和 backend.parameters.json 从源文件夹 F:\Allfiles\Exercises\M05 上传到 Cloud Shell 主目录  。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 backend.json 和 backend.parameters.json 从源文件夹 F:\Allfiles\Exercises\M05 逐个上传到 Cloud Shell 主目录  。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 

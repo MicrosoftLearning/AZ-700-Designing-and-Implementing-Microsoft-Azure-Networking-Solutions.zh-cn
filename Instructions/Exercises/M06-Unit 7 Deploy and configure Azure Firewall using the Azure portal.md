@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 06-单元 7 使用 Azure 门户部署和配置 Azure 防火墙
   module: 'Module - Design and implement network security '
-ms.openlocfilehash: ed65009faa624ee3c7f50caefa33aa9abed2af21
-ms.sourcegitcommit: cc6b12857d97b72310f349592f5d4adbd371cc50
+ms.openlocfilehash: ae9bb7d64103b1a04003cb7b1bce42f2e99fadde
+ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2022
-ms.locfileid: "138422796"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140741999"
 ---
 # <a name="m06-unit-7-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>模块 06-单元 7 使用 Azure 门户部署和配置 Azure 防火墙
 
@@ -97,7 +97,7 @@ ms.locfileid: "138422796"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 firewall.json 和 firewall.parameters.json 从源文件夹 F:\Allfiles\Exercises\M06 上传到 Cloud Shell 主目录  。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 firewall.json 和 firewall.parameters.json 从源文件夹 F:\Allfiles\Exercises\M06 逐个上传到 Cloud Shell 主目录  。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
