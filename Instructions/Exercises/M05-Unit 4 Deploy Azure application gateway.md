@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 05-第 4 单元 部署 Azure 应用程序网关
   module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: bb7e4a9d6c91177afa8b22c127bc56d61f95ebd3
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: 4a69cd20079b32de6219049a3127d146a26386c4
+ms.sourcegitcommit: 2793e1a16a8f6ef6c25352cd6eaeaae43c9615a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140741993"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "144102108"
 ---
 # <a name="m05-unit-4-deploy-azure-application-gateway"></a>模块 05-第 4 单元 部署 Azure 应用程序网关
  
@@ -96,7 +96,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 19. 接受“侦听器”选项卡上其他设置的默认值。
 
-    ![在 Azure 门户上添加应用程序网关路由规则](../media/routing-rule-listener-tab.png)
+    ![在 Azure 门户上添加应用程序网关路由规则](../media/Routing-rule-listener-tab.png)
 
 20. 选择“后端目标”选项卡以配置传递规则的其余部分。
 
@@ -105,7 +105,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
     | **设置**   | **值**      |
     | ------------- | -------------- |
     | 目标类型   | 后端池   |
-    | HTTP 设置 | **新建** |
+    | HTTP 设置 | **添加新内容** |
 
 22. 在“添加 HTTP 设置”中，输入或选择以下信息：
 

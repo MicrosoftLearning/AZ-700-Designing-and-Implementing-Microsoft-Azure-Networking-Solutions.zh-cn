@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 06-单元 7 使用 Azure 门户部署和配置 Azure 防火墙
   module: 'Module - Design and implement network security '
-ms.openlocfilehash: ae9bb7d64103b1a04003cb7b1bce42f2e99fadde
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: d5d875e379845d0fec8b9803b18b7b78bb4d385a
+ms.sourcegitcommit: 2793e1a16a8f6ef6c25352cd6eaeaae43c9615a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140741999"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "144102113"
 ---
 # <a name="m06-unit-7-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>模块 06-单元 7 使用 Azure 门户部署和配置 Azure 防火墙
 
@@ -209,7 +209,7 @@ ms.locfileid: "140741999"
 
 15. 在“下一跃点地址”中，键入之前记下的防火墙专用 IP 地址（例如，10.0.1.4）
 
-16. 单击 **“确定”** 。
+16. 单击“添加”。
 
     ![添加防火墙路由](../media/add-firewall-route.png)
 
