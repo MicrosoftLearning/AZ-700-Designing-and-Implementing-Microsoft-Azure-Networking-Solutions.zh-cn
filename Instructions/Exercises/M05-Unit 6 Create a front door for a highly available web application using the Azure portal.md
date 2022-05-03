@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 05-单元 6 - 使用 Azure 门户为高度可用的 Web 应用程序创建 Front Door
   module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: 78a6ba6417aa6c43e2e613af8c20c5d76c4749c0
-ms.sourcegitcommit: 3aeb76a0ac28b33b6edc61365b303f5b0252a3c2
+ms.openlocfilehash: ae5346b27305d68779db54dad5496027a0adfec5
+ms.sourcegitcommit: 2793e1a16a8f6ef6c25352cd6eaeaae43c9615a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2022
-ms.locfileid: "137860534"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "144102101"
 ---
 # <a name="m05-unit-6-create-a-front-door-for-a-highly-available-web-application-using-the-azure-portal"></a>模块 05-单元 6 - 使用 Azure 门户为高度可用的 Web 应用程序创建 Front Door
 
@@ -77,89 +77,38 @@ ms.locfileid: "137860534"
 
 配置 Azure Front Door，以根据两个 Web 应用服务器之间的最小延迟来定向用户流量。 若要开始，请为 Azure Front Door 添加前端主机。
 
-1. 在任何 Azure 门户页面的“搜索资源、服务和文档(G+/)”中，输入 front door，然后从结果中选择“Front Doors” 。
+1. 在任何 Azure 门户页上，在“搜索资源、服务和文档 (G+/)”中搜索 Front Door 和 CDN 配置文件，然后选择“Front Door 和 CDN 配置文件” 。
 
-   ![Azure 门户中的“搜索 Front Door”](../media/search-front-door.png)
+1. 选择“创建 Front Door 和 CDN 配置文件”。 在“比较产品/服务”页上选择“快速创建”。  然后选择“继续创建 Front Door”。
 
-2. 在“Front Doors”页上，选择“+ 创建”。
+1. 在“基本”选项卡上，输入或选择以下信息。
 
-3. 在“创建 Front Door”中，输入或选择以下信息。
 
    | **设置**             | 值                                    |
    | ----------------------- | -------------------------------------------- |
    | 订阅            | 选择订阅。                    |
    | 资源组          | 选择 ContosoResourceGroup                  |
    | 资源组位置 | 接受默认设置                       |
+   | 名称                    | 在此订阅中输入唯一名称，例如 FrontDoor(你的姓名首字母)   |
+   | 层                    | 标准   |
+   | 终结点名称           | FDendpoint   |
+   | 原点类型             | 应用服务| 
+   | 源主机名        | 之前部署的 Web 应用的名称 |
+   
 
-4. 在完成时选择“下一步:配置”。
+1. 选择“查看并创建”，然后选择“创建” 。
 
-5. 在“配置”选项卡上的“前端/域”中，选择 + 以添加前端主机。
-
-   ![创建 Front Door 添加前端/域](../media/add-frontends-domains.png)
-
-6. 输入全局唯一的主机名，例如 contoso-frontend，然后选择“添加”。
-
-7. 接下来，创建一个后端池，在其中包含你的两个 Web 应用。  
-   ‎在“创建 Front Door”的“后端”池中，选择“+”以添加后端池。
-
-   ![创建 Front Door 添加后端池](../media/add-backends.png)
-
-8. 输入主机名，如 BackendPool。
-
-9. 在“后端”下，选择“+ 添加后端”。
-
-10. 在“添加后端”中，输入或选择以下信息。
-
-    | **设置**       | **值**                                                    |
-    | ----------------- | ------------------------------------------------------------ |
-    | 后端主机类型 | 选择“应用服务”。                                      |
-    | 订阅      | 选择订阅。                                    |
-    | 后端主机名 | 选择所创建的第一个 Web 应用。 在本示例中，Web 应用是 WebAppContoso-1。 |
-
-11. 将所有其他字段保留为默认值，然后选择“添加”。
-
-12. 再次选择“+ 添加后端”，输入或选择以下内容。
-
-    | **设置**       | **值**                                                    |
-    | ----------------- | ------------------------------------------------------------ |
-    | 后端主机类型 | 选择“应用服务”。                                          |
-    | 订阅      | 选择订阅。                                    |
-    | 后端主机名 | 选择所创建的第二个 Web 应用。 在本示例中，Web 应用是 WebAppContoso-2。 |
-
-13. 将所有其他字段保留为默认值，然后选择“添加”。
-
-14. 在“添加后端池”边栏选项卡上，选择“添加”以完成后端池配置。
-
-15. 最后，添加一个路由规则。 路由规则将前端主机映射到后端池。 此规则将 contoso-frontend.azurefd.net 请求转发到 myBackendPool。
-
-16. 在“创建 Front Door”中的“传递规则”中，选择 + 以配置传递规则。
-
-    ![创建 Front Door 添加传递规则](../media/add-routing-rules.png)
-
-17. 在“添加规则”中，对于“名称”，请输入“LocationRule”。 
-
-18. 接受所有默认值，然后选择“添加”以添加路由规则。
-
-19. 选择“查看 + 创建”，然后选择“创建” 。
-
-必须确保 Front Door 中每个前端主机都有一个传递规则，并包含与之关联的默认路径 (\*)。也就是说，在所有传递规则中，每个前端主机的默认路径 (\*) 上都必须定义至少一个传递规则，否则可能会导致最终用户流量无法正确路由。
-
- 
+1. 等待资源部署，然后选择“转到资源”。
+2. 在“概述”边栏选项卡中的 Front Door 资源上，找到“源组”，选择创建的源组
+3. 若要更新源组，请从列表中选择名称“default-origin-group”。 选择“添加源”并添加第二个 Web 应用。 选择“添加”，然后选择“更新”。 
 
 ## <a name="task-3-view-azure-front-door-in-action"></a>任务 3：通过实际操作查看 Azure Front Door
 
 创建 Front Door 后，需要花费几分钟时间来全局部署配置。 完成后，访问你创建的前端主机。 
 
-1. 在 Azure 门户中，导航到 Front Door 前端。 选择“转到资源”。 或者，在“搜索资源、服务和文档(G+/)”中，输入“front door”，并从结果中选择“Front Door”，然后选择“Front Door”。
+1. 在“概述”边栏选项卡中的 Front Door 资源上，找到为终结点创建的终结点主机名。 该名称应该为 fdendpoint，后跟连字符和随机字符串。 例如 fdendpoint-fxa8c8hddhhgcrb9.z01.azurefd.net。 单击“复制”复制此 FQDN。
 
-2. 在“Front Door”页上，记下前端主机 URL。 本练习使用 contoso-frontend.azurefd.net，但你可能已更改它以确保名称是唯一的。
-
-   ![“Azure 门户前端”页 - 验证前端 URL](../media/frontend-url.png)
-
-3. 在浏览器中，转到前端主机 URL (contoso-frontend.azurefd.net)。 你的请求将从后端池中的指定服务器自动路由到离你最近的服务器。
-
-4. 将看到以下信息页面：
-
+1. 在新浏览器选项卡中，导航到 Front Door 终结点 FQDN。 系统将显示默认应用服务页。
    ![显示应用服务信息页的浏览器](../media/app-service-info-page.png)
 
 5. 若要实际测试即时全局故障转移，请尝试以下步骤：
@@ -182,9 +131,8 @@ Web 应用停止时可能有延迟。如果在浏览器中出现错误页面，�
 
    祝贺你！ 你已配置并测试了 Azure Front Door。
    
-  
-   
-   ## <a name="task-4-clean-up-resources"></a>任务 4：清理资源
+
+## <a name="task-4-clean-up-resources"></a>任务 4：清理资源
    
    >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 

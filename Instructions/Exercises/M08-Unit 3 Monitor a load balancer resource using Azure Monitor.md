@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
   module: Module - Design and implement network monitoring
-ms.openlocfilehash: eefc2e8d1e6092b133c9409cdbdd8635edd1bed6
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: 6ba86eb68ad8e343bfe693cef6a8a3c882a24dda
+ms.sourcegitcommit: 2793e1a16a8f6ef6c25352cd6eaeaae43c9615a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140741996"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "144102116"
 ---
 # <a name="m08-unit-3-monitor-a-load-balancer-resource-using-azure-monitor"></a>模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
 
@@ -87,13 +87,10 @@ ms.locfileid: "140741996"
 
 在本部分中，你将创建一个内部标准 SKU 负载均衡器。 在此练习中创建标准 SKU 负载均衡器（而不是基本 SKU 负载均衡器）的原因是，之后的练习需要使用标准 SKU 版本的负载均衡器。
 
-1. 在 Azure 门户主页上页面顶部的“搜索”框中，键入“负载均衡器”，然后选择“服务”下的“负载均衡器”。
-
-2. 单击“创建”。
-
-   ![创建负载均衡器](../media/create-load-balancer-4.png)
-
-3. 在“基本信息”选项卡上，使用下表中的信息创建负载均衡器。
+1.  在 Azure 主页的搜索栏中，输入“负载均衡器” 
+2.  选择“创建负载均衡器”。
+3.  在“基本信息”选项卡上，使用下表中的信息创建负载均衡器。
+    
 
    | **设置**           | **值**                |
    | --------------------- | ------------------------ |
@@ -262,7 +259,7 @@ ms.locfileid: "140741996"
    | 区域               | （美国）美国西部                             |
    | 可用性选项 | **没有所需的基础结构冗余**    |
    | 映像                | Windows Server 2019 Datacenter - Gen 1   |
-   | 大小                 | Standard_DS2_v3 - 2 vcpu，8 GiB 内存 |
+   | 大小                 | Standard_DS2_v3 - 2 个 vCPU，8 GiB 内存 |
    | 用户名             | TestUser                                 |
    | 密码             | TestPa$$w0rd!                            |
    | 确认密码     | TestPa$$w0rd!                            |
