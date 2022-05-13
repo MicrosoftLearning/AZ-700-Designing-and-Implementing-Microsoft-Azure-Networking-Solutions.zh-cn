@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
   module: Module - Design and implement network security
-ms.openlocfilehash: e8ad8b1a640391e4393082999d50ed36dcc561ac
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: 3a6a7719f5f78198fe5215b6d0779752d0fbc848
+ms.sourcegitcommit: b4698ea8d7f37149530f40e4e92394a0f3d6440c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742014"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "141348859"
 ---
 # <a name="m06-unit-4-configure-ddos-protection-on-a-virtual-network-using-the-azure-portal"></a>模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
 
@@ -233,7 +233,7 @@ ms.locfileid: "140742014"
 
     ![向警报规则添加条件 - 配置信号逻辑](../media/add-condition-to-alert-rule-2.png)
 
-13. 返回到“创建警报规则”页，向下滚动到“警报规则详细信息”部分，在“警报规则名称”中，输入“MyDdosAlert”。
+13. 返回到“创建警报规则”页，在“警报规则详细信息”部分的“警报规则名称”中，输入“MyDdosAlert”   。
 
     ![创建新警报规则的终点](../media/new-alert-rule-end.png)
 

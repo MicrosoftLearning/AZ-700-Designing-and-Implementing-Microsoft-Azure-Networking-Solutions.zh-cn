@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 04-第 4 单元 创建并配置 Azure 负载均衡器
   module: Module - Load balancing non-HTTP(S) traffic in Azure
-ms.openlocfilehash: 1c34cac1a578662e40265f387b4579b6171b4d13
-ms.sourcegitcommit: 3aeb76a0ac28b33b6edc61365b303f5b0252a3c2
+ms.openlocfilehash: f88f70aa0a753425a9c93ac37d034d26ea7685d4
+ms.sourcegitcommit: 349c82964aa36c0f69cfaf6a0b36ad8bb0017f06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2022
-ms.locfileid: "137860529"
+ms.lasthandoff: 04/06/2022
+ms.locfileid: "141483587"
 ---
 # <a name="m04-unit-4-create-and-configure-an-azure-load-balancer"></a>模块 04-第 4 单元 创建并配置 Azure 负载均衡器
 
@@ -81,9 +81,9 @@ ms.locfileid: "137860529"
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-2. 在“Cloud Shell”窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json、azuredeploy.parameters.vm1.json、azuredeploy.parameters.vm2.json 和 azuredeploy.parameters.vm3.json 文件上传到 Cloud Shell 主目录中。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json、azuredeploy.parameters.vm1.json、azuredeploy.parameters.vm2.json 和 azuredeploy.parameters.vm3.json 文件逐个上传到 Cloud Shell 主目录中。
 
-3. 部署以下 ARM 模板以创建本练习所需的虚拟网络、子网和 VM：
+3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
    ```powershell
    $RGName = "IntLB-RG"
@@ -92,6 +92,8 @@ ms.locfileid: "137860529"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm2.json
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm3.json
    ```
+
+创建这三个 VM 可能需要 5-10 分钟。 无需等待此作业完成，即可继续执行下一个任务。
 
 ## <a name="task-3-create-the-load-balancer"></a>任务 3：创建负载均衡器
 
@@ -103,8 +105,7 @@ ms.locfileid: "137860529"
 
 3. 在结果页面上，找到并选择“负载均衡器”（名称下显示“Microsoft”和“Azure Service”的那个）。
 
-4. 单击“**创建**”。
-   ![图片 3](../media/create-load-balancer-4.png)
+4. 单击“创建”。
 
 5. 在“基本信息”选项卡上，使用下表中的信息创建负载均衡器。
 
@@ -120,7 +121,7 @@ ms.locfileid: "137860529"
 
 6. 单击“下一步:前端 IP 配置”。
 7. 单击“添加前端 IP”
-8. 在“添加前端 IP 地址”边栏选项卡上，输入下表中的信息。
+8. 在“添加前端 IP 地址”边栏选项卡上，输入下表中的信息，并选择“添加” 。
  
    | **设置**     | **值**                |
    | --------------- | ------------------------ |
@@ -223,7 +224,7 @@ ms.locfileid: "137860529"
 
 ### <a name="create-test-vm"></a>创建测试 VM
 
-1. 在 Azure 门户主页上，依次单击“创建资源”、“计算”，然后选择“虚拟机”（如果页面上未列出此资源类型，请使用页面顶部的搜索框搜索并选择该资源类型）。
+1. 在 Azure 门户主页上，依次单击“创建资源”、“虚拟”，然后选择“虚拟机”（如果页面上未列出此资源类型，请使用页面顶部的搜索框搜索并选择该资源类型）  。
 
 2. 在“创建虚拟机”页的“基本信息”选项卡上，使用下表中的信息创建第一个 VM。
 
@@ -234,7 +235,7 @@ ms.locfileid: "137860529"
    | 虚拟机名称 | **myTestVM**                                 |
    | 区域               | **（美国）美国东部**                             |
    | 可用性选项 | **没有所需的基础结构冗余**    |
-   | 映像                | Windows Server 2019 Datacenter - Gen 1   |
+   | 映像                | Windows Server 2019 Datacenter - Gen 2   |
    | 大小                 | Standard_DS2_v3 - 2 个 vCPU，8 GiB 内存 |
    | 用户名             | TestUser                                 |
    | 密码             | TestPa$$w0rd!                            |
@@ -273,7 +274,7 @@ ms.locfileid: "137860529"
 
 5. 单击“使用 Bastion”。
 
-6. 在“用户名”框中键入“TestUser”，在“密码”框中键入“TestPa$$w0rd!”，然后单击“连接”。
+6. 在“用户名”框中键入“TestUser”，在“密码”框中键入“TestPa$$w0rd!”，然后单击“连接”。 如果弹出窗口阻止程序在阻止新窗口，请允许弹出窗口阻止程序并再次连接。
 
 7. 将在另一个浏览器标签页中打开“myTestVM”窗口。
 
