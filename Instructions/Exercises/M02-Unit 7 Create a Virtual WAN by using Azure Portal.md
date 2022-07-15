@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
   module: Module - Design and implement hybrid networking
-ms.openlocfilehash: 007d533a77a0f8f71d6d38989b4da59664776d18
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: cdba2b4a3439d6903030352de15166c030ad2f3e
+ms.sourcegitcommit: 2b9d6e12ebe29bbf543d2f0b88f4caefc7fa91ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140741987"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "147098035"
 ---
 # <a name="m02-unit-7-create-a-virtual-wan-by-using-azure-portal"></a>模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
 
@@ -63,6 +63,7 @@ ms.locfileid: "140741987"
    - 区域：美国西部
    - 名称：ContosoVirtualWANHub-WestUS
    - 中心专用地址空间：10.60.0.0/24
+   - 虚拟中心容量：2 个路由基础结构单元
 5. 在完成时选择“下一步:站点到站点”。
 6. 在“站点到站点”选项卡上填写以下字段：
    - 是否要创建站点到站点(VPN 网关)?：是
