@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
   module: Module - Design and implement private access to Azure Services
-ms.openlocfilehash: 165f6023aaee74ce370f319cda493ce9eb87251a
-ms.sourcegitcommit: 99cea7fefa7a89521d4d01338bbad396bc6411cf
+ms.openlocfilehash: 3dd388f4bed463f4e982e848bcec7e15598482a1
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2022
-ms.locfileid: "146111069"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922377"
 ---
 # <a name="m07-unit-5-restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints"></a>模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
 
@@ -27,6 +27,8 @@ ms.locfileid: "146111069"
 + 任务 9：创建虚拟机
 + 任务 10：确认对存储帐户的访问权限
 + 任务 11：清理资源
+
+#### <a name="estimated-time-35-minutes"></a>预计用时：35 分钟
 
 ## <a name="task-1-create-a-virtual-network"></a>任务 1：创建虚拟网络
 

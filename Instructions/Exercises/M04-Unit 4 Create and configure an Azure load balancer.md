@@ -2,16 +2,18 @@
 Exercise:
   title: 模块 04-第 4 单元 创建并配置 Azure 负载均衡器
   module: Module - Load balancing non-HTTP(S) traffic in Azure
-ms.openlocfilehash: f88f70aa0a753425a9c93ac37d034d26ea7685d4
-ms.sourcegitcommit: 349c82964aa36c0f69cfaf6a0b36ad8bb0017f06
+ms.openlocfilehash: f3125fa7a5fafa5a1894ccd18b1430cb1055028d
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "141483587"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922326"
 ---
 # <a name="m04-unit-4-create-and-configure-an-azure-load-balancer"></a>模块 04-第 4 单元 创建并配置 Azure 负载均衡器
 
 在本练习中，你将为虚构的 Contoso Ltd 组织创建一个内部负载均衡器。 
+
+#### <a name="estimated-time-60-minutes-includes-45-minutes-deployment-waiting-time"></a>预计用时：60 分钟（包括约 45 分钟的部署等待时间）
 
 创建内部负载均衡器的步骤与你在此模块中学到的创建公共负载均衡器的步骤非常相似。 主要区别在于，使用公共负载均衡器时，前端可通过公共 IP 地址访问，并从位于虚拟网络外部的主机测试连接；而使用内部负载均衡器时，前端是虚拟网络中的专用 IP 地址，并从来自同一网络内的主机测试连接。
 
@@ -126,9 +128,10 @@ ms.locfileid: "141483587"
    | **设置**     | **值**                |
    | --------------- | ------------------------ |
    | 名称            | LoadBalancerFrontEnd |
-   | 虚拟网络 | IntLB-VNet           |
-   | 子网          | myFrontEndSubnet     |
-   | 分配      | **动态**              |
+   | IP 版本      | **IPv4**           |
+   | IP 类型         | IP 地址     |
+   | 公共 IP 地址      | 新建，名为 myFrontEndIP              |
+   | 网关负载均衡器  | 无   |
 
 9. 单击“查看 + 创建”。
 
@@ -253,7 +256,7 @@ ms.locfileid: "141483587"
    | 公共 IP                                                    | 更改为“无”            |
    | NIC 网络安全组                                   | **高级**                  |
    | 配置网络安全组                             | 选择现有的“myNSG” |
-   | 是否将此虚拟机置于现有负载均衡解决方案之后？ | 关（未选中）           |
+   | 负载均衡选项                                       | 无                       |
 
 
 5. 单击“查看 + 创建”。

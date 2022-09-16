@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
   module: Module - Design and implement hybrid networking
-ms.openlocfilehash: cdba2b4a3439d6903030352de15166c030ad2f3e
-ms.sourcegitcommit: 2b9d6e12ebe29bbf543d2f0b88f4caefc7fa91ce
+ms.openlocfilehash: 0d1cdaad19959b5c284618d3e55c2a0c7068e9b1
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "147098035"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922320"
 ---
 # <a name="m02-unit-7-create-a-virtual-wan-by-using-azure-portal"></a>模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
 
@@ -22,6 +22,8 @@ ms.locfileid: "147098035"
 + 任务 4：清理资源
 
 
+
+#### <a name="estimated-time-65-minutes-including-45-minutes-deployment-waiting-time"></a>预计用时：65 分钟（包括约 45 分钟的部署等待时间）
 
 ## <a name="task-1-create-a-virtual-wan"></a>任务 1：创建虚拟 WAN
 

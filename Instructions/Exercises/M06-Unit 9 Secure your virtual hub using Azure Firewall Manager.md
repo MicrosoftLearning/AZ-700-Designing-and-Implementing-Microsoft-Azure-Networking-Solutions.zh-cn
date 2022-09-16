@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 06-单元 9 使用 Azure 防火墙管理器保护虚拟中心安全
   module: Module - Design and implement network security
-ms.openlocfilehash: 4ccd864904eda16e2959bcfd31c360df4c0d7efc
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: e53ea57b2304396f36d608ce531d278c6ddad446
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742011"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922380"
 ---
 # <a name="m06-unit-9-secure-your-virtual-hub-using-azure-firewall-manager"></a>模块 06-单元 9 使用 Azure 防火墙管理器保护虚拟中心安全
 
@@ -29,6 +29,8 @@ ms.locfileid: "140742011"
 + 任务 8：测试应用程序规则
 + 任务 9：测试网络规则
 + 任务 10：清理资源
+
+#### <a name="estimated-time-35-minutes"></a>预计用时：35 分钟
 
 ## <a name="task-1-create-two-spoke-virtual-networks-and-subnets"></a>任务 1：创建两个分支虚拟网络和子网
 

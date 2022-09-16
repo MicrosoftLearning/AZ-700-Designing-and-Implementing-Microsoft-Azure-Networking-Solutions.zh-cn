@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
   module: Module - Design and implement network monitoring
-ms.openlocfilehash: 6ba86eb68ad8e343bfe693cef6a8a3c882a24dda
-ms.sourcegitcommit: 2793e1a16a8f6ef6c25352cd6eaeaae43c9615a4
+ms.openlocfilehash: ce86fe207223424b4407f3e9986ad76965f819c5
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "144102116"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922311"
 ---
 # <a name="m08-unit-3-monitor-a-load-balancer-resource-using-azure-monitor"></a>模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
 
@@ -37,6 +37,8 @@ ms.locfileid: "144102116"
 + 任务 15：清理资源
 
 
+
+#### <a name="estimated-time-55-minutes"></a>预计用时：55 分钟
 
 ## <a name="task-1-create-the-virtual-network"></a>任务 1：创建虚拟网络
 

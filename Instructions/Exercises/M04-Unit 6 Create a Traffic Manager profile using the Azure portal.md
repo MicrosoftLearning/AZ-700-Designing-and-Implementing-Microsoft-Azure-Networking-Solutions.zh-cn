@@ -2,16 +2,18 @@
 Exercise:
   title: 模块 04-第 6 单元 使用 Azure 门户创建流量管理器配置文件
   module: Module - Load balancing non-HTTP(S) traffic in Azure
-ms.openlocfilehash: 1d04de9c9710cc452220b1f6c6cecc39ff130810
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: c285aaf46e98daa1fa95a0cf1ef603bb9674b2e5
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742005"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922329"
 ---
 # <a name="m04-unit-6-create-a-traffic-manager-profile-using-the-azure-portal"></a>模块 04-第 6 单元 使用 Azure 门户创建流量管理器配置文件
 
 在此练习中，你将创建一个流量管理器配置文件，以便为虚构的 Contoso Ltd 组织的 Web 应用程序提供高可用性。 
+
+#### <a name="estimated-time-35-minutes"></a>预计用时：35 分钟
 
 你需要创建在两个不同的区域（“美国东部”和“西欧”）部署的两个 Web 应用程序实例。 “美国东部”区域将充当流量管理器的主终结点，“西欧”区域将充当故障转移终结点。
 
