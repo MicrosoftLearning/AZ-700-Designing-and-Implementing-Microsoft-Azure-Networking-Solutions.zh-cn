@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 01 第 4 单元 - 在 Azure 中设计和实现虚拟网络
   module: Module - Introduction to Azure Virtual Networks
-ms.openlocfilehash: f44e23e80ce989065d4495586bb1ba0e5b90ec64
-ms.sourcegitcommit: 7e040d6fba448f60ca3262126db60cad96222bbc
+ms.openlocfilehash: 609406c98129f47e547e09bfe70b0d289ed95340
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "137819922"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922374"
 ---
 # <a name="m01-unit-4-design-and-implement-a-virtual-network-in-azure"></a>模块 01 第 4 单元 - 在 Azure 中设计和实现虚拟网络
 
@@ -17,6 +17,8 @@ ms.locfileid: "137819922"
 现在，你已准备好在 Azure 门户中部署虚拟网络。
 
 假设有一家虚构的组织 Contoso Ltd，它正在将基础结构和应用程序迁移到 Azure。 如果你担任网络工程师一职，则必须计划并实现三个虚拟网络和子网，以支持这些虚拟网络中的资源。
+
+#### <a name="estimated-time-20-minutes"></a>预计用时：20 分钟
 
 虚拟网络“CoreServicesVnet”部署在“美国东部”区域。 此虚拟网络将具有最大数量的资源。 它将通过 VPN 连接与本地网络建立连接。 此网络将包含 Web 服务、数据库和其他系统，这些都是业务运营的关键所在。 共享服务（如域控制器和 DNS）也将位于此处。 预计会有大量增长，因此该虚拟网络需要较大的地址空间。
 

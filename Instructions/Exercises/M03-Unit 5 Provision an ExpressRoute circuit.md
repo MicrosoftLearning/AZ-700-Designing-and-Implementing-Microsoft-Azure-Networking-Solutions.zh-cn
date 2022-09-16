@@ -2,16 +2,18 @@
 Exercise:
   title: 模块 03-第 5 单元 预配 ExpressRoute 线路
   module: Module - Design and implement Azure ExpressRoute
-ms.openlocfilehash: baf6ccb5c164b867b31225fbe78758e834df6c6e
-ms.sourcegitcommit: b4698ea8d7f37149530f40e4e92394a0f3d6440c
+ms.openlocfilehash: 9e65cbcb5b746b1b6a63139c9e7ee9973ddb8a5b
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2022
-ms.locfileid: "141348856"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922332"
 ---
 # <a name="m03-unit-5-provision-an-expressroute-circuit"></a>模块 03-第 5 单元 预配 ExpressRoute 线路
 
 在本练习中，你将使用 Azure 门户和 Azure 资源管理器部署模型创建 ExpressRoute 线路。 
+
+#### <a name="estimated-time-15-minutes"></a>预计用时：15 分钟
 
 ![用于练习的 ExpressRoute 线路布局示意图](../media/environment-diagram.png)
 

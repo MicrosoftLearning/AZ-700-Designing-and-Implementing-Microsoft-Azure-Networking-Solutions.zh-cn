@@ -2,16 +2,18 @@
 Exercise:
   title: 模块 07 - 第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点
   module: Module - Design and implement private access to Azure Services
-ms.openlocfilehash: 4587a3a1f0812a006db7097ebfc4cea2c0fe45b1
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: 13ad6214d9814bcf39794f9e4bd91d22f5371a02
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742044"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922368"
 ---
 # <a name="m07-unit-6-create-an-azure-private-endpoint-using-azure-powershell"></a>模块 07 - 第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点
 
 使用专用终结点安全连接到 Azure Web 应用以开始使用 Azure 专用链接。 可以通过很多方法（包括门户、CLI、PowerShell 等）创建终结点。 
+
+#### <a name="estimated-time-45-minutes"></a>估计时间：45 分钟
 
 你将创建 Azure Web 应用的专用终结点，并部署虚拟机以测试专用连接。
 

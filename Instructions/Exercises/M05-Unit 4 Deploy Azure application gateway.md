@@ -2,17 +2,19 @@
 Exercise:
   title: 模块 05-第 4 单元 部署 Azure 应用程序网关
   module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: 4a69cd20079b32de6219049a3127d146a26386c4
-ms.sourcegitcommit: 2793e1a16a8f6ef6c25352cd6eaeaae43c9615a4
+ms.openlocfilehash: 0f000687276a78991f2a88d7caeab7c5b7a32bcd
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "144102108"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922365"
 ---
 # <a name="m05-unit-4-deploy-azure-application-gateway"></a>模块 05-第 4 单元 部署 Azure 应用程序网关
  
 
 在本练习中，你将使用 Azure 门户创建一个应用程序网关。 然后对其进行测试以确保其正常运行。
+
+#### <a name="estimated-time-25-minutes"></a>预计用时：25 分钟
 
 该应用程序网关将应用程序 Web 流量定向到后端池中的特定资源。 你将向端口分配侦听器，创建规则，并向后端池中添加资源。 为简单起见，本文使用了带有公共前端 IP 的简单设置、一个在应用程序网关上托管单个站点的基本侦听器、一个基本的请求路由规则，以及后端池中的两台虚拟机。
 
@@ -92,6 +94,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
     | **设置**   | **值**         |
     | ------------- | ----------------- |
     | 侦听器名称 | 侦听器          |
+    | 优先级      | **100**           |
     | 前端 IP   | 选择“公共” |
 
 19. 接受“侦听器”选项卡上其他设置的默认值。

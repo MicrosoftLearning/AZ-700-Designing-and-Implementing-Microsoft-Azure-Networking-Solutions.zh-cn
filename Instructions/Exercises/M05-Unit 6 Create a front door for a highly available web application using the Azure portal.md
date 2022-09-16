@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 05-单元 6 - 使用 Azure 门户为高度可用的 Web 应用程序创建 Front Door
   module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: ae5346b27305d68779db54dad5496027a0adfec5
-ms.sourcegitcommit: 2793e1a16a8f6ef6c25352cd6eaeaae43c9615a4
+ms.openlocfilehash: dbdd8fdccdea3ade0ae2d8f67b5b837a13fb94fa
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "144102101"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922362"
 ---
 # <a name="m05-unit-6-create-a-front-door-for-a-highly-available-web-application-using-the-azure-portal"></a>模块 05-单元 6 - 使用 Azure 门户为高度可用的 Web 应用程序创建 Front Door
 
@@ -24,6 +24,8 @@ ms.locfileid: "144102101"
 + 任务 3：通过实际操作查看 Azure Front Door
 + 任务 4：清理资源
 
+
+#### <a name="estimated-time-30-minutes"></a>预计用时：30 分钟
 
 ## <a name="task-1-create-two-instances-of-a-web-app"></a>任务 1：创建 Web 应用的两个实例
 

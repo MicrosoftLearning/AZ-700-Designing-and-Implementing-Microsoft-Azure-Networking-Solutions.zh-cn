@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
   module: Module - Design and implement network security
-ms.openlocfilehash: 3a6a7719f5f78198fe5215b6d0779752d0fbc848
-ms.sourcegitcommit: b4698ea8d7f37149530f40e4e92394a0f3d6440c
+ms.openlocfilehash: a3d6752859f81544082d6aa40ca0d455d217d8f4
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2022
-ms.locfileid: "141348859"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922338"
 ---
 # <a name="m06-unit-4-configure-ddos-protection-on-a-virtual-network-using-the-azure-portal"></a>模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
 
@@ -25,6 +25,8 @@ ms.locfileid: "141348859"
 + 任务 8：清理资源
 
 
+
+#### <a name="estimated-time-40-minutes"></a>估计时间：40 分钟
 
 ## <a name="task-1-create-a-resource-group"></a>任务 1：创建资源组
 
