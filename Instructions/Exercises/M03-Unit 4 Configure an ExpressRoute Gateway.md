@@ -2,18 +2,21 @@
 Exercise:
   title: 模块 03-第 4 单元 配置 ExpressRoute 网关
   module: Module - Design and implement Azure ExpressRoute
-ms.openlocfilehash: 27ff95d931a6ec26dc892af0965158157cabac31
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: af79e4be86e2b89c20338b9cb66ddaa5a94b1f5e
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742035"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922335"
 ---
 # <a name="m03-unit-4-configure-an-expressroute-gateway"></a>模块 03-第 4 单元 配置 ExpressRoute 网关
 
 ## <a name="deploy-expressroute-gateways"></a>部署 ExpressRoute 网关
 
 若要通过 ExpressRoute 连接 Azure 虚拟网络和本地网络，必须首先创建虚拟网络网关。 虚拟网络网关有两个用途：在网络之间交换 IP 路由和路由网络流量。 
+
+
+#### <a name="estimated-time-60-minutes-includes-45-minutes-deployment-waiting-time"></a>预计用时：60 分钟（包括约 45 分钟的部署等待时间）
 
 网关类型
 

@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
   module: Module - Introduction to Azure Virtual Networks
-ms.openlocfilehash: fc423941d69e8a4c4d166aa6896c10506fe239eb
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: d93ebe915fbdf9b4e7acd69695e3de3ea214f7c3
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742038"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922371"
 ---
 # <a name="m01-unit-8-connect-two-azure-virtual-networks-using-global-virtual-network-peering"></a>模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
 
@@ -22,6 +22,8 @@ ms.locfileid: "140742038"
 + 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
 + 任务 5：测试 VM 间的连接
 + 任务 6：清理资源
+
+#### <a name="estimated-time-20-minutes"></a>预计用时：20 分钟
 
 ## <a name="task-1-create-a-virtual-machine-to-test-the-configuration"></a>任务 1：创建虚拟机以测试配置
 
@@ -126,6 +128,7 @@ ms.locfileid: "140742038"
 | 检查设置，然后选择“添加”。 |                                               |                                       |
 |                                      |                                               |                                       |
 
+ >**注意**：如果你没有“MOC 订阅”，请使用之前一直使用的订阅。 这只是一个名称而已。
 
 5. 在“CoreServicesVnet”|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”对等互连。
 

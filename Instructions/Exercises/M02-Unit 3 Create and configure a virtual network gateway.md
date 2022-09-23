@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 02 第 3 单元 - 创建和配置虚拟网络网关
   module: Module - Design and implement hybrid networking
-ms.openlocfilehash: be0108387a6618c00d5e950d6065a286d5694fc5
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: 55c62023ebcc5f30e69649dca4a027f8d69878ac
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140741990"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922341"
 ---
 # <a name="m02-unit-3-create-and-configure-a-virtual-network-gateway"></a>模块 02 第 3 单元 - 创建和配置虚拟网络网关
 
@@ -27,11 +27,13 @@ ms.locfileid: "140741990"
 + 任务 10：验证连接是否成功 
 + 任务 11：测试 VM 间的连接
 
+#### <a name="estimated-time-70-minutes-including-45-minutes-deployment-waiting-time"></a>预计用时：70 分钟（包括约 45 分钟的部署等待时间）
+
 ## <a name="task-1-create-coreservicesvnet-and-manufacturingvnet"></a>任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
 
 1. 在 Azure 门户的“Cloud Shell”窗格内打开“PowerShell”会话。
 
-2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件逐个上传到 Cloud Shell 主目录中 。
+2. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录  
 
 3. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
 

@@ -2,20 +2,21 @@
 Exercise:
   title: 模块 03-第 5 单元 预配 ExpressRoute 线路
   module: Module - Design and implement Azure ExpressRoute
-ms.openlocfilehash: cf7a0c4f6c7a17d7b67d75bf661a1a7a4781084c
-ms.sourcegitcommit: 7e040d6fba448f60ca3262126db60cad96222bbc
+ms.openlocfilehash: 9e65cbcb5b746b1b6a63139c9e7ee9973ddb8a5b
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "137819970"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922332"
 ---
 # <a name="m03-unit-5-provision-an-expressroute-circuit"></a>模块 03-第 5 单元 预配 ExpressRoute 线路
 
 在本练习中，你将使用 Azure 门户和 Azure 资源管理器部署模型创建 ExpressRoute 线路。 
 
+#### <a name="estimated-time-15-minutes"></a>预计用时：15 分钟
+
 ![用于练习的 ExpressRoute 线路布局示意图](../media/environment-diagram.png)
 
-若要观看有关如何创建 ExpressRoute 线路的演示，请参阅 [Azure ExpressRoute - 如何创建 Expressroute 线路 | Azure | 第 9 频道 (msdn.com)](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)。
 
 
 通过学习本练习，你将能够：
@@ -43,6 +44,11 @@ ms.locfileid: "137819970"
 3. 在“创建 ExpressRoute”页上，使用以下项提供线路的“资源组”、“区域”和“名称”   。ExpressRouteResourceGroup、美国东部 2、TestERCircuit。 然后选择“下一步: 配置 &gt;”。
 
 4. 在此页上填写相应值时，请务必指定正确的 SKU 层（本地版、标准版或高级版）和数据计量计费模型（“不限流量”或“按流量计费”）。
+
+5. 选择“查看 + 创建”  。
+
+6. 确认 ExpressRoute 配置通过验证，然后选择“创建”。
+
 
 ![Azure 门户 - 创建 ExpressRoute 配置选项卡](../media/expressroute-create-configuration.png)
 

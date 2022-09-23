@@ -2,17 +2,19 @@
 Exercise:
   title: 模块 05-第 4 单元 部署 Azure 应用程序网关
   module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: bb7e4a9d6c91177afa8b22c127bc56d61f95ebd3
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: 0f000687276a78991f2a88d7caeab7c5b7a32bcd
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140741993"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922365"
 ---
 # <a name="m05-unit-4-deploy-azure-application-gateway"></a>模块 05-第 4 单元 部署 Azure 应用程序网关
  
 
 在本练习中，你将使用 Azure 门户创建一个应用程序网关。 然后对其进行测试以确保其正常运行。
+
+#### <a name="estimated-time-25-minutes"></a>预计用时：25 分钟
 
 该应用程序网关将应用程序 Web 流量定向到后端池中的特定资源。 你将向端口分配侦听器，创建规则，并向后端池中添加资源。 为简单起见，本文使用了带有公共前端 IP 的简单设置、一个在应用程序网关上托管单个站点的基本侦听器、一个基本的请求路由规则，以及后端池中的两台虚拟机。
 
@@ -92,11 +94,12 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
     | **设置**   | **值**         |
     | ------------- | ----------------- |
     | 侦听器名称 | 侦听器          |
+    | 优先级      | **100**           |
     | 前端 IP   | 选择“公共” |
 
 19. 接受“侦听器”选项卡上其他设置的默认值。
 
-    ![在 Azure 门户上添加应用程序网关路由规则](../media/routing-rule-listener-tab.png)
+    ![在 Azure 门户上添加应用程序网关路由规则](../media/Routing-rule-listener-tab.png)
 
 20. 选择“后端目标”选项卡以配置传递规则的其余部分。
 
@@ -105,7 +108,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
     | **设置**   | **值**      |
     | ------------- | -------------- |
     | 目标类型   | 后端池   |
-    | HTTP 设置 | **新建** |
+    | HTTP 设置 | **添加新内容** |
 
 22. 在“添加 HTTP 设置”中，输入或选择以下信息：
 

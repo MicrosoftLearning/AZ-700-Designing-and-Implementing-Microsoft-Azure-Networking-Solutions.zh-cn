@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
   module: Module - Design and implement private access to Azure Services
-ms.openlocfilehash: 7769b75d3db52a3b802013dcf96cdc5528c33a4c
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: 3dd388f4bed463f4e982e848bcec7e15598482a1
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742047"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922377"
 ---
 # <a name="m07-unit-5-restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints"></a>模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
 
@@ -27,6 +27,8 @@ ms.locfileid: "140742047"
 + 任务 9：创建虚拟机
 + 任务 10：确认对存储帐户的访问权限
 + 任务 11：清理资源
+
+#### <a name="estimated-time-35-minutes"></a>预计用时：35 分钟
 
 ## <a name="task-1-create-a-virtual-network"></a>任务 1：创建虚拟网络
 
@@ -117,15 +119,16 @@ ms.locfileid: "140742047"
 
    | 设置             | **值**                 |
    | ----------------------- | ------------------------- |
-   | Source                  | 选择“VirtualNetwork” |
+   | 源                  | 选择“服务标记”    |
+   | 源服务标记      | 选择“VirtualNetwork” |
    | 源端口范围      | *                         |
    | 目标             | 选择“服务标记”    |
    | 目标服务标记 | 选择“存储”        |
    | 服务                 | 自定义                    |
    | 目标端口范围 | *                         |
    | 协议                | 任意                       |
-   | 操作                  | 允许                     |
-   | 优先度                | 100                       |
+   | 操作                  | Allow                     |
+   | 优先级                | 100                       |
    | 名称                    | Allow-Storage-All         |
 
 9. 选择“添加”：
@@ -172,7 +175,7 @@ ms.locfileid: "140742047"
    | 服务                 | 自定义                    |
    | 目标端口范围 | 3389                      |
    | 协议                | 任意                       |
-   | 操作                  | 允许                     |
+   | 操作                  | Allow                     |
    | 优先级                | 120                       |
    | 名称                    | Allow-RDP-All             |
 
@@ -272,12 +275,14 @@ ms.locfileid: "140742047"
 5. 你可能会在登录过程中收到证书警告。 如果收到警告，请选择“是”或“继续”以继续连接。
 6. 在 ContosoWestPrivate VM 上，使用 PowerShell 将 Azure 文件共享映射到驱动器 Z。 在运行以下命令之前，将 <storage-account-key>、<storage-account-name>（即 contosostoragexx）和 my-file-share（即 marketing）替换为你在“创建存储帐户”任务中提供和检索的值。
 
-```Azure CLI
+
+```azurecli
 $acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -Force
 
 $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\<storage-account-name>", $acctKey
 
 New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.core.windows.net\marketing" -Credential $credential
+
 ```
 
 Azure 文件共享已成功映射到驱动器 Z。

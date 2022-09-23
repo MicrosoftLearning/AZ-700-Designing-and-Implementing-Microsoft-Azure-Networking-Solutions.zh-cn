@@ -2,12 +2,12 @@
 Exercise:
   title: 模块 01 - 第 6 单元 在 Azure 中配置 DNS 设置
   module: Module - Introduction to Azure Virtual Networks
-ms.openlocfilehash: 6224b77917ee7631ec709773edc866ffc19b85b0
-ms.sourcegitcommit: 15778a5942c3177246f4fb1077d4233ddeaf95a2
+ms.openlocfilehash: e6a21f21c87ff92e0e8a1a245d5b1fab477ce271
+ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742041"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "147922323"
 ---
 # <a name="m01---unit-6-configure-dns-settings-in-azure"></a>模块 01 - 第 6 单元 在 Azure 中配置 DNS 设置
 
@@ -21,6 +21,7 @@ ms.locfileid: "140742041"
 + 任务 3：创建虚拟机以测试配置
 + 任务 4：验证 DNS 区域中是否存在记录
 
+#### <a name="estimated-time-25-minutes"></a>预计用时：25 分钟
 
 ## <a name="task-1-create-a-private-dns-zone"></a>任务 1：创建专用 DNS 区域
 
@@ -105,6 +106,8 @@ ms.locfileid: "140742041"
 在本部分中，你将创建两个测试 VM 来测试专用 DNS 区域配置。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
+    
+    > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
 
 2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录  。
 
