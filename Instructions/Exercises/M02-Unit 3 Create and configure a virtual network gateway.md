@@ -1,14 +1,10 @@
 ---
 Exercise:
-  title: 模块 02 第 3 单元 - 创建和配置虚拟网络网关
-  module: Module - Design and implement hybrid networking
-ms.openlocfilehash: 55c62023ebcc5f30e69649dca4a027f8d69878ac
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922341"
+  title: 模块 02 - 第 3 单元 - 创建和配置虚拟网络网关
+  module: Module 02 - Design and implement hybrid networking
 ---
+
+
 # <a name="m02-unit-3-create-and-configure-a-virtual-network-gateway"></a>模块 02 第 3 单元 - 创建和配置虚拟网络网关
 
 在本练习中，配置一个虚拟网关以连接 Contoso Core Services VNet 和 Manufacturing VNet。 

@@ -1,13 +1,7 @@
 ---
 Exercise:
-  title: 模块 03-第 5 单元 预配 ExpressRoute 线路
-  module: Module - Design and implement Azure ExpressRoute
-ms.openlocfilehash: 9e65cbcb5b746b1b6a63139c9e7ee9973ddb8a5b
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922332"
+  title: 模块 03 - 第 5 单元 预配 ExpressRoute 线路
+  module: Module 03 - Design and implement Azure ExpressRoute
 ---
 # <a name="m03-unit-5-provision-an-expressroute-circuit"></a>模块 03-第 5 单元 预配 ExpressRoute 线路
 
@@ -37,20 +31,20 @@ ms.locfileid: "147922332"
    >
    > 从发布服务密钥的那一刻起，将对 ExpressRoute 线路进行计费。 确保连接服务提供商准备好预配线路后就执行此操作。
 
-2. 在 Azure 门户菜单中，选择“+ 创建资源”。 选择“网络”，然后选择“ExpressRoute”，如下图所示。 如果列表中未显示 ExpressRoute，请使用“搜索市场”对其进行搜索：
+2. 在 Azure 门户菜单中，选择“+ 创建资源”****。 选择“网络”，然后选择“ExpressRoute”，如下图所示。 如果列表中未显示 ExpressRoute，请使用“搜索市场”对其进行搜索：
 
    ![Azure 门户 - 创建 ExpressRoute 线路菜单](../media/create-expressroute-circuit-menu.png)
 
 3. 在“创建 ExpressRoute”页上，使用以下项提供线路的“资源组”、“区域”和“名称”   。ExpressRouteResourceGroup、美国东部 2、TestERCircuit。 然后选择“下一步: 配置 &gt;”。
 
-4. 在此页上填写相应值时，请务必指定正确的 SKU 层（本地版、标准版或高级版）和数据计量计费模型（“不限流量”或“按流量计费”）。
+4. 在此页上填写值时，对于此示例，请确保指定正确的 SKU 层（标准）数据计量计费模型（按流量计费）提供程序 (Equinix) 对等互连位置 (Seattle) 和带宽 (50Mbps)    。
 
 5. 选择“查看 + 创建”  。
 
 6. 确认 ExpressRoute 配置通过验证，然后选择“创建”。
 
 
-![Azure 门户 - 创建 ExpressRoute 配置选项卡](../media/expressroute-create-configuration.png)
+![Azure 门户 - 创建 ExpressRoute 配置选项卡](../media/expressroute-create-configuration2.png)
 
  
 
@@ -69,13 +63,13 @@ ms.locfileid: "147922332"
 >
 > 不能将 SKU 从“标准”/“高级”更改为“本地” 。
 
-- **计费模型** 确定计费类型。 可以指定“Metered”以获取数据流量套餐，指定“Unlimited”以获取无限制流量套餐。 可以将计费类型从“按流量计费”更改为“不限流量” 。
+- **计费模型**确定计费类型。 可以指定“Metered”**** 以获取数据流量套餐，指定“Unlimited”**** 以获取无限制流量套餐。 可以将计费类型从“按流量计费”更改为“不限流量” 。
 
 > [!Important]
 >
 > 无法将类型从“不限流量”更改为“按流量计费”。
 
-- **允许经典操作** 将允许经典虚拟网络链接到线路。
+- **允许经典操作**将允许经典虚拟网络链接到线路。
 
 ## <a name="task-2-retrieve-your-service-key"></a>任务 2：检索服务密钥
  
@@ -112,7 +106,6 @@ ms.locfileid: "147922332"
 ![Azure 门户 - 现已预配显示状态的 ExpressRoute 线路属性](../media/provisioned.png)
 
  
-若要观看有关如何创建和预配 ExpressRoute 线路的演示，请参阅 [Azure ExpressRoute - 如何创建 Expressroute 线路 | Azure | 第 9 频道 (msdn.com)](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)。 
 
 祝贺你！ 已经创建了一个 ExpressRoute 线路，并找到了该服务密钥，这需要完成对线路的预配。
 

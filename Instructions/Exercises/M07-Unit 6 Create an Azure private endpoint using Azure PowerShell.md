@@ -1,14 +1,9 @@
 ---
 Exercise:
-  title: 模块 07 - 第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点
-  module: Module - Design and implement private access to Azure Services
-ms.openlocfilehash: 13ad6214d9814bcf39794f9e4bd91d22f5371a02
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922368"
+  title: 模块 07 -第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点
+  module: Module 07 - Design and implement private access to Azure Services
 ---
+
 # <a name="m07-unit-6-create-an-azure-private-endpoint-using-azure-powershell"></a>模块 07 - 第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点
 
 使用专用终结点安全连接到 Azure Web 应用以开始使用 Azure 专用链接。 可以通过很多方法（包括门户、CLI、PowerShell 等）创建终结点。 
@@ -385,7 +380,7 @@ New-AzPrivateDnsZoneGroup @parameters4
 
 4. 选择“myVM”。
 
-5. 在 **myVM** 的“概述”页上，选择“连接”，然后选择“堡垒”。
+5. 在 **myVM**的“概述”页上，选择“连接”，然后选择“堡垒”。
 
 6. 选择蓝色的“使用堡垒”按钮。
 

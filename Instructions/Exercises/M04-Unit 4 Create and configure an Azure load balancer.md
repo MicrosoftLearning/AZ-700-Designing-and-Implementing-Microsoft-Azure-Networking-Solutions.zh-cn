@@ -1,14 +1,10 @@
 ---
 Exercise:
-  title: 模块 04-第 4 单元 创建并配置 Azure 负载均衡器
-  module: Module - Load balancing non-HTTP(S) traffic in Azure
-ms.openlocfilehash: f3125fa7a5fafa5a1894ccd18b1430cb1055028d
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922326"
+  title: 模块 04 - 第 4 单元 创建并配置 Azure 负载均衡器
+  module: Module 04 - Load balancing non-HTTP(S) traffic in Azure
 ---
+
+
 # <a name="m04-unit-4-create-and-configure-an-azure-load-balancer"></a>模块 04-第 4 单元 创建并配置 Azure 负载均衡器
 
 在本练习中，你将为虚构的 Contoso Ltd 组织创建一个内部负载均衡器。 
@@ -128,10 +124,10 @@ ms.locfileid: "147922326"
    | **设置**     | **值**                |
    | --------------- | ------------------------ |
    | 名称            | LoadBalancerFrontEnd |
-   | IP 版本      | **IPv4**           |
-   | IP 类型         | IP 地址     |
-   | 公共 IP 地址      | 新建，名为 myFrontEndIP              |
-   | 网关负载均衡器  | 无   |
+   | 虚拟网络 | IntLB-VNet           |
+   | 子网          | myFrontEndSubnet     |
+   | 分配      | **动态**              |
+
 
 9. 单击“查看 + 创建”。
 

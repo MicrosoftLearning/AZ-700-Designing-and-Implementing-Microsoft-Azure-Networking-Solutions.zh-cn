@@ -1,14 +1,9 @@
 ---
 Exercise:
   title: 模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
-  module: Module - Design and implement network monitoring
-ms.openlocfilehash: ce86fe207223424b4407f3e9986ad76965f819c5
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922311"
+  module: Module 08 - Design and implement network monitoring
 ---
+
 # <a name="m08-unit-3-monitor-a-load-balancer-resource-using-azure-monitor"></a>模块 08 - 第 3 单元 使用 Azure Monitor 监视负载均衡器资源
 
 
@@ -190,7 +185,7 @@ ms.locfileid: "147922311"
 ## <a name="task-6-create-backend-servers"></a>任务 6：创建后端服务器
 
 
-在本部分中，你将为负载均衡器的后端池创建三个位于同一可用集的 VM，将这些 VM 添加到后端池，然后在这三个 VM 上安装 IIS 以测试负载均衡器。
+在本部分中，你将为负载均衡器的后端池创建三个 VM，将这些 VM 添加到后端池，然后在这三个 VM 上安装 IIS 以测试负载均衡器。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 

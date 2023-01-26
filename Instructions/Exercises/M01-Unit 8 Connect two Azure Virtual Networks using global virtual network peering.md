@@ -1,13 +1,7 @@
 ---
 Exercise:
-  title: 模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
-  module: Module - Introduction to Azure Virtual Networks
-ms.openlocfilehash: d93ebe915fbdf9b4e7acd69695e3de3ea214f7c3
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922371"
+  title: 模块 01 - 第 8 单元 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
+  module: Module 01 - Introduction to Azure Virtual Networks
 ---
 # <a name="m01-unit-8-connect-two-azure-virtual-networks-using-global-virtual-network-peering"></a>模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
 

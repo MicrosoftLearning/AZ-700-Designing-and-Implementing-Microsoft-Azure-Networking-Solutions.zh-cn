@@ -1,13 +1,7 @@
 ---
 Exercise:
-  title: 模块 03-第 4 单元 配置 ExpressRoute 网关
-  module: Module - Design and implement Azure ExpressRoute
-ms.openlocfilehash: af79e4be86e2b89c20338b9cb66ddaa5a94b1f5e
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922335"
+  title: 模块 03 - 第 4 单元 配置 ExpressRoute 网关
+  module: Module 03 - Design and implement Azure ExpressRoute
 ---
 # <a name="m03-unit-4-configure-an-expressroute-gateway"></a>模块 03-第 4 单元 配置 ExpressRoute 网关
 

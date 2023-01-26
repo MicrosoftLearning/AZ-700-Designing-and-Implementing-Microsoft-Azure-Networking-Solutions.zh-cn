@@ -1,14 +1,9 @@
 ---
 Exercise:
-  title: 模块 06-单元 7 使用 Azure 门户部署和配置 Azure 防火墙
-  module: 'Module - Design and implement network security '
-ms.openlocfilehash: 95308e5da6b8e349047834d0fc1b97a360289f55
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922353"
+  title: 模块 06 - 第 7 单元 使用 Azure 门户部署和配置 Azure 防火墙
+  module: 'Module 06 - Design and implement network security '
 ---
+
 # <a name="m06-unit-7-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>模块 06-单元 7 使用 Azure 门户部署和配置 Azure 防火墙
 
 作为 Contoso 的网络安全团队的成员，下一个任务是创建防火墙规则以允许/拒绝对某些网站的访问。 以下步骤将引导你创建资源组、虚拟网络和子网，以及将虚拟机作为环境准备任务，然后部署防火墙和防火墙策略、配置默认路由和应用程序、网络和 DNAT 规则，最后测试防火墙。
@@ -134,7 +129,7 @@ ms.locfileid: "147922353"
    | 资源组       | **Test-FW-RG**                                               |
    | 防火墙名称        | **Test-FW01**                                                |
    | 区域               | 你的区域                                                  |
-   | 防火墙层        | **标准**                                                 |
+   | 防火墙 SKU        | **标准**                                                 |
    | 防火墙管理  | **使用防火墙策略来管理此防火墙**            |
    | 防火墙策略      | 选择“新增”<br />名称：fw-test-pol<br />区域：你的区域 |
 
@@ -205,13 +200,13 @@ ms.locfileid: "147922353"
 
 12. 在“路由名称”中输入“fw-dg”。
 
-13. 在“地址前缀”中，输入“0.0.0.0/0”。
+13. 在“地址前缀目标”中输入“0.0.0.0/0” 。
 
 14. 在“下一跃点类型”中，选择“虚拟设备”。
 
 15. 在“下一跃点地址”中，键入之前记下的防火墙专用 IP 地址（例如，10.0.1.4）
 
-16. 单击“添加”  。
+16. 单击“添加”。
 
     ![添加防火墙路由](../media/add-firewall-route.png)
 
@@ -320,7 +315,7 @@ ms.locfileid: "147922353"
 
  
 
-## <a name="task-9-change-the-primary-and-secondary-dns-address-for-the-servers-network-interface"></a>任务 9：更改服务器网络接口的主要和辅助 DNS 地址
+## <a name="task-9-change-the-primary-and-secondary-dns-address-for-the-serversnetwork-interface"></a>任务 9：更改服务器网络接口的主要和辅助 DNS 地址
 
 为了在此练习中进行测试，在此任务中，将配置 Srv-Work 服务器的主要和辅助 DNS 地址。 不过，这并不是一项常规的 Azure 防火墙要求。
 

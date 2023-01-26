@@ -1,14 +1,9 @@
 ---
 Exercise:
   title: 模块 01 - 第 6 单元 在 Azure 中配置 DNS 设置
-  module: Module - Introduction to Azure Virtual Networks
-ms.openlocfilehash: e6a21f21c87ff92e0e8a1a245d5b1fab477ce271
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922323"
+  module: Module 01 - Introduction to Azure Virtual Networks
 ---
+
 # <a name="m01---unit-6-configure-dns-settings-in-azure"></a>模块 01 - 第 6 单元 在 Azure 中配置 DNS 设置
 
 ## <a name="exercise-scenario"></a>练习场景 
