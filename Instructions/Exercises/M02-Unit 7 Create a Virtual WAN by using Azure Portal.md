@@ -1,14 +1,9 @@
 ---
 Exercise:
-  title: 模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
-  module: Module - Design and implement hybrid networking
-ms.openlocfilehash: 0d1cdaad19959b5c284618d3e55c2a0c7068e9b1
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922320"
+  title: 模块 02 - 第 7 单元 使用 Azure 门户创建虚拟 WAN
+  module: Module 02 - Design and implement hybrid networking
 ---
+
 # <a name="m02-unit-7-create-a-virtual-wan-by-using-azure-portal"></a>模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
 
 

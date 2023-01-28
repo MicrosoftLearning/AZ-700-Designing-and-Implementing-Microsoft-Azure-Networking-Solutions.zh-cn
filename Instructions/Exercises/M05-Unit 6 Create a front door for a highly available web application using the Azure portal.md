@@ -1,14 +1,11 @@
 ---
 Exercise:
-  title: 模块 05-单元 6 - 使用 Azure 门户为高度可用的 Web 应用程序创建 Front Door
-  module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: dbdd8fdccdea3ade0ae2d8f67b5b837a13fb94fa
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922362"
+  title: 模块 05 - 第 6 单元 - 使用 Azure 门户为高度可用的 Web 应用程序创建 Front Door
+  module: Module 05 - Load balancing HTTP(S) traffic in Azure
 ---
+
+
+
 # <a name="m05-unit-6-create-a-front-door-for-a-highly-available-web-application-using-the-azure-portal"></a>模块 05-单元 6 - 使用 Azure 门户为高度可用的 Web 应用程序创建 Front Door
 
  
@@ -39,7 +36,7 @@ ms.locfileid: "147922362"
 
 4. 在“创建 Web 应用”页的“基本信息”选项卡上，输入或选择以下信息。
 
-   | **设置**      | 值                                                    |
+   | 设置      | 值                                                    |
    | ---------------- | ------------------------------------------------------------ |
    | 订阅     | 选择订阅。                                    |
    | 资源组   | 选择资源组 ContosoResourceGroup               |
@@ -60,7 +57,7 @@ ms.locfileid: "147922362"
 
 8. 在“创建 Web 应用”页的“基本信息”选项卡上，输入或选择以下信息。
 
-   | **设置**      | 值                                                    |
+   | 设置      | 值                                                    |
    | ---------------- | ------------------------------------------------------------ |
    | 订阅     | 选择订阅。                                    |
    | 资源组   | 选择资源组 ContosoResourceGroup               |

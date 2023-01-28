@@ -1,14 +1,9 @@
 ---
 Exercise:
-  title: 模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
-  module: Module - Design and implement network security
-ms.openlocfilehash: a3d6752859f81544082d6aa40ca0d455d217d8f4
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922338"
+  title: 模块 06 - 第 4 单元 使用 Azure 门户在虚拟网络上配置 DDoS 防护
+  module: Module 06 - Design and implement network security
 ---
+
 # <a name="m06-unit-4-configure-ddos-protection-on-a-virtual-network-using-the-azure-portal"></a>模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
 
 作为 Contoso 网络安全团队的负责人，你将在虚拟网络上运行模拟 DDoS 攻击。 以下步骤将引导你完成创建虚拟网络、配置 DDoS 防护以及创建攻击，你可以借助遥测和指标的帮助进行观察和监视。

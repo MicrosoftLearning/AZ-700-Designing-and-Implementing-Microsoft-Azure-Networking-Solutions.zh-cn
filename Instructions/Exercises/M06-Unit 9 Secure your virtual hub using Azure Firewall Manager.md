@@ -1,14 +1,10 @@
 ---
 Exercise:
-  title: 模块 06-单元 9 使用 Azure 防火墙管理器保护虚拟中心安全
-  module: Module - Design and implement network security
-ms.openlocfilehash: e53ea57b2304396f36d608ce531d278c6ddad446
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922380"
+  title: 模块 06 - 第 9 单元 使用 Azure 防火墙管理器保护虚拟中心安全
+  module: Module 06 - Design and implement network security
 ---
+
+
 # <a name="m06-unit-9-secure-your-virtual-hub-using-azure-firewall-manager"></a>模块 06-单元 9 使用 Azure 防火墙管理器保护虚拟中心安全
 
 在此练习中，你将创建分支虚拟网络并创建安全虚拟中心，然后连接中心和分支虚拟网络，并将流量路由到中心。 接下来，你将部署工作负载服务器，然后创建防火墙策略并保护中心，最后测试防火墙。
@@ -63,7 +59,7 @@ ms.locfileid: "147922380"
 
 在此任务中，你将使用防火墙管理器创建安全虚拟中心。
 
-1. 在 Azure 门户主页中，单击“所有服务”。
+1. 在 Azure 门户主页中，单击“所有服务”。****
 
 2. 在搜索框中，键入“防火墙管理器”，然后在出现“防火墙管理器”时选择它。
 
@@ -71,7 +67,7 @@ ms.locfileid: "147922380"
 
 4. 在“虚拟中心”页上，单击“创建新的安全虚拟中心”。
 
-5. 对于 **资源组**，请选择 **fw-manager-rg**。
+5. 对于**资源组**，请选择 **fw-manager-rg**。
 
 6. 在“区域”中，选择你的区域。
 
@@ -122,7 +118,7 @@ ms.locfileid: "147922380"
 4. 单击“添加连接”。
 5. 对于“连接名称”，请输入“hub-spoke-01”。
 6. 对于“中心”，选择“Hub-01”。
-7. 对于 **资源组**，请选择 **fw-manager-rg**。
+7. 对于**资源组**，请选择 **fw-manager-rg**。
 8. 对于“虚拟网络”，选择“Spoke-01”。
 9. 单击“**创建**”。
    ![将中心和分支连接添加到虚拟 WAN - 分支 1](../media/connect-hub-spoke-vnet-1.png)
@@ -200,7 +196,7 @@ ms.locfileid: "147922380"
 
 20. 对于“目标”，请输入 *.microsoft.com。
 
-21. 单击 **添加**。
+21. 单击“添加”。
 
     ![将应用程序规则集合添加到防火墙策略](../media/add-rule-collection-firewall-policy-1.png)
 
@@ -240,7 +236,7 @@ ms.locfileid: "147922380"
 
 39. 对于“优先级”，请输入“100”。
 
-40. 对于 **规则集合操作**，请选择 **允许**。
+40. 对于**规则集合操作**，请选择**允许**。
 
 41. 在“规则”下的“名称”中，输入“Allow-vnet”。
 

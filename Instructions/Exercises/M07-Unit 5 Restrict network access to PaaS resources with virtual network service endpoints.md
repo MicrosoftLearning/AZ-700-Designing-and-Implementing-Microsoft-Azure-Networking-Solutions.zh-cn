@@ -1,14 +1,9 @@
 ---
 Exercise:
-  title: 模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
-  module: Module - Design and implement private access to Azure Services
-ms.openlocfilehash: 3dd388f4bed463f4e982e848bcec7e15598482a1
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922377"
+  title: 模块 07 - 第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
+  module: Module 07 - Design and implement private access to Azure Services
 ---
+
 # <a name="m07-unit-5-restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints"></a>模块 07-第 5 单元 使用虚拟网络服务终结点限制对 PaaS 资源的网络访问
 
 
@@ -226,7 +221,7 @@ ms.locfileid: "147922377"
 
 1. 在存储帐户的“安全 + 网络”下，选择“网络”。
 
-2. 选择“所选网络”。
+2. 选择“已从所选虚拟网络和 IP 地址启用”。
 
 3. 选择“+添加现有虚拟网络”。
 
@@ -236,7 +231,7 @@ ms.locfileid: "147922377"
    | ---------------- | ---------------------------- |
    | 订阅     | 选择订阅。    |
    | 虚拟网络 | 选择 CoreServicesVNet。 |
-   | 子网          | 选择“专用”。          |
+   | 子网          | 选择“专用”****。          |
 
 5. 选择“添加”  。
 
@@ -291,6 +286,7 @@ Azure 文件共享已成功映射到驱动器 Z。
 
  ping bing.com
 
+
 你不会收到回复，因为关联到“专用”子网的网络安全组不允许与 Internet 建立出站访问。
 
 8. 关闭与 ContosoWestPrivate VM 的远程桌面会话。
@@ -308,7 +304,7 @@ Azure 文件共享已成功映射到驱动器 Z。
 4. 从命令提示符确认公共 VM 确实具有到 Internet 的出站连接：
 
  ping bing.com    
-    
+
 5. 关闭与 ContosoPublic VM 的远程桌面会话。
 
 6. 在计算机上浏览到 Azure 门户。

@@ -1,14 +1,9 @@
 ---
 Exercise:
-  title: 模块 05-第 4 单元 部署 Azure 应用程序网关
-  module: Module - Load balancing HTTP(S) traffic in Azure
-ms.openlocfilehash: 0f000687276a78991f2a88d7caeab7c5b7a32bcd
-ms.sourcegitcommit: e98d709ed0f96f3c8e8c4e74c3aea821dff153ca
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2022
-ms.locfileid: "147922365"
+  title: 模块 05 - 第 4 单元 部署 Azure 应用程序网关
+  module: Module 05 - Load balancing HTTP(S) traffic in Azure
 ---
+
 # <a name="m05-unit-4-deploy-azure-application-gateway"></a>模块 05-第 4 单元 部署 Azure 应用程序网关
  
 
@@ -105,19 +100,19 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 21. 在“后端目标”选项卡上，输入或选择以下信息：
 
-    | **设置**   | **值**      |
-    | ------------- | -------------- |
-    | 目标类型   | 后端池   |
-    | HTTP 设置 | **添加新内容** |
+    | **设置**      | **值**      |
+    | -------------    | -------------- |
+    | 目标类型      | 后端池   |
+    | 后端设置 | **添加新内容** |
 
-22. 在“添加 HTTP 设置”中，输入或选择以下信息：
+22. 在“添加后端设置”中，输入或选择以下信息：
 
-    | **设置**        | **值**   |
-    | ------------------ | ----------- |
-    | HTTP 设置名称 | HTTPSetting |
-    | 后端端口       | 80          |
+    | **设置**          | **值**   |
+    | ------------------   | ----------- |
+    | 后端设置名称 | HTTPSetting |
+    | 后端端口         | 80          |
 
-23. 接受“添加 HTTP 设置”窗口中其他设置的默认值，然后选择“添加”以返回到“添加传递规则”。
+23. 接受“添加后端设置”窗口中其他设置的默认值，然后选择“添加”以返回到“添加传递规则”。
 
 24. 选择“添加”以保存传递规则，然后返回到“配置”选项卡。
 
@@ -175,7 +170,7 @@ Azure 可能需要数分钟时间来创建应用程序网关。 请等待部署�
 
 ### <a name="use-iis-to-test-the-application-gateway"></a>使用 IIS 测试应用程序网关：
 
-1. 在“概览”页上找到应用程序网关的公共 IP 地址。 
+1. 在“概览”页上找到应用程序网关的公共 IP 地址。**** 
 
    ![在 Azure 门户中，查询前端公共 IP 地址 ](../media/app-gw-public-ip.png)
 
