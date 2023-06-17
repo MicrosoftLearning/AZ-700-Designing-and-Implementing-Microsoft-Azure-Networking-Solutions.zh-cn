@@ -3,16 +3,18 @@ Exercise:
   title: 模块 01 - 第 4 单元 - 在 Azure 中设计和实现虚拟网络
   module: Module 01 - Introduction to Azure Virtual Networks
 ---
-# <a name="m01-unit-4-design-and-implement-a-virtual-network-in-azure"></a>模块 01 第 4 单元 - 在 Azure 中设计和实现虚拟网络
+# 模块 01 第 4 单元 - 在 Azure 中设计和实现虚拟网络
 
 
-## <a name="exercise-scenario"></a>练习场景 
+## 练习场景 
 
 现在，你已准备好在 Azure 门户中部署虚拟网络。
 
 假设有一家虚构的组织 Contoso Ltd，它正在将基础结构和应用程序迁移到 Azure。 如果你担任网络工程师一职，则必须计划并实现三个虚拟网络和子网，以支持这些虚拟网络中的资源。
 
-#### <a name="estimated-time-20-minutes"></a>预计用时：20 分钟
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+
+#### 预计用时：20 分钟
 
 虚拟网络“CoreServicesVnet”部署在“美国东部”区域。 此虚拟网络将具有最大数量的资源。 它将通过 VPN 连接与本地网络建立连接。 此网络将包含 Web 服务、数据库和其他系统，这些都是业务运营的关键所在。 共享服务（如域控制器和 DNS）也将位于此处。 预计会有大量增长，因此该虚拟网络需要较大的地址空间。
 
@@ -53,7 +55,7 @@ Exercise:
 + 任务 4：创建 ResearchVnet 虚拟网络和子网
 + 任务5：验证 VNet 和子网的创建
 
-## <a name="task-1-create-the-contoso-resource-group"></a>任务 1：创建 Contoso 资源组
+## 任务 1：创建 Contoso 资源组
 
 1. 转到 [Azure 门户](https://portal.azure.com/)。
 
@@ -68,14 +70,14 @@ Exercise:
 | 基础          | 资源组                             | ContosoResourceGroup |
 |                 | 区域                                     | （美国）美国东部         |
 | 标记            | 无需更改                        |                      |
-| 查看 + 创建 | 检查设置，然后选择“创建” |                      |
+| 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
 
 
 5. 在“资源组”中，验证 ContosoResourceGroup 是否显示在列表中。
 
  
 
-## <a name="task-2-create-the-coreservicesvnet-virtual-network-and-subnets"></a>任务 2：创建 CoreServicesVnet 虚拟网络和子网
+## 任务 2：创建 CoreServicesVnet 虚拟网络和子网
 
 1. 在 Azure 门户主页上，导航到“全局搜索”栏，搜索“虚拟网络”，然后在“服务”下选择“虚拟网络”。  ![Azure 门户主页上“全局搜索”栏中有关虚拟网络的结果。](../media/global-search-bar.PNG)
 2. 在“虚拟网络”页上选择“创建”。  ![创建虚拟网络向导。](../media/create-virtual-network.png)
@@ -112,7 +114,7 @@ Exercise:
  
  8. 根据下表对每个 VNet 重复步骤 1 - 8  
 
-## <a name="task-3-create-the-manufacturingvnet-virtual-network-and-subnets"></a>任务 3：创建 ManufacturingVnet 虚拟网络和子网
+## 任务 3：创建 ManufacturingVnet 虚拟网络和子网
 
 
 | Tab      | **选项**         | **值**             |
@@ -136,7 +138,7 @@ Exercise:
 |                           | 子网地址范围 | 10.30.22.0/24             |
  
 
-## <a name="task-4-create-the-researchvnet-virtual-network-and-subnets"></a>任务 4：创建 ResearchVnet 虚拟网络和子网
+## 任务 4：创建 ResearchVnet 虚拟网络和子网
 
 
 | Tab      | **选项**         | **值**            |
@@ -152,22 +154,20 @@ Exercise:
 |                      | 子网地址范围 | 10.40.0.0/24         |
  
 
-## <a name="task-5-verify-the-creation-of-vnets-and-subnets"></a>任务5：验证 VNet 和子网的创建
+## 任务5：验证 VNet 和子网的创建
 
 1. 在 Azure 门户主页上，选择“所有资源”。
 
 2. 验证是否列出了 CoreServicesVnet、ManufacturingVnet 和 ResearchVnet。
 
-3. 请注意，Azure 会为你使用的每个区域创建 NetworkWatcher。
+3 选择“CoreServicesVNet”。 
 
-4. 选择“CoreServicesVNet”。 
+4. 在“CoreServicesVnet”中的“设置”下，选择“子网”。
 
-5. 在“CoreServicesVnet”中的“设置”下，选择“子网”。
-
-6. 在“CoreServicesVnet | 子网”中，验证是否列出了已创建的子网，以及 IP 地址范围是否正确。
+5. 在“CoreServicesVnet | 子网”中，验证是否列出了已创建的子网，以及 IP 地址范围是否正确。
 
    ![CoreServicesVnet 中的子网列表。](../media/verify-subnets-annotated.png)
 
-7. 为每个 VNet 重复步骤 4-6。
+6. 对每个 VNet 重复步骤 3 - 5。
 
 祝贺你！ 你已成功创建一个资源组、三个 VNet 及其关联的子网。 
