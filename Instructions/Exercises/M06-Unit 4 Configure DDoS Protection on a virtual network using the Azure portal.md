@@ -96,14 +96,9 @@ Exercise:
 
 1. 在“DNS 名称标签”中，输入“mypublicdnsxx”（其中 xx 是使此名称唯一的缩写） 。
 
-1. 从列表中选择你的资源组。
-
-   ![创建公共 IP 地址](../media/create-public-ip-address-for-ddos-telemetry.png)
-
 1. 选择“创建”。
 
-
-1. 在 Azure 主页上，选择“所有资源”。
+1. 若要设置遥测，请导航到 Azure 主页，然后选择“所有资源”。
 
 1. 在资源列表中，选择“MyDdosProtectionPlan”。
 
@@ -166,7 +161,7 @@ Exercise:
    | 虚拟机名称  | MyVirtualMachine                                         |
    | 区域                | 你的区域                                                  |
    | 可用性选项  | 不需要基础结构冗余                   |
-   | 映像                 | Ubuntu Server 18.04 LTS - 第 1 代（如果需要，请选择“配置 VM 生成链接”） |                     
+   | 映像                 | Ubuntu Server 20.04 LTS - 第 2 代（如果需要，请选择“配置 VM 生成链接”） |                     
    | 大小                  | 选择“查看所有大小”，然后在列表中选择“B1ls”并选择“选择”“(Standard_B1ls - 1 vcpu，0.5 GiB内存)”    |
    | 身份验证类型   | **SSH 公钥**                                           |
    | 用户名              | **azureuser**                                                |
@@ -206,35 +201,21 @@ Exercise:
 
 1. 在 Azure 主页上，选择“所有资源”。
 
-1. 在资源列表中，选择“MyDdosProtectionPlan”。
+1. 在资源列表中，选择“MyPublicIPAddress”。
 
 1. 在“监视”下，选择“警报” 。
 
-1. 选择“新建警报规则”。
+1. 选择“创建警报规则”。
 
 1. 在“创建警报规则”页的“范围”下，选择“编辑资源”。
 
-1. 在“选择资源”窗格的“按资源类型”筛选框中，向下滚动列表并选择“公共 IP 地址”  。
+1. 对于信号名称，请选择“是否受到 DDoS 攻击”。
 
-   ![新的警报规则将范围更改为公共 IP 地址](../media/new-alert-rule-change-scope-to-public-ip-address-1.png)
-
-1. 在“资源”列表中，选择“MyPublicIPAddress”，然后选择“完成”  。
-
-1. 在“创建警报规则”页的“条件”下，选择“添加条件”。
-
-1. 选择“是否受到 DDoS 攻击”。
-
-   ![向警报规则添加条件 - 选择信号](../media/add-condition-to-alert-rule-1.png)
-
-1. 在“运算符”框中，选择“大于或等于” 。
+1. 在“警报逻辑”下找到“运算符”设置，然后选择“大于或等于”。 
 
 1. 在“阈值”中，输入“1”（表示受攻击） 。
 
-1. 选择“完成”。
-
-    ![向警报规则添加条件 - 配置信号逻辑](../media/add-condition-to-alert-rule-2.png)
-
-1. 返回到“创建警报规则”页，在“警报规则详细信息”部分的“警报规则名称”中，输入“MyDdosAlert”   。
+1. 导航到“详细信息”选项卡并选择“警报规则名称”，输入 MyDdosAlert。 
 
     ![创建新警报规则的终点](../media/new-alert-rule-end.png)
 

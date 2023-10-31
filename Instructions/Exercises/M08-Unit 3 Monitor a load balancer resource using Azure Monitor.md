@@ -22,14 +22,14 @@ Exercise:
 + 任务 5：创建负载均衡器规则
 + 任务 6：创建后端服务器
 + 任务 7：将 VM 添加到后端地址池
-+ 任务 8：在 VM 上安装 IIS
-+ 任务 9：测试负载均衡器
-+ 任务 10：创建 Log Analytics 工作区
-+ 任务 11：使用函数依赖关系视图
-+ 任务 12：查看详细指标
-+ 任务 13：查看资源运行状况
-+ 任务 14：配置诊断设置
-+ 任务 15：清理资源
++ 任务 8：测试负载均衡器
++ 任务 9：创建 Log Analytics 工作区
++ 任务 10：使用函数依赖关系视图
++ 任务 11：查看详细指标
++ 任务 12：查看资源运行状况
++ 任务 13：配置诊断设置
++ 任务 14：清理资源
+
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -191,8 +191,8 @@ Exercise:
 在本部分中，你将为负载均衡器的后端池创建三个 VM，将这些 VM 添加到后端池，然后在这三个 VM 上安装 IIS 以测试负载均衡器。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
-
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json、azuredeploy.parameters.vm1.json、azuredeploy.parameters.vm2.json 和 azuredeploy.parameters.vm3.json 文件从源文件夹 F:\Allfiles\Exercises\M08 逐个上传到 Cloud Shell 主目录中      。
+ > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
+1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件从源文件夹 F:\Allfiles\Exercises\M08 逐个上传到 Cloud Shell 主目录。    
 
 1. 部署以下 ARM 模板以创建本练习所需的虚拟网络、子网和 VM：
 
@@ -200,10 +200,8 @@ Exercise:
 
    ```powershell
    $RGName = "IntLB-RG"
-   
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm1.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm2.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm3.json
+
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
   
     > **注意：** 将需要几分钟才能完成部署。 
@@ -226,24 +224,7 @@ Exercise:
 
  
 
-## 任务 8：在 VM 上安装 IIS
-
-1. 在 Azure 门户主页上，选择“所有资源”，然后在资源列表中选择“myVM1” 。
-1. 在“概述”页上，选择“连接”，然后选择“Bastion”  。
-1. 选择“使用 Bastion”。
-1. 在“用户名”框中，输入“TestUser”，在“密码”框中，输入部署期间提供的密码，然后选择“连接”   。
-1. 将在另一个浏览器选项卡中打开“myVM1”窗口。
-1. 如果出现“网络”窗格，请选择“是” 。
-1. 选择窗口左下角的“Windows 开始图标”，然后选择“Windows PowerShell”磁贴 。
-1. 若要安装 IIS，请在 PowerShell 中运行以下命令：Install-WindowsFeature -name Web-Server -IncludeManagementTools
-1. 若要删除现有的默认 Web 主页，请在 PowerShell 中运行以下命令：Remove-Item C:\inetpub\wwwroot\iisstart.htm
-1. 若要添加新的默认 Web 主页并向其添加内容，请在 PowerShell 中运行以下命令：Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
-1. 通过关闭浏览器选项卡来关闭与 myVM1 的 Bastion 会话。
-1. 重复以上步骤 1-11 两次，以在 myVM2 和 myVM3 虚拟机上安装 IIS 和更新后的默认主页。
-
- 
-
-## 任务 9：测试负载均衡器
+## 任务 8：测试负载均衡器
 
 在本部分中，你将创建一个测试 VM，然后测试负载均衡器。
 
@@ -319,7 +300,7 @@ Exercise:
 
     ![显示来自 VM3 的 Hello World 响应的浏览器窗口](../media/load-balancer-web-test-2.png)
 
-## 任务 10：创建 Log Analytics 工作区
+## 任务 9：创建 Log Analytics 工作区
 
 1. 在 Azure 门户主页上，选择“所有服务”，然后在页面顶部的搜索框中输入“Log Analytics”，然后从筛选列表中选择“Log Analytics 工作区”  。
 
@@ -342,7 +323,7 @@ Exercise:
 
 
 
-## 任务 11：使用函数依赖关系视图
+## 任务 10：使用函数依赖关系视图
 
 1. 在 Azure 门户主页上，选择“所有资源”，然后在资源列表中选择“myIntLoadBalancer” 。
 
@@ -371,7 +352,7 @@ Exercise:
 
  
 
-## 任务 12：查看详细指标
+## 任务 11：查看详细指标
 
 1. 若要查看此网络资源的更全面的指标，请选择“查看详细指标”。
    ![Azure Monitor 网络见解 - 突出显示“查看详细指标”按钮](../media/network-insights-detailedmetrics-1.png)
@@ -393,7 +374,7 @@ Exercise:
 
  
 
-## 任务 13：查看资源运行状况
+## 任务 12：查看资源运行状况
 
 1. 若要查看负载均衡器资源的运行状况，请在 Azure 门户主页上，选择“所有服务”，然后选择“监视” 。
 
@@ -413,7 +394,7 @@ Exercise:
 
  
 
-## 任务 14：配置诊断设置
+## 任务 13：配置诊断设置
 
 1. 在 Azure 门户主页上，选择“资源组”，然后从列表中选择“IntLB-RG”资源组 。
 
@@ -435,9 +416,7 @@ Exercise:
 
  
 
- 
-
-## 任务 15：清理资源
+## 任务 14：清理资源
 
    >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
