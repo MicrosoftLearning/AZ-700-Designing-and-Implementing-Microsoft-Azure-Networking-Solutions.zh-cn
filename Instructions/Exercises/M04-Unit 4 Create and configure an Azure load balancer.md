@@ -67,7 +67,7 @@ Exercise:
     | **设置**                       | **值**                                     |
     | --------------------------------- | --------------------------------------------- |
     | Bastion 名称                      | myBastionHost                             |
-    | AzureBastionSubnet 地址空间 | **10.1.1.0/24**                               |
+    | AzureBastionSubnet 地址空间 | **10.1.1.0/26**                               |
     | 公共 IP 地址                 | 选择“新建”  名称：myBastionIP |
 
 
@@ -80,7 +80,7 @@ Exercise:
 在本部分中，你将为负载均衡器的后端池创建三个位于同一可用集的 VM，将这些 VM 添加到后端池，然后在这三个 VM 上安装 IIS 以测试负载均衡器。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
-
+ > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
 2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json、azuredeploy.parameters.vm1.json、azuredeploy.parameters.vm2.json 和 azuredeploy.parameters.vm3.json 文件逐个上传到 Cloud Shell 主目录中 。
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：

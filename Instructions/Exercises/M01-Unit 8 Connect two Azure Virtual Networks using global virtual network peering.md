@@ -28,6 +28,7 @@ Exercise:
 ### 创建 ManufacturingVM
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
+  > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
 
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录    。
 
