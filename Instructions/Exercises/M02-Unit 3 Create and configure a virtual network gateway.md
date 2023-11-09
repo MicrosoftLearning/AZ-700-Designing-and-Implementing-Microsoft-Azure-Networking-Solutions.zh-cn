@@ -14,7 +14,7 @@ Exercise:
 + 任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
 + 任务 2：创建 CoreServicesVM
 + 任务 3：创建 ManufacturingVM
-+ 任务 4：使用 RDP 连接到测试 VM
++ 任务 4：使用 RDP 连接到 VM
 + 任务 5：测试 VM 间的连接
 + 任务 6：创建 CoreServicesVnet 网关
 + 任务 7：创建 ManufacturingVnet 网关
@@ -30,7 +30,7 @@ Exercise:
 ## 任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
-
+ > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录    
 
 1. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
@@ -83,23 +83,23 @@ Exercise:
 1. 验证是否已创建虚拟机。
 
 
-## 任务 4：使用 RDP 连接到测试 VM
+## 任务 4：使用 RDP 连接到 VM
 
 1. 在 Azure 门户主页上，选择“虚拟机”。
 1. 选择“ManufacturingVM”。
 1. 在“ManufacturingVM”中，选择“连接”&gt;“RDP” 。
 1. 在“ManufacturingVM | 连接”中，选择“下载 RDP 文件” 。
 1. 将 RDP 文件保存到桌面。
-1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 ManufacturingTestVM。 连接后，最小化 RDP 会话。
+1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 ManufacturingVM。  连接后，最小化 RDP 会话。
 1. 在 Azure 门户主页上，选择“虚拟机”。
 1. 选择 CoreServicesVM。
 1. 在“CoreServicesTestVM”中，选择“连接”&gt;“RDP” 。
 1. 在“CoreServicesTestVM | 连接”中，选择“下载 RDP 文件” 。
 1. 将 RDP 文件保存到桌面。
-1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 CoreServicesTestVM。
+1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 CoreServicesVM。 
 1. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
 1. 在这两个 VM 上的“网络”中，选择“是”。
-1. 在 CoreServicesTestVM 上，打开 PowerShell 并运行此命令：ipconfig
+1. 在 CoreServicesVM 上，打开 PowerShell 并运行以下命令：ipconfig
 1. 记录 IPv4 地址。 
 
  
