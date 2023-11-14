@@ -23,7 +23,7 @@ Exercise:
 + 任务 10：确认对存储帐户的访问权限
 + 任务 11：清理资源
 
-                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 #### 预计用时：35 分钟
 
@@ -123,7 +123,7 @@ Exercise:
    | 目标服务标记 | 选择“存储”        |
    | 服务                 | 自定义                    |
    | 目标端口范围 | *                         |
-   | 协议                | 任意                       |
+   | 协议                | Any                       |
    | 操作                  | Allow                     |
    | 优先级                | 100                       |
    | 名称                    | Allow-Storage-All         |
@@ -148,7 +148,7 @@ Exercise:
    | 目标服务标记 | 选择“Internet”       |
    | 服务                 | 自定义                    |
    | 目标端口范围 | *                         |
-   | 协议                | 任意                       |
+   | 协议                | Any                       |
    | 操作                  | 拒绝                      |
    | 优先级                | 110                       |
    | 名称                    | Deny-Internet-All         |
@@ -172,7 +172,7 @@ Exercise:
    | 目标             | 选择“VirtualNetwork” |
    | 服务                 | 自定义                    |
    | 目标端口范围 | 3389                      |
-   | 协议                | 任意                       |
+   | 协议                | Any                       |
    | 操作                  | Allow                     |
    | 优先级                | 120                       |
    | 名称                    | Allow-RDP-All             |
@@ -187,7 +187,7 @@ Exercise:
 
 1. 在“关联子网”下，选择“虚拟网络”，然后选择“选择虚拟网络”下的“CoreServicesVNet”。
 
-1. 在“选择子网”下选择“专用”，然后选择“确定”。  
+1. 在“选择子网”下选择“专用”，然后选择“确定”。
 
 ## 任务 6：限制对资源的网络访问
 
@@ -216,7 +216,7 @@ Exercise:
 1. 创建存储帐户后，在门户顶部的“搜索资源、服务和文档”框中输入该存储帐户的名称。 该存储帐户的名称出现在搜索结果中时，请选择它。
 1. 选择“文件共享”，如下图所示：![图形用户界面，应用程序 自动生成的描述](../media/new-file-share-2.png)
 1. 选择“+ 文件共享”。
-1. 在“名称”下输入“市场营销”，然后选择“下一步: 备份”。 
+1. 在“名称”下输入“市场营销”，然后选择“下一步: 备份”。
    ![图形用户界面，应用程序 自动生成的描述](../media/new-file-share-basics.png)
 1. 取消选择“启用备份”，如下图所示：![图形用户界面，应用程序 自动生成的描述](../media/new-file-share-backup.png)
 1. 选择“查看 + 创建”  。 验证资源后，选择“创建”。

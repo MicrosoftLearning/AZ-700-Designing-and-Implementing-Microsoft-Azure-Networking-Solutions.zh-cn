@@ -31,7 +31,7 @@ Exercise:
 + 任务 14：清理资源
 
 
-                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 
 > [!Note]  
@@ -47,7 +47,7 @@ Exercise:
 
 1. 在 Azure 门户主页上，搜索“虚拟网络”然后选择“服务”下的“虚拟网络”。
 
-1. 选择“+ 新建”。 
+1. 选择“+ 新建”。
 
    ![创建虚拟网络](../media/create-virtual-network.png)
 
@@ -121,7 +121,7 @@ Exercise:
 
 1. 在 Azure 门户主页上，选择“所有资源”，然后在资源列表中选择“myIntLoadBalancer” 。
 
-1. 在“设置”下，依次选择“后端池”、“添加”。  
+1. 在“设置”下，依次选择“后端池”、“添加”。
 
 1. 在“添加后端池”页上，输入下表中的信息。
 
@@ -192,7 +192,7 @@ Exercise:
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
  > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件从源文件夹 F:\Allfiles\Exercises\M08 逐个上传到 Cloud Shell 主目录。    
+1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件从源文件夹 F:\Allfiles\Exercises\M08 逐个上传到 Cloud Shell 主目录。
 
 1. 部署以下 ARM 模板以创建本练习所需的虚拟网络、子网和 VM：
 
@@ -243,7 +243,7 @@ Exercise:
    | 资源组       | IntLB-RG                                 |
    | 虚拟机名称 | **myTestVM**                                 |
    | 区域               | （美国）美国西部                             |
-   | 可用性选项 | **没有所需的基础结构冗余**    |
+   | 可用性选项 | 不需要基础结构冗余    |
    | 映像                | Windows Server 2019 Datacenter - Gen 1   |
    | 大小                 | Standard_DS2_v3 - 2 个 vCPU，8 GiB 内存 |
    | 用户名             | TestUser                                 |

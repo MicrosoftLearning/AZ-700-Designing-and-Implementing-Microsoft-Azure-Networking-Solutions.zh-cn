@@ -19,7 +19,7 @@ Exercise:
 + 任务 7：使用模拟合作伙伴进行测试
 + 任务 8：清理资源
 
-                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 
 #### 估计时间：40 分钟
@@ -46,7 +46,7 @@ Exercise:
 
 1. 在 Azure 门户主页上，在“搜索”框中輸入 DDoS，并在出现“DDoS 防护计划”时选择它 。
 
-1. 选择“+ 新建”。 
+1. 选择“+ 新建”。
 
 1. 在“基本信息”选项卡的“资源组”列表中，选择刚创建的资源组。
 
@@ -62,7 +62,7 @@ Exercise:
 
 1. 在 Azure 门户主页上，选择“创建资源”，然后在搜索框中输入“虚拟网络”，并在出现“虚拟网络”时选择它  。
 
-1. 在“虚拟网络”页上选择“创建”。  
+1. 在“虚拟网络”页上选择“创建”。
 
 1. 在“基本信息”选项卡上，选择先前创建的资源组。
 
@@ -96,13 +96,13 @@ Exercise:
 
 1. 在“DNS 名称标签”中，输入“mypublicdnsxx”（其中 xx 是使此名称唯一的缩写） 。
 
-1. 选择“创建”。
+1. 选择**创建**。
 
 1. 若要设置遥测，请导航到 Azure 主页，然后选择“所有资源”。
 
 1. 在资源列表中，选择“MyDdosProtectionPlan”。
 
-1. 在“监视”下，选择“指标”。 
+1. 在“监视”下，选择“指标”。
 
 1. 选择“范围”框，并选中“MyPublicIPAddress”旁的复选框。
 
@@ -162,7 +162,7 @@ Exercise:
    | 区域                | 你的区域                                                  |
    | 可用性选项  | 不需要基础结构冗余                   |
    | 映像                 | Ubuntu Server 20.04 LTS - 第 2 代（如果需要，请选择“配置 VM 生成链接”） |                     
-   | 大小                  | 选择“查看所有大小”，然后在列表中选择“B1ls”并选择“选择”“(Standard_B1ls - 1 vcpu，0.5 GiB内存)”    |
+   | 大小                  | 选择“查看所有大小”，然后在列表中选择“B1ls”并选择“选择”“(Standard_B1ls - 1 vcpu，0.5 GiB内存)” |
    | 身份验证类型   | **SSH 公钥**                                           |
    | 用户名              | **azureuser**                                                |
    | SSH 公钥源 | 生成新密钥对                                    |
@@ -211,11 +211,11 @@ Exercise:
 
 1. 对于信号名称，请选择“是否受到 DDoS 攻击”。
 
-1. 在“警报逻辑”下找到“运算符”设置，然后选择“大于或等于”。 
+1. 在“警报逻辑”下找到“运算符”设置，然后选择“大于或等于”。
 
 1. 在“阈值”中，输入“1”（表示受攻击） 。
 
-1. 导航到“详细信息”选项卡并选择“警报规则名称”，输入 MyDdosAlert。 
+1. 导航到“详细信息”选项卡并选择“警报规则名称”，输入 MyDdosAlert。
 
     ![创建新警报规则的终点](../media/new-alert-rule-end.png)
 
@@ -228,7 +228,7 @@ Exercise:
 
 1. 查看 [Azure DDoS 模拟测试策略](https://learn.microsoft.com/azure/ddos-protection/test-through-simulations#azure-ddos-simulation-testing-policy)
 
-1. 使用经批准的测试合作伙伴配置 DDoS 测试攻击。 如果使用 BreakingPoint Cloud 进行测试，请使用以下屏幕截图中的设置（可能需要使用试用帐户选择 100k pps 测试大小），但在“目标 IP 地址”框中指定自己的“MyPublicIPAddress”资源的 IP 地址（例如 51.140.137.219）![DDOSAttack](https://user-images.githubusercontent.com/46939028/138599420-58bef33a-2597-4fa2-919f-bf1614037bc3.JPG)  
+1. 使用经批准的测试合作伙伴配置 DDoS 测试攻击。 如果使用 BreakingPoint Cloud 进行测试，请使用以下屏幕截图中的设置（可能需要使用试用帐户选择 100k pps 测试大小），但在“目标 IP 地址”框中指定自己的“MyPublicIPAddress”资源的 IP 地址（例如 51.140.137.219）![DDOSAttack](https://user-images.githubusercontent.com/46939028/138599420-58bef33a-2597-4fa2-919f-bf1614037bc3.JPG)
 
 1. 在 Azure 门户主页上，选择“所有资源”。
 
