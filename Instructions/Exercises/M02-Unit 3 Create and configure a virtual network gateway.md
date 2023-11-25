@@ -23,7 +23,7 @@ Exercise:
 + 任务 10：验证连接是否成功 
 + 任务 11：测试 VM 间的连接
 
-                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 #### 预计用时：70 分钟（包括约 45 分钟的部署等待时间）
 
@@ -31,7 +31,7 @@ Exercise:
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
  > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录    
+1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录
 
 1. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
 
@@ -90,16 +90,16 @@ Exercise:
 1. 在“ManufacturingVM”中，选择“连接”&gt;“RDP” 。
 1. 在“ManufacturingVM | 连接”中，选择“下载 RDP 文件” 。
 1. 将 RDP 文件保存到桌面。
-1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 ManufacturingVM。  连接后，最小化 RDP 会话。
+1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 ManufacturingVM。******** 连接后，最小化 RDP 会话。
 1. 在 Azure 门户主页上，选择“虚拟机”。
 1. 选择 CoreServicesVM。
 1. 在“CoreServicesTestVM”中，选择“连接”&gt;“RDP” 。
 1. 在“CoreServicesTestVM | 连接”中，选择“下载 RDP 文件” 。
 1. 将 RDP 文件保存到桌面。
-1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 CoreServicesVM。 
+1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 CoreServicesVM。********
 1. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
 1. 在这两个 VM 上的“网络”中，选择“是”。
-1. 在 CoreServicesVM 上，打开 PowerShell 并运行以下命令：ipconfig
+1. 在 CoreServicesVM 上，打开 PowerShell 并运行以下命令：ipconfig****
 1. 记录 IPv4 地址。 
 
  
