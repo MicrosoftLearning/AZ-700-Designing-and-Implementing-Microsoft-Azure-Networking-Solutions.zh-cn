@@ -8,7 +8,7 @@ Exercise:
 
 在此练习中，你将创建一个流量管理器配置文件，以便为虚构的 Contoso Ltd 组织的 Web 应用程序提供高可用性。 
 
-                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Traffic%20Manager%20profile%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Traffic%20Manager%20profile%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 #### 预计用时：35 分钟
 
@@ -39,7 +39,7 @@ Exercise:
 
    | **设置**      | 值                                                    |
    | ---------------- | ------------------------------------------------------------ |
-   | 订阅     | 选择订阅                                     |
+   | 订阅     | 选择“订阅”                                     |
    | 资源组   | 选择“新建”  名称：Contoso-RG-TM1             |
    | 名称             | **ContosoWebAppEastUSxx**（其中 xx 是你的姓名首字母，以确保名称独一无二） |
    | 发布          | **代码**                                                     |
@@ -96,7 +96,7 @@ Exercise:
    | ----------------------- | ------------------------ |
    | 名称                    | **Contoso-TMProfilexx**（其中 xx 是你的姓名首字母，以确保名称独一无二） |
    | 路由方法          | **Priority**             |
-   | 订阅            | 选择订阅 |
+   | 订阅            | 选择“订阅” |
    | 资源组          | Contoso-RG-TM1       |
    | 资源组位置 | **美国东部**              |
 
