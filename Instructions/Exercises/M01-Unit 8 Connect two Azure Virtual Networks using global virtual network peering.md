@@ -8,12 +8,14 @@ Exercise:
 ## 练习场景 
 在本单元中，你将通过添加对等互连来允许通信流，以配置 CoreServicesVnet 和 ManufacturingVnet 之间的连接。 
 
+![虚拟网络对等互连的示意图。](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
+
 在本单元中，你将学习以下内容：
 
 + 任务 1：创建虚拟机以测试配置
 + 任务 2：使用 RDP 连接到测试 VM
-+ 任务 3：测试 VM 间的连接
-+ 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
++ 任务 3：测试 VM 之间的连接
++ 任务 4：在 CoreServicesVnet 与 ManufacturingVnet 之间创建 VNet 对等互连
 + 任务 5：测试 VM 间的连接
 + 任务 6：清理资源
 

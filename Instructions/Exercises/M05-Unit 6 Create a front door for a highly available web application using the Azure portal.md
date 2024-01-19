@@ -12,7 +12,7 @@ Exercise:
 
 在此练习中，你将设置 Azure Front Door 配置，将在不同 Azure 区域运行的 Web 应用程序的两个实例汇集在一起。 此配置将流量定向到运行该应用程序的最近站点。 Azure Front Door 会持续监视该 Web 应用程序。 演示在最近的站点不可用时到下一个可用站点的自动故障转移。 网络配置如下图所示：
 
-![Azure Front Door 的网络配置。](../media/front-door-environment-diagram.png)
+![Azure Front Door 的网络配置。](../media/6-exercise-create-front-door-for-highly-available.png)
 
 通过学习本练习，你将能够：
 

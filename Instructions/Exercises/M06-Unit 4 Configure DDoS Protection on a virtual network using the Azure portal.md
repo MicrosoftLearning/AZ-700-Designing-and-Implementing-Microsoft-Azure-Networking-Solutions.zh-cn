@@ -8,6 +8,9 @@ Exercise:
 
 作为 Contoso 网络安全团队的负责人，你将在虚拟网络上运行模拟 DDoS 攻击。 以下步骤将引导你完成创建虚拟网络、配置 DDoS 防护以及创建攻击，你可以借助遥测和指标的帮助进行观察和监视。
 
+![DDoS 体系结构图。](../media/4-exercise-configure-ddos-protection-virtual-network-using-azure-portal.png)
+
+
 通过学习本练习，你将能够：
 
 + 任务 1：创建资源组
@@ -156,7 +159,7 @@ Exercise:
 
    | **设置**           | 值                                                    |
    | --------------------- | ------------------------------------------------------------ |
-   | 订阅          | 选择“订阅”                                     |
+   | 订阅          | 选择订阅                                     |
    | 资源组        | MyResourceGroup                                          |
    | 虚拟机名称  | MyVirtualMachine                                         |
    | 区域                | 你的区域                                                  |

@@ -9,6 +9,9 @@ Exercise:
 
 在此练习中，你将创建分支虚拟网络并创建安全虚拟中心，然后连接中心和分支虚拟网络，并将流量路由到中心。 接下来，你将部署工作负载服务器，然后创建防火墙策略并保护中心，最后测试防火墙。
 
+![具有安全中心的虚拟网络体系结构示意图。](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
+
+
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ## 创建中心和辐射体系结构

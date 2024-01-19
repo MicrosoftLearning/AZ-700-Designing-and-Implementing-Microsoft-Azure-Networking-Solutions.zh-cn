@@ -11,7 +11,7 @@ Exercise:
 
 #### 预计用时：15 分钟
 
-![用于练习的 ExpressRoute 线路布局示意图](../media/environment-diagram.png)
+![用于练习的 ExpressRoute 线路布局示意图](../media/5-exercise-provision-expressroute-circuit.png)
 
 
 
