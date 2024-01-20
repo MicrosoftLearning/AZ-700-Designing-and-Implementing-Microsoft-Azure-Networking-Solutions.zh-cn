@@ -9,6 +9,8 @@ Exercise:
 ## 练习场景 
 在本单元中，你将为 Contoso Ltd 配置 DNS 名称解析。你将创建一个名为 contoso.com 的专用 DNS 区域，链接 VNet 进行注册和解析，然后创建两个虚拟机并测试配置。
 
+![DNS 体系结构图。](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
+
 通过学习本练习，你将能够：
 
 + 任务 1：创建专用 DNS 区域

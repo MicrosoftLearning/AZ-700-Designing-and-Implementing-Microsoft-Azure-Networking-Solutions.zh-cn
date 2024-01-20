@@ -9,7 +9,10 @@ Exercise:
 
 在本练习中，你将使用 Azure 门户创建一个应用程序网关。 然后对其进行测试以确保其正常运行。
 
->注意：我们提供[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)，让你能以自己的节奏点击浏览实验室 。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+![应用程序网关体系结构的示意图。](../media/4-exercise-deploy-azure-application-gateway.png)
+
+
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 #### 预计用时：25 分钟
 

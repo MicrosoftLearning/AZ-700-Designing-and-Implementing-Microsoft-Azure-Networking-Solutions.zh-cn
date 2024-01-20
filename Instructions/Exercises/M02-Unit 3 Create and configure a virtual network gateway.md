@@ -9,6 +9,8 @@ Exercise:
 
 在本练习中，配置一个虚拟网关以连接 Contoso Core Services VNet 和 Manufacturing VNet。 
 
+![虚拟网络网关图示。](../media/3-exercise-create-configure-local-network-gateway.png)
+
 通过学习本练习，你将能够：
 
 + 任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
