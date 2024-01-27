@@ -43,6 +43,7 @@ Exercise:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
+ > **注意：** 目前，“西欧”区域存在一个影响网关部署的未解决问题。 作为解决方法，已将 ManufacturingVnet 区域更改为“北欧”以便进行此部署。 
 
 ## 任务 2：创建 CoreServicesVM
 
@@ -167,7 +168,7 @@ Exercise:
    | 基本信息          | 项目详细信息   | 订阅                                | 无需更改          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | 实例详细信息  | 名称                                        | ManufacturingVnetGateway     |
-   |                 |                   | 区域                                      | 西欧                  |
+   |                 |                   | 区域                                      | 北欧                  |
    |                 |                   | 网关类型                                | VPN                          |
    |                 |                   | VPN 类型                                    | 基于路由                  |
    |                 |                   | SKU                                         | VpnGw1                       |

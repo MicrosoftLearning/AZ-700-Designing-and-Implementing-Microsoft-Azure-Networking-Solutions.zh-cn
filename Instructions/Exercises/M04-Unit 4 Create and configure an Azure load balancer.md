@@ -15,9 +15,8 @@ Exercise:
 
 创建内部负载均衡器的步骤与你在此模块中学到的创建公共负载均衡器的步骤非常相似。 主要区别在于，使用公共负载均衡器时，前端可通过公共 IP 地址访问，并从位于虚拟网络外部的主机测试连接；而使用内部负载均衡器时，前端是虚拟网络中的专用 IP 地址，并从来自同一网络内的主机测试连接。
 
-下图展示了将在本练习中部署的环境。
 
-![内部标准负载均衡器关系图](../media/exercise-internal-standard-load-balancer-environment-diagram.png)
+![内部标准负载均衡器关系图](../media/4-exercise-create-configure-azure-load-balancer.png)
 
  
 通过学习本练习，你将能够：
@@ -42,7 +41,7 @@ Exercise:
 
    | **设置**    | 值                                  |
    | -------------- | ------------------------------------------ |
-   | 订阅   | 选择“订阅”                   |
+   | 订阅   | 选择订阅                   |
    | 资源组 | 选择“新建”  名称：IntLB-RG |
    | 名称           | IntLB-VNet                             |
    | 区域         | **（美国）美国东部**                           |
@@ -81,7 +80,7 @@ Exercise:
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
  > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
-2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json、azuredeploy.parameters.vm1.json、azuredeploy.parameters.vm2.json 和 azuredeploy.parameters.vm3.json 文件逐个上传到 Cloud Shell 主目录中 。
+2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件逐个上传到 Cloud Shell 主目录中。********
 
 3. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -90,9 +89,7 @@ Exercise:
    ```powershell
    $RGName = "IntLB-RG"
    
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm1.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm2.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm3.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
 创建这三个 VM 可能需要 5-10 分钟。 无需等待此作业完成，即可继续执行下一个任务。
@@ -113,12 +110,13 @@ Exercise:
 
    | **设置**           | 值                |
    | --------------------- | ------------------------ |
-   | 订阅          | 选择“订阅” |
+   | 订阅          | 选择订阅 |
    | 资源组        | IntLB-RG             |
    | 名称                  | myIntLoadBalancer    |
    | 区域                | **（美国）美国东部**         |
-   | 类型                  | **内部**             |
    | SKU                   | **标准**             |
+   | 类型                  | **内部**             |
+   | 层                  | **Regional**             |
 
 
 1. 选择“下一步: 前端 IP 配置”。
@@ -161,7 +159,7 @@ Exercise:
 
 1. 选中所有 3 个 VM（myVM1、myVM2 和 myVM3）的复选框，然后选择“添加”   。
 
-1. 选择“添加”  。
+1. 选择“保存”。
    ![图片 7](../media/add-vms-backendpool.png)
    
 
@@ -180,10 +178,9 @@ Exercise:
    | 端口                | **80**            |
    | 路径                | **/**             |
    | 时间间隔            | **15**            |
-   | 不正常阈值 | **2**             |
 
 
-1. 选择“添加”  。
+1. 选择 **添加** 。
    ![图片 5](../media/create-healthprobe.png)
 
  
@@ -192,7 +189,7 @@ Exercise:
 
 负载均衡器规则用于定义将流量分配给 VM 的方式。 定义传入流量的前端 IP 配置和后端 IP 池以接收流量。 源端口和目标端口在规则中定义。 你将在此处创建负载均衡器规则。
 
-1. 在负载均衡器的“后端池”页的“设置”下，选择“负载均衡规则”，然后选择“添加”   。
+1. 在“设置”下，依次选择“负载均衡规则”、“添加”。************
 
 1. 在“添加负载均衡规则”页上，输入下表中的信息。
 
@@ -201,17 +198,17 @@ Exercise:
    | 名称                   | myHTTPRule           |
    | IP 版本             | **IPv4**                 |
    | 前端 IP 地址    | LoadBalancerFrontEnd |
+   | 后端池           | myBackendPool        |
    | 协议               | **TCP**                  |
    | 端口                   | **80**                   |
    | 后端端口           | **80**                   |
-   | 后端池           | myBackendPool        |
    | 运行状况探测           | myHealthProbe        |
    | 会话暂留    | **无**                 |
    | 空闲超时(分钟) | **15**                   |
    | 浮动 IP            | **已禁用**             |
 
 
-1. 选择“添加”  。
+1. 选择“保存”。
    ![图片 6](../media/create-loadbalancerrule.png)
 
  
@@ -233,7 +230,7 @@ Exercise:
 
    | **设置**          | 值                                    |
    | -------------------- | -------------------------------------------- |
-   | 订阅         | 选择“订阅”                     |
+   | 订阅         | 选择订阅                     |
    | 资源组       | IntLB-RG                                 |
    | 虚拟机名称 | **myTestVM**                                 |
    | 区域               | **（美国）美国东部**                             |

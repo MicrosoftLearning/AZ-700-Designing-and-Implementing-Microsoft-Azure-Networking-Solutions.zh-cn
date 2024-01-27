@@ -6,8 +6,10 @@ Exercise:
 
 # 模块 02-第 7 单元 使用 Azure 门户创建虚拟 WAN
 
-
 在此练习中，创建适用于 Contoso 的虚拟 WAN。
+
+![虚拟网络 WAN 体系结构示意图。](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
+
 
 通过学习本练习，你将能够：
 
