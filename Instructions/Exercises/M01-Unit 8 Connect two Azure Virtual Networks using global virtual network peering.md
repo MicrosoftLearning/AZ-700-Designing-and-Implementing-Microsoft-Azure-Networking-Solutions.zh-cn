@@ -5,8 +5,9 @@ Exercise:
 ---
 # 模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
 
-## 练习场景 
-在本单元中，你将通过添加对等互连来允许通信流，以配置 CoreServicesVnet 和 ManufacturingVnet 之间的连接。 
+## 练习场景
+
+在本单元中，你将通过添加对等互连来允许通信流，以配置 CoreServicesVnet 和 ManufacturingVnet 之间的连接。
 
 ![虚拟网络对等互连的示意图。](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
@@ -14,14 +15,14 @@ Exercise:
 
 + 任务 1：创建虚拟机以测试配置
 + 任务 2：使用 RDP 连接到测试 VM
-+ 任务 3：测试 VM 之间的连接
-+ 任务 4：在 CoreServicesVnet 与 ManufacturingVnet 之间创建 VNet 对等互连
++ 任务 3：测试 VM 间的连接
++ 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
 + 任务 5：测试 VM 间的连接
 + 任务 6：清理资源
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-#### 预计用时：20 分钟
+### 预计用时：20 分钟
 
 ## 任务 1：创建虚拟机以测试配置
 
@@ -80,9 +81,7 @@ Exercise:
 
 1. 在 TestVM1 上，打开 PowerShell 提示符，然后运行以下命令：ipconfig
 
-1. 记录 IPv4 地址。 
-
- 
+1. 记录 IPv4 地址。
 
 ## 任务 3：测试 VM 间的连接
 
@@ -94,10 +93,7 @@ Exercise:
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. 测试连接应失败，且你将看到如下所示的结果：![Test-NetConnection 10.20.20.4 - 端口 3389 显示失败的 PowerShell 窗口](../media/test-netconnection-fail.png)
-
- 
 
 ## 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
 
@@ -135,24 +131,19 @@ Exercise:
 
 1. 在“虚拟网络”下，选择“ManufacturingVnet”，然后验证是否列出了“将 ManufacturingVnet 连接到 CoreServicesVnet”对等互连。
 
- 
-
 ## 任务 5：测试 VM 间的连接
 
 1. 在“ManufacturingVM”上，打开 PowerShell 提示符。
 
-1. 使用以下命令验证 CoreServicesVnet 上现是否存在与 TestVM1 的连接。 
+1. 使用以下命令验证 CoreServicesVnet 上现是否存在与 TestVM1 的连接。
 
    ```powershell
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. 测试连接应成功，且你将看到如下所示的结果：![Test-NetConnection 10.20.20.4 - 端口 3389 显示 TCP 测试成功: true 的 Powershell 窗口](../media/test-connection-succeeded.png)
 
- 
-
-祝贺你！ 通过添加对等互连，你已成功配置 VNet 之间的连接。 
+祝贺你！ 通过添加对等互连，你已成功配置 VNet 之间的连接。
 
 ## 任务 6：清理资源
 

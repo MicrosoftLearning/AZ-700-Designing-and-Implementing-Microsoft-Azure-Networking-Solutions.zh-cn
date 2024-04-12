@@ -6,6 +6,8 @@ Exercise:
 
 # 模块 06-单元 7 使用 Azure 门户部署和配置 Azure 防火墙
 
+## 练习场景
+
 作为 Contoso 的网络安全团队的成员，下一个任务是创建防火墙规则以允许/拒绝对某些网站的访问。 以下步骤将引导你创建资源组、虚拟网络和子网，以及将虚拟机作为环境准备任务，然后部署防火墙和防火墙策略、配置默认路由和应用程序、网络和 DNAT 规则，最后测试防火墙。
 
 ![具有Azure 防火墙体系结构的网络示意图。](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
@@ -26,8 +28,7 @@ Exercise:
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-
-#### 估计时间：60 分钟
+### 估计时间：60 分钟
 
 ## 任务 1：创建资源组
 
@@ -37,7 +38,7 @@ Exercise:
 
 1. 在 Azure 门户主页上，选择“资源组”。
 
-1. 选择“创建”。 
+1. 选择“创建”。
 
 1. 在“基本信息”选项卡上的“资源组”中，输入“Test-FW-RG”。
 
@@ -48,8 +49,6 @@ Exercise:
 1. 选择“查看 + 创建”。
 
 1. 选择“创建”。
-
- 
 
 ## 任务 2：创建虚拟网络和子网
 
@@ -65,7 +64,7 @@ Exercise:
 
    ![“创建虚拟网络”-“基本信息”选项卡](../media/create-vnet-basics-for-azure-firewall.png)
 
-1. 在完成时选择“下一步:IP 地址”。 如果默认情况下不存在，请输入 IPv4 地址空间 10.0.0.0/16。 
+1. 在完成时选择“下一步:IP 地址”。 如果默认情况下不存在，请输入 IPv4 地址空间 10.0.0.0/16。
 
 1. 在“子网名称”下，选择词语“默认”。
 
@@ -77,9 +76,8 @@ Exercise:
 
 1. 选择“添加子网”以创建另一个子网，它将托管你将即将创建的工作负载服务器。
 
-
     ![添加子网](../media/add-workload-subnet.png)
-    
+
 1. 在“编辑子网”对话框中，将名称更改为“Workload-SN”。
 
 1. 将“子网地址范围”更改为“10.0.2.0/24”。
@@ -89,8 +87,6 @@ Exercise:
 1. 选择“查看 + 创建”。
 
 1. 选择“创建”。
-
- 
 
 ## 任务 3：创建虚拟机
 
@@ -117,7 +113,6 @@ Exercise:
 1. VM 部署完成后，单击“转到资源”。
 
 1. 在“Srv-Work”的“概述”页右侧的“网络”下，记下此 VM 的“专用 IP 地址”（例如 10.0.2.4）。
- 
 
 ## 任务 4：部署防火墙和防火墙策略
 
@@ -146,7 +141,6 @@ Exercise:
    | 虚拟网络          | **Test-FW-VN**                           |
    | 公共 IP 地址        | 选择“新增”<br />名称：fw-pip |
 
-
    ![将公共 IP 地址添加到防火墙](../media/assign-public-ip-to-firewall.png)
 
 1. 检查所有设置，确保它们与下面的屏幕截图匹配。
@@ -165,8 +159,6 @@ Exercise:
 
 1. 记下“fw-pip”公共 IP 配置的“IP 地址”下的地址（例如 20.90.136.51）。
 
- 
-
 ## 任务 5：创建默认路由
 
 在此任务中，对于“Workload-SN”子网，将配置要通过防火墙的出站默认路由。
@@ -184,7 +176,6 @@ Exercise:
    | 区域                   | 你的区域              |
    | 名称                     | Firewall-route       |
    | 传播网关路由 | **是**                  |
-
 
 1. 选择“查看 + 创建”。
 
@@ -216,11 +207,9 @@ Exercise:
 
     ![添加防火墙路由](../media/add-firewall-route.png)
 
- 
-
 ## 任务 6：配置应用程序规则
 
-在此任务中，你将添加允许对 www.google.com 的出站访问的应用程序规则。
+在此任务中，你将添加允许对 <www.google.com> 的出站访问的应用程序规则。
 
 1. 在 Azure 门户主页上，选择“所有资源”。
 
@@ -245,14 +234,11 @@ Exercise:
    | 源                 | **10.0.2.0/24**                           |
    | 协议               | http、https                            |
    | 目标类型       | **FQDN**                                  |
-   | 目标            | **www.google.com**                        |
-
+   | 目标            | **<www.google.com>**                        |
 
    ![添加应用程序规则集合](../media/add-an-application-rule-for-firewall.png)
 
 1. 选择 **添加** 。
-
- 
 
 ## 任务 7：配置网络规则
 
@@ -280,12 +266,9 @@ Exercise:
    | 目标类型       | **IP 地址**                                               |
    | 目标            | 209.244.0.3、209.244.0.4<br />这些是由 Century Link 操作的公共 DNS 服务器 |
 
-
     ![添加网络规则集合](../media/add-a-network-rule-for-firewall.png)
 
 1. 选择 **添加** 。
-
- 
 
 ## 任务 8：配置目标 NAT (DNAT) 规则
 
@@ -314,12 +297,9 @@ Exercise:
    | 已翻译的地址    | 输入前面提到的 Srv-Work 中的专用 IP 地址。<br />例如 - 10.0.2.4 |
    | 已翻译的端口       | **3389**                                                     |
 
+  ![添加 DNAT 规则集合](../media/add-a-dnat-rule.png)
 
-        ![Add a DNAT rule collection](../media/add-a-dnat-rule.png)
-
-1. 选择“添加”  。
-
- 
+1. 选择 **添加** 。
 
 ## 任务 9：更改服务器网络接口的主要和辅助 DNS 地址
 
@@ -345,8 +325,6 @@ Exercise:
 
 1. 重启 **Srv-Work** 虚拟机。
 
- 
-
 ## 任务 10：测试防火墙
 
 在最后一个任务中，你将测试防火墙，以验证规则是否正确配置并正常工作。 通过此配置，可以通过防火墙的公共 IP 地址建立到 Srv-Work 虚拟机的远程桌面连接。
@@ -367,7 +345,7 @@ Exercise:
 
 1. 选择证书消息上的“是”。
 
-1. 打开 Internet Explorer 并浏览到 https://www.google.com。
+1. 打开 Internet Explorer 并浏览到 <https://www.google.com>。
 
 1. 在“安全警报”对话框中，选择“确定” 。
 
@@ -377,14 +355,13 @@ Exercise:
 
     ![Srv-work 服务器上 RDP 会话 - google.com 上的浏览器](../media/remote-desktop-connection-2.png)
 
-1. 浏览到 **https://www.microsoft.com**。
+1. 浏览到 **<https://www.microsoft.com>**。
 
 1. 防火墙应会阻止你访问。
 
     ![Srv-work 服务器上 RDP 会话 - 浏览器在 microsoft.com 上受阻](../media/remote-desktop-connection-3.png)
 
- 
-## 任务 11：清理资源 
+## 任务 11：清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 

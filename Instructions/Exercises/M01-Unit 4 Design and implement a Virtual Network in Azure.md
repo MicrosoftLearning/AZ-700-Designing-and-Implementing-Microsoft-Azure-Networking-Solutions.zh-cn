@@ -5,8 +5,7 @@ Exercise:
 ---
 # 模块 01 第 4 单元 - 在 Azure 中设计和实现虚拟网络
 
-
-## 练习场景 
+## 练习场景
 
 现在，你已准备好在 Azure 门户中部署虚拟网络。
 
@@ -14,7 +13,7 @@ Exercise:
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-#### 预计用时：20 分钟
+### 预计用时：20 分钟
 
 虚拟网络“CoreServicesVnet”部署在“美国东部”区域。 此虚拟网络将具有最大数量的资源。 它将通过 VPN 连接与本地网络建立连接。 此网络将包含 Web 服务、数据库和其他系统，这些都是业务运营的关键所在。 共享服务（如域控制器和 DNS）也将位于此处。 预计会有大量增长，因此该虚拟网络需要较大的地址空间。
 
@@ -22,28 +21,26 @@ Exercise:
 
 虚拟网络“ResearchVnet”部署在靠近组织研发团队位置的“东南亚”区域。 研发团队使用此虚拟网络。 该团队有少量稳定的资源，并且预计这些资源不会增长。 团队需要少量的 IP 地址以供少数虚拟机工作。
 
-![Contoso 的网络布局。 本地 10.10.0.0/16 ResearchVNet 东南亚 10.40.40.0/24 CoreServicesVNet 美国东部 10.20.0.0/16 ManufacturingVNet 欧洲西部 10.30.0.0/16
+![Contoso 的网络布局。
+本地 10.10.0.0/16 ResearchVNet 东南亚 10.40.40.0/24 CoreServicesVNet 美国东部 10.20.0.0/16 ManufacturingVNet 欧洲西部 10.30.0.0/16
 ](../media/design-implement-vnet-peering.png)
 
-
 你将创建以下资源：
- 
 
-| **虚拟网络** | 区域   | **虚拟网络地址空间** | **子网**                | **子网**    |
-| ------------------- | ------------ | --------------------------------- | ------------------------- | ------------- |
-| CoreServicesVnet    | 美国东部      | 10.20.0.0/16                      |                           |               |
-|                     |              |                                   | GatewaySubnet             | 10.20.0.0/27  |
-|                     |              |                                   | SharedServicesSubnet      | 10.20.10.0/24 |
-|                     |              |                                   | DatabaseSubnet            | 10.20.20.0/24 |
-|                     |              |                                   | PublicWebServiceSubnet    | 10.20.30.0/24 |
-| ManufacturingVnet   | 西欧  | 10.30.0.0/16                      |                           |               |
-|                     |              |                                   | ManufacturingSystemSubnet | 10.30.10.0/24 |
-|                     |              |                                   | SensorSubnet1             | 10.30.20.0/24 |
-|                     |              |                                   | SensorSubnet2             | 10.30.21.0/24 |
-|                     |              |                                   | SensorSubnet3             | 10.30.22.0/24 |
-| ResearchVnet        |东南亚| 10.40.0.0/16                      |                           |               |
-|                     |              |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
-
+| **虚拟网络** | 区域     | **虚拟网络地址空间** | **子网**                | **子网**    |
+| ------------------- | -------------- | --------------------------------- | ------------------------- | ------------- |
+| CoreServicesVnet    | 美国东部        | 10.20.0.0/16                      |                           |               |
+|                     |                |                                   | GatewaySubnet             | 10.20.0.0/27  |
+|                     |                |                                   | SharedServicesSubnet      | 10.20.10.0/24 |
+|                     |                |                                   | DatabaseSubnet            | 10.20.20.0/24 |
+|                     |                |                                   | PublicWebServiceSubnet    | 10.20.30.0/24 |
+| ManufacturingVnet   | 西欧    | 10.30.0.0/16                      |                           |               |
+|                     |                |                                   | ManufacturingSystemSubnet | 10.30.10.0/24 |
+|                     |                |                                   | SensorSubnet1             | 10.30.20.0/24 |
+|                     |                |                                   | SensorSubnet2             | 10.30.21.0/24 |
+|                     |                |                                   | SensorSubnet3             | 10.30.22.0/24 |
+| ResearchVnet        | 东南亚 | 10.40.0.0/16                      |                           |               |
+|                     |                |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
 
 这些虚拟网络和子网以一种既可容纳现有资源，又允许预计增长的方式构建。 让我们来创建这些虚拟网络和子网，为网络基础结构奠定基础。
 
@@ -72,10 +69,7 @@ Exercise:
 | 标记            | 无需更改                        |                      |
 | 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
 
-
 5. 在“资源组”中，验证 ContosoResourceGroup 是否显示在列表中。
-
- 
 
 ## 任务 2：创建 CoreServicesVnet 虚拟网络和子网
 
@@ -83,8 +77,6 @@ Exercise:
 2. 在“虚拟网络”页上选择“创建”。  ![创建虚拟网络向导。](../media/create-virtual-network.png)
 3. 使用下表中的信息创建 CoreServicesVnet 虚拟网络。  
    ‎删除或覆盖默认 IP 地址空间![Azure 虚拟网络部署的 IP 地址配置 ](../media/default-vnet-ip-address-range-annotated.png)
-
- 
 
 | Tab      | **选项**         | **值**            |
 | ------------ | ------------------ | -------------------- |
@@ -111,20 +103,17 @@ Exercise:
  6. 若要完成创建 CoreServicesVnet 及其关联的子网，请选择“审阅并创建”。
 
  7. 验证配置是否通过验证，然后选择“创建”。
- 
+
  8. 根据下表对每个 VNet 重复步骤 1 - 8  
 
 ## 任务 3：创建 ManufacturingVnet 虚拟网络和子网
 
-
-| Tab      | **选项**         | **值**             |
-| ------------ | ------------------ | --------------------- |
-| 基础       | 资源组     | ContosoResourceGroup  |
-|              | 名称               | ManufacturingVnet     |
-|              | 区域             | （欧洲）西欧  |
-| IP 地址 | IPv4 地址空间 | 10.30.0.0/16          |
-
-
+| Tab      | **选项**         | **值**            |
+| ------------ | ------------------ | -------------------- |
+| 基础       | 资源组     | ContosoResourceGroup |
+|              | 名称               | ManufacturingVnet    |
+|              | 区域             | （欧洲）西欧 |
+| IP 地址 | IPv4 地址空间 | 10.30.0.0/16         |
 
 | **子网**                | **选项**           | 值                 |
 | ------------------------- | -------------------- | ------------------------- |
@@ -136,10 +125,8 @@ Exercise:
 |                           | 子网地址范围 | 10.30.21.0/24             |
 | SensorSubnet3             | 子网名称          | SensorSubnet3             |
 |                           | 子网地址范围 | 10.30.22.0/24             |
- 
 
 ## 任务 4：创建 ResearchVnet 虚拟网络和子网
-
 
 | Tab      | **选项**         | **值**            |
 | ------------ | ------------------ | -------------------- |
@@ -152,7 +139,6 @@ Exercise:
 | -------------------- | -------------------- | -------------------- |
 | ResearchSystemSubnet | 子网名称          | ResearchSystemSubnet |
 |                      | 子网地址范围 | 10.40.0.0/24         |
- 
 
 ## 任务5：验证 VNet 和子网的创建
 
@@ -160,7 +146,7 @@ Exercise:
 
 2. 验证是否列出了 CoreServicesVnet、ManufacturingVnet 和 ResearchVnet。
 
-3 选择“CoreServicesVNet”。 
+3. 选择“CoreServicesVNet”。
 
 4. 在“CoreServicesVnet”中的“设置”下，选择“子网”。
 
@@ -170,4 +156,4 @@ Exercise:
 
 6. 对每个 VNet 重复步骤 3 - 5。
 
-祝贺你！ 你已成功创建一个资源组、三个 VNet 及其关联的子网。 
+祝贺你！ 你已成功创建一个资源组、三个 VNet 及其关联的子网。

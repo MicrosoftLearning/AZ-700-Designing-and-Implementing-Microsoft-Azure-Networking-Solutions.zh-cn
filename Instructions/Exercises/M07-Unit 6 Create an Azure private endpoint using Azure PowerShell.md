@@ -6,14 +6,16 @@ Exercise:
 
 # 模块 07 - 第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点
 
-使用专用终结点安全连接到 Azure Web 应用以开始使用 Azure 专用链接。 可以通过很多方法（包括门户、CLI、PowerShell 等）创建终结点。 
+## 练习场景
+
+使用专用终结点安全连接到 Azure Web 应用以开始使用 Azure 专用链接。 可以通过很多方法（包括门户、CLI、PowerShell 等）创建终结点。
 
 ![专用终结点体系结构示意图。](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-#### 估计时间：45 分钟
+### 估计时间：45 分钟
 
 你将创建 Azure Web 应用的专用终结点，并部署虚拟机以测试专用连接。
 
@@ -35,13 +37,13 @@ Exercise:
 
 通过学习本练习，你将能够：
 
-+ 任务 1：创建资源组
-+ 任务 2：创建虚拟网络和堡垒主机
-+ 任务 3：创建测试虚拟机
-+ 任务 4：创建专用终结点
-+ 任务 5：配置专用 DNS 区域
-+ 任务 6：测试与专用终结点的连接
-+ 任务 7：清理资源
+- 任务 1：创建资源组
+- 任务 2：创建虚拟网络和堡垒主机
+- 任务 3：创建测试虚拟机
+- 任务 4：创建专用终结点
+- 任务 5：配置专用 DNS 区域
+- 任务 6：测试与专用终结点的连接
+- 任务 7：清理资源
 
 ## 任务 1：创建资源组并部署必备 Web 应用
 
@@ -52,6 +54,7 @@ Azure 资源组是在其中部署和管理 Azure 资源的逻辑容器。
 ```PowerShell
 New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 ```
+
 部署以下 ARM 模板以创建本练习所需的 PremiumV2 层 Azure Web 应用：
 
    ```powershell
@@ -59,6 +62,7 @@ New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
    ```
+
 如果你收到错误消息（例如在门户中查看部署状态时），例如“具有给定名称 GEN-UNIQUE 的网站已存在。”， 请务必转到上面提到的有关编辑模板的先决条件。
 
 ## 任务 2：创建虚拟网络和堡垒主机
@@ -74,8 +78,6 @@ New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 - New-AzPublicIpAddress
 
 - New-AzBastion
-
- 
 
 ```PowerShell
 ## Create backend subnet config. ##
@@ -138,9 +140,6 @@ $parameters3 = @{
 
 New-AzBastion @parameters3
 ```
-
-
-
 
 ## 任务 3：创建测试虚拟机
 
@@ -226,9 +225,6 @@ New-AzVM -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Location 'eastus' -VM 
 
 ```
 
-
-
-
 Azure 为未获得公共 IP 地址或位于内部基本 Azure 负载均衡器后端池中的 Azure 虚拟机提供临时 IP。 临时 IP 机制可提供无法配置的出站 IP 地址。
 
 如果将公共 IP 地址分配给某个虚拟机或将该虚拟机置入具有或不具有出站规则的标准负载均衡器的后端池中时，将禁用其原有的临时 IP。 如果向虚拟机的子网分配 Azure 虚拟网络 NAT 网关资源，也会禁用其临时 IP。
@@ -242,8 +238,6 @@ Azure 为未获得公共 IP 地址或位于内部基本 Azure 负载均衡器后
 - New-AzPrivateLinkServiceConnection
 
 - New-AzPrivateEndpoint
-
- 
 
 ```PowerShell
 ## Place web app into variable. This assumes that only one web app exists in the resource group. ##
@@ -292,9 +286,6 @@ $parameters2 = @{
 
 New-AzPrivateEndpoint @parameters2 
 ```
-
-
-
 
 ## 任务 5：配置专用 DNS 区域
 
@@ -370,7 +361,6 @@ $parameters4 = @{
 New-AzPrivateDnsZoneGroup @parameters4 
 ```
 
-
 ## 任务 6：测试与专用终结点的连接
 
 在本部分中，你将使用在上一步骤中创建的虚拟机通过专用终结点连接到 Web 应用。
@@ -407,13 +397,12 @@ New-AzPrivateDnsZoneGroup @parameters4
   Aliases: mywebapp8675.azurewebsites.net 
   ```  
 
-
 将为 Web 应用名称返回专用 IP 地址 10.0.0.5。 此地址位于你之前创建的虚拟网络的子网中。
 
 1. 在到 myVM 的堡垒连接中，打开 Internet Explorer。
 1. 输入 Web 应用的 URL，&lt;&gt;。
 1. 如果尚未部署应用程序，将收到默认 Web 应用页：![ Azure 中的页面的屏幕截图，指示应用服务已启动并正在运行](../media/web-app-default-page.png)
-1. 关闭到 **myVM** 的连接。 
+1. 关闭到 **myVM** 的连接。
 
 ## 任务 7：清理资源
 
@@ -422,8 +411,3 @@ New-AzPrivateDnsZoneGroup @parameters4
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
-
-
-
-
-
