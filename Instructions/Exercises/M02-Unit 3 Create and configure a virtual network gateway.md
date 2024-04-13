@@ -7,7 +7,9 @@ Exercise:
 
 # 模块 02 第 3 单元 - 创建和配置虚拟网络网关
 
-在本练习中，配置一个虚拟网关以连接 Contoso Core Services VNet 和 Manufacturing VNet。 
+## 练习场景
+
+在本练习中，配置一个虚拟网关以连接 Contoso Core Services VNet 和 Manufacturing VNet。
 
 ![虚拟网络网关图示。](../media/3-exercise-create-configure-local-network-gateway.png)
 
@@ -20,19 +22,21 @@ Exercise:
 + 任务 5：测试 VM 间的连接
 + 任务 6：创建 CoreServicesVnet 网关
 + 任务 7：创建 ManufacturingVnet 网关
-+ 任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet 
++ 任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet
 + 任务 9：将 ManufacturingVnet 连接到 CoreServicesVnet
-+ 任务 10：验证连接是否成功 
++ 任务 10：验证连接是否成功
 + 任务 11：测试 VM 间的连接
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-#### 预计用时：70 分钟（包括约 45 分钟的部署等待时间）
+### 预计用时：70 分钟（包括约 45 分钟的部署等待时间）
 
 ## 任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
+
  > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
+
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录
 
 1. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
@@ -43,7 +47,8 @@ Exercise:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
- > **注意：** 目前，“西欧”区域存在一个影响网关部署的未解决问题。 作为解决方法，已将 ManufacturingVnet 区域更改为“北欧”以便进行此部署。 
+
+ > **注意：** 目前，“西欧”区域存在一个影响网关部署的未解决问题。 作为解决方法，已将 ManufacturingVnet 区域更改为“北欧”以便进行此部署。
 
 ## 任务 2：创建 CoreServicesVM
 
@@ -85,7 +90,6 @@ Exercise:
 
 1. 验证是否已创建虚拟机。
 
-
 ## 任务 4：使用 RDP 连接到 VM
 
 1. 在 Azure 门户主页上，选择“虚拟机”。
@@ -103,9 +107,7 @@ Exercise:
 1. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
 1. 在这两个 VM 上的“网络”中，选择“是”。
 1. 在 CoreServicesVM 上，打开 PowerShell 并运行以下命令：ipconfig****
-1. 记录 IPv4 地址。 
-
- 
+1. 记录 IPv4 地址。
 
 ## 任务 5：测试 VM 间的连接
 
@@ -121,9 +123,7 @@ Exercise:
 
    ![Test-NetConnection 失败。](../media/test-netconnection-fail.png)
 
- 
-
-##  任务 6：创建 CoreServicesVnet 网关
+## 任务 6：创建 CoreServicesVnet 网关
 
 1. 在“搜索资源、服务和文档(G+/)”中，输入“虚拟网关”，然后从结果中选择“虚拟网关”。
    ![在 Azure 门户上搜索虚拟网关。](../media/virtual-network-gateway-search.png)
@@ -151,9 +151,9 @@ Exercise:
    |                 |                   | 配置 BGP                               | 已禁用                     |
    | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |
 
-   > [!NOTE] 
+   > [!NOTE]
    >
-   > 最多需要 45 分钟就可创建虚拟网络网关。 
+   > 最多需要 45 分钟就可创建虚拟网络网关。
 
 ## 任务 7：创建 ManufacturingVnet 网关
 
@@ -181,14 +181,12 @@ Exercise:
    |                 |                   | 启用主动-主动模式                   | 已禁用                     |
    |                 |                   | 配置 BGP                               | 已禁用                     |
    | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |
-   
+
    > [!NOTE]
    >
-   > 最多需要 45 分钟就可创建虚拟网络网关。 
+   > 最多需要 45 分钟就可创建虚拟网络网关。
 
- 
-
-## 任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet 
+## 任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet
 
 1. 在“搜索资源、服务和文档(G+/)”中，输入“虚拟网关”，然后从结果中选择“虚拟网关”。
 
@@ -217,7 +215,6 @@ Exercise:
    | 位置                       | 美国东部                           |
 
 1. 若要创建连接，请选择“确定”。
-   
 
 ## 任务 9：将 ManufacturingVnet 连接到 CoreServicesVnet
 
@@ -245,15 +242,13 @@ Exercise:
 
 1. 若要创建连接，请选择“确定”。
 
-## 任务 10：验证连接是否成功 
+## 任务 10：验证连接是否成功
 
 1. 在“搜索资源、服务和文档(G+/)”中，输入“连接”，然后从结果中选择“连接”。
 
-1. 等待，直到两个连接的状态都为“已连接”。 你可能需要刷新屏幕。 
+1. 等待，直到两个连接的状态都为“已连接”。 你可能需要刷新屏幕。
 
    ![已成功创建 VPN 网关连接。](../media/connections-status-connected.png)
-
- 
 
 ## 任务 11：测试 VM 间的连接
 

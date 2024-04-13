@@ -6,10 +6,11 @@ Exercise:
 
 # 模块 06-单元 4 使用 Azure 门户在虚拟网络上配置 DDoS 防护
 
+## 练习场景
+
 作为 Contoso 网络安全团队的负责人，你将在虚拟网络上运行模拟 DDoS 攻击。 以下步骤将引导你完成创建虚拟网络、配置 DDoS 防护以及创建攻击，你可以借助遥测和指标的帮助进行观察和监视。
 
 ![DDoS 体系结构图。](../media/4-exercise-configure-ddos-protection-virtual-network-using-azure-portal.png)
-
 
 通过学习本练习，你将能够：
 
@@ -24,8 +25,7 @@ Exercise:
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-
-#### 估计时间：40 分钟
+### 估计时间：40 分钟
 
 ## 任务 1：创建资源组
 
@@ -33,7 +33,7 @@ Exercise:
 
 1. 在 Azure 门户主页上，选择“资源组”。
 
-1. 选择“创建”。 
+1. 选择“创建”。
 
 1. 在“基本信息”选项卡上的“资源组”中，输入“MyResourceGroup”。
 
@@ -42,8 +42,6 @@ Exercise:
 1. 选择“查看 + 创建”。
 
 1. 选择“创建”。
-
-
 
 ## 任务 2：创建 DDoS 防护计划
 
@@ -57,8 +55,6 @@ Exercise:
 
 1. 选择“创建”。
 
- 
-
 ## 任务 3：在新的虚拟网络上启用 DDoS 防护
 
 在此，你将在新的虚拟网络而不是现有虚拟网络上启用 DDoS，因此，首先需要创建新的虚拟网络，然后使用你之前创建的计划对其启用 DDoS 防护。
@@ -69,7 +65,7 @@ Exercise:
 
 1. 在“基本信息”选项卡上，选择先前创建的资源组。
 
-1. 在“名称”框中，输入“MyVirtualNetwork”，然后选择“安全性”选项卡  。 
+1. 在“名称”框中，输入“MyVirtualNetwork”，然后选择“安全性”选项卡  。
 
 1. 在“安全性”选项卡的“DDoS 网络保护”旁边，选择“启用”  。
 
@@ -80,8 +76,6 @@ Exercise:
 1. 选择“查看 + 创建”。
 
 1. 选择“创建”。
-
- 
 
 ## 任务 4：配置 DDoS 遥测
 
@@ -119,8 +113,6 @@ Exercise:
 
     ![为 DDoS 遥测创建的指标](../media/metrics-created-for-ddos-telemetry.png)
 
- 
-
 ## 任务 5：配置 DDoS 诊断日志
 
 1. 在 Azure 主页上，选择“所有资源”。
@@ -129,9 +121,9 @@ Exercise:
 
 1. 在“监视”下，选择“诊断设置” 。
 
-1. 选择“添加诊断设置”。 
+1. 选择“添加诊断设置”。
 
-1. 在“诊断设置”页上的“诊断设置名称”框中，输入“MyDiagnosticSetting”。 
+1. 在“诊断设置”页上的“诊断设置名称”框中，输入“MyDiagnosticSetting”。
 
 1. 在“类别详细信息”下，选中所有 3 个“日志”复选框和“AllMetrics”复选框。
 
@@ -142,8 +134,6 @@ Exercise:
 1. 正常情况下，现在可以选择“保存”以保存诊断设置。 请注意，此选项仍灰显，因为我们尚未完成设置配置。
 
 1. 依次选择“放弃”、“是”。
-
- 
 
 ## 任务 6：配置 DDoS 警报
 
@@ -164,15 +154,13 @@ Exercise:
    | 虚拟机名称  | MyVirtualMachine                                         |
    | 区域                | 你的区域                                                  |
    | 可用性选项  | 不需要基础结构冗余                   |
-   | 映像                 | Ubuntu Server 20.04 LTS - 第 2 代（如果需要，请选择“配置 VM 生成链接”） |                     
+   | 映像                 | Ubuntu Server 20.04 LTS - 第 2 代（如果需要，请选择“配置 VM 生成链接”） |
    | 大小                  | 选择“查看所有大小”，然后在列表中选择“B1ls”并选择“选择”“(Standard_B1ls - 1 vcpu，0.5 GiB内存)” |
    | 身份验证类型   | **SSH 公钥**                                           |
    | 用户名              | **azureuser**                                                |
    | SSH 公钥源 | 生成新密钥对                                    |
    | 密钥对名称         | myvirtualmachine-ssh-key                                 |
    | 公共入站端口  | 全部不选                                                  |
-
-
 
 1. 选择“查看 + 创建”。
 
@@ -224,10 +212,7 @@ Exercise:
 
 1. 选择“创建警报规则”。
 
- 
-
 ## 任务 7：使用模拟合作伙伴进行测试
-
 
 1. 查看 [Azure DDoS 模拟测试策略](https://learn.microsoft.com/azure/ddos-protection/test-through-simulations#azure-ddos-simulation-testing-policy)
 
@@ -235,7 +220,7 @@ Exercise:
 
 1. 在 Azure 门户主页上，选择“所有资源”。
 
-1. 在资源列表中，选择“MyPublicIPAddress”资源，然后在“监视”下选择“指标”。 
+1. 在资源列表中，选择“MyPublicIPAddress”资源，然后在“监视”下选择“指标”。
 
 1. 在“指标”框中，从列表中选择“是否受到 DDoS 攻击”。
 
@@ -243,7 +228,6 @@ Exercise:
 
    ![显示受 DDoS 攻击的资源的指标](../media/metrics-showing-resource-under-attack.png)
 
- 
 ## 任务 8：清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。

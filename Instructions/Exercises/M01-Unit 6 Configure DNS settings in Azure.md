@@ -6,7 +6,8 @@ Exercise:
 
 # 模块 01 - 第 6 单元 在 Azure 中配置 DNS 设置
 
-## 练习场景 
+## 练习场景
+
 在本单元中，你将为 Contoso Ltd 配置 DNS 名称解析。你将创建一个名为 contoso.com 的专用 DNS 区域，链接 VNet 进行注册和解析，然后创建两个虚拟机并测试配置。
 
 ![DNS 体系结构图。](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
@@ -20,7 +21,7 @@ Exercise:
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-#### 预计用时：25 分钟
+### 预计用时：25 分钟
 
 ## 任务 1：创建专用 DNS 区域
 
@@ -39,7 +40,6 @@ Exercise:
 |                 | 名称                                   | Contoso.com          |
 | Tags            | 无需更改                    |                      |
 | 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
-
 
 5. 等待部署完成，然后选择“转到资源”。
 
@@ -63,12 +63,11 @@ Exercise:
 | 启用自动注册            | 选定                                |
 | 检查设置，然后选择“确定”。 |                                         |
 
-
 4. 选择“刷新”。
 
 5. 验证是否已创建 CoreServicesVnetLink，以及是否已启用自动注册。
 
-6. 使用下表中的信息，对 ManufacturingVnet 重复步骤 2 - 5： 
+6. 使用下表中的信息，对 ManufacturingVnet 重复步骤 2 - 5：
 
 | **选项**                          | 值                                |
 | ----------------------------------- | ---------------------------------------- |
@@ -78,12 +77,11 @@ Exercise:
 | 启用自动注册            | 选定                                 |
 | 检查设置，然后选择“确定”。 |                                          |
 
-
 7. 选择“刷新”。
 
 8. 验证是否已创建 ManufacturingVnetLink，以及是否已启用自动注册。
 
-9. 使用下表中的信息，对 ResearchVnet 重复步骤 2 - 5： 
+9. 使用下表中的信息，对 ResearchVnet 重复步骤 2 - 5：
 
 | **选项**                          | 值                           |
 | ----------------------------------- | ----------------------------------- |
@@ -93,19 +91,16 @@ Exercise:
 | 启用自动注册            | 选定                            |
 | 检查设置，然后选择“确定”。 |                                     |
 
-
 10. 选择“刷新”。
 
 11. 验证是否已创建 ResearchVnetLink，以及是否已启用自动注册。
 
- 
-
-##  任务 3：创建虚拟机以测试配置
+## 任务 3：创建虚拟机以测试配置
 
 在本部分中，你将创建两个测试 VM 来测试专用 DNS 区域配置。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
-    
+
     > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
 
 2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录    。
@@ -124,8 +119,6 @@ Exercise:
 
 5. 验证是否已创建两个虚拟机。
 
- 
-
 ## 任务 4：验证 DNS 区域中是否存在记录
 
 1. 在 Azure 门户主页上，选择“专用 DNS 区域”。
@@ -136,11 +129,7 @@ Exercise:
 
 ![显示已自动注册的主机 A 记录的 Contoso.com DNS 区域。](../media/contoso_com-dns-zone.png)
 
- 
-
 4. 记下 VM 的名称和 IP 地址。
-
- 
 
 ### 使用 RDP 连接到测试 VM
 
@@ -173,6 +162,5 @@ Exercise:
 1. 验证 FQDN 是否解析为你在专用 DNS 区域中记下的 IP 地址。 由于 VM 上启用了 Windows 防火墙，ping 本身将超时。
 
 1. 或者，可以输入命令 nslookup TestVM2.contoso.com，并验证是否收到成功的 VM2 名称解析记录
- 
 
-祝贺你！ 你已经创建了一个专用 DNS 区域、添加了名称解析和自动注册链接，并在配置中测试了名称解析。 
+祝贺你！ 你已经创建了一个专用 DNS 区域、添加了名称解析和自动注册链接，并在配置中测试了名称解析。
