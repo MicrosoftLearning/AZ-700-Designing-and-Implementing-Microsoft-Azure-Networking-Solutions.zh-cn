@@ -27,85 +27,86 @@ Exercise:
 
 1. 转到 [Azure 门户](https://portal.azure.com/)。
 
-2. 在 Azure 主页上的搜索栏中，输入“dns”，然后选择“专用 DNS 区域”。  
-   ‎![具有 dns 搜索的 Azure 门户主页。](../media/create-private-dns-zone.png)
+1. 在 Azure 主页上的搜索栏中，输入“dns”，然后选择“专用 DNS 区域”。  
+   ![包含 DNS 搜索的 Azure 门户主页。](../media/create-private-dns-zone.png)
 
-3. 在专用 DNS 区域中，选择“+ 创建”。
+1. 在专用 DNS 区域中，选择“+ 创建”。
 
-4. 使用下表中的信息创建专用 DNS 区域。
+1. 使用下表中的信息创建专用 DNS 区域。
 
-| Tab         | **选项**                             | **值**            |
-| --------------- | -------------------------------------- | -------------------- |
-| 基础          | 资源组                         | ContosoResourceGroup |
-|                 | 名称                                   | Contoso.com          |
-| Tags            | 无需更改                    |                      |
-| 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
+    | Tab         | **选项**                             | **值**            |
+    | --------------- | -------------------------------------- | -------------------- |
+    | 基础          | 资源组                         | ContosoResourceGroup |
+    |                 | 名称                                   | Contoso.com          |
+    | Tags            | 无需更改                    |                      |
+    | 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
 
-5. 等待部署完成，然后选择“转到资源”。
+1. 等待部署完成，然后选择“转到资源”。
 
-6. 验证是否已创建区域。
+1. 验证是否已创建区域。
 
 ## 任务 2：链接子网进行自动注册
 
 1. 在“Contoso.com”中的“设置”下，选择“虚拟网络链接”。
 
-2. 在“Contoso.com | 虚拟网络”链接上，选择“+ 添加”。
+1. 在“Contoso.com \| 虚拟网络”链接上，选择“+ 添加”****。
 
-![突出显示了“+ 添加”的“contoso.com | 虚拟网络链接”。](../media/add-network-link-dns.png)
+    ![突出显示了“+ 添加”的“Contoso.com \| 虚拟网络链接”。](../media/add-network-link-dns.png)
 
-3. 使用下表中的信息添加虚拟网络链接。
+1. 使用下表中的信息添加虚拟网络链接。
 
-| **选项**                          | 值                               |
-| ----------------------------------- | --------------------------------------- |
-| 链接名称                           | CoreServicesVnetLink                    |
-| 订阅                        | 无需更改                     |
-| 虚拟网络                     | CoreServicesVnet (ContosoResourceGroup) |
-| 启用自动注册            | 选定                                |
-| 检查设置，然后选择“确定”。 |                                         |
+    | **选项**                          | 值                               |
+    | ----------------------------------- | --------------------------------------- |
+    | 链接名称                           | CoreServicesVnetLink                    |
+    | 订阅                        | 无需更改                     |
+    | 虚拟网络                     | CoreServicesVnet (ContosoResourceGroup) |
+    | 启用自动注册            | 选定                                |
+    | 检查设置，然后选择“确定”。 |                                         |
 
-4. 选择“刷新”。
+1. 选择“刷新”。
 
-5. 验证是否已创建 CoreServicesVnetLink，以及是否已启用自动注册。
+1. 验证是否已创建 CoreServicesVnetLink，以及是否已启用自动注册。
 
-6. 使用下表中的信息，对 ManufacturingVnet 重复步骤 2 - 5：
+1. 使用下表中的信息，对 ManufacturingVnet 重复步骤 2 - 5：
 
-| **选项**                          | 值                                |
-| ----------------------------------- | ---------------------------------------- |
-| 链接名称                           | ManufacturingVnetLink                    |
-| 订阅                        | 无需更改                      |
-| 虚拟网络                     | ManufacturingVnet (ContosoResourceGroup) |
-| 启用自动注册            | 选定                                 |
-| 检查设置，然后选择“确定”。 |                                          |
+    | **选项**                          | 值                                |
+    | ----------------------------------- | ---------------------------------------- |
+    | 链接名称                           | ManufacturingVnetLink                    |
+    | 订阅                        | 无需更改                      |
+    | 虚拟网络                     | ManufacturingVnet (ContosoResourceGroup) |
+    | 启用自动注册            | 选定                                 |
+    | 检查设置，然后选择“确定”。 |                                          |
 
-7. 选择“刷新”。
+1. 选择“刷新”。
 
-8. 验证是否已创建 ManufacturingVnetLink，以及是否已启用自动注册。
+1. 验证是否已创建 ManufacturingVnetLink，以及是否已启用自动注册。
 
-9. 使用下表中的信息，对 ResearchVnet 重复步骤 2 - 5：
+1. 使用下表中的信息，对 ResearchVnet 重复步骤 2 - 5：
 
-| **选项**                          | 值                           |
-| ----------------------------------- | ----------------------------------- |
-| 链接名称                           | ResearchVnetLink                    |
-| 订阅                        | 无需更改                 |
-| 虚拟网络                     | ResearchVnet (ContosoResourceGroup) |
-| 启用自动注册            | 选定                            |
-| 检查设置，然后选择“确定”。 |                                     |
+    | **选项**                          | 值                           |
+    | ----------------------------------- | ----------------------------------- |
+    | 链接名称                           | ResearchVnetLink                    |
+    | 订阅                        | 无需更改                 |
+    | 虚拟网络                     | ResearchVnet (ContosoResourceGroup) |
+    | 启用自动注册            | 选定                            |
+    | 检查设置，然后选择“确定”。 |                                     |
 
-10. 选择“刷新”。
+1. 选择“刷新”。
 
-11. 验证是否已创建 ResearchVnetLink，以及是否已启用自动注册。
+1. 验证是否已创建 ResearchVnetLink，以及是否已启用自动注册。
 
 ## 任务 3：创建虚拟机以测试配置
 
 在本部分中，你将创建两个测试 VM 来测试专用 DNS 区域配置。
 
-1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
+1. 在 Azure 门户中，选择右上角的 Cloud Shell 图标。 如有必要，请配置 Shell。  
+    + 选择“PowerShell”****。
+    + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
+    + 等待终端创建并显示提示。 
 
-    > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
+1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录    。
 
-2. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录    。
-
-3. 部署以下 ARM 模板以创建此练习所需的 VM：
+1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
     >注意：系统会提示你提供管理员密码。
 
@@ -115,21 +116,21 @@ Exercise:
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
   
-4. 部署完成后，转到 Azure 门户主页，然后选择“虚拟机”。
+1. 部署完成后，转到 Azure 门户主页，然后选择“虚拟机”。
 
-5. 验证是否已创建两个虚拟机。
+1. 验证是否已创建两个虚拟机。
 
 ## 任务 4：验证 DNS 区域中是否存在记录
 
 1. 在 Azure 门户主页上，选择“专用 DNS 区域”。
 
-2. 在专用 DNS 区域中，选择“contoso.com”。
+1. 在专用 DNS 区域中，选择“contoso.com”。
 
-3. 验证是否为两个 VM 列出了主机 (A) 记录，如下所示：
+1. 验证是否为两个 VM 列出了主机 (A) 记录，如下所示：
 
-![显示已自动注册的主机 A 记录的 Contoso.com DNS 区域。](../media/contoso_com-dns-zone.png)
+    ![显示已自动注册的主机 A 记录的 Contoso.com DNS 区域。](../media/contoso_com-dns-zone.png)
 
-4. 记下 VM 的名称和 IP 地址。
+1. 记下 VM 的名称和 IP 地址。
 
 ### 使用 RDP 连接到测试 VM
 
@@ -153,7 +154,7 @@ Exercise:
 
 1. 在两个 VM 上，如果出现提示，请在“网络”中选择“是” 。
 
-1. 在 TestVM1 上，打开命令提示符并输入命令 ipconfig /all。
+1. 在 TestVM1 上，打开命令提示符并输入命令 `ipconfig /all`。
 
 1. 验证 IP 地址是否与在 DNS 区域中记下的地址相同。
 

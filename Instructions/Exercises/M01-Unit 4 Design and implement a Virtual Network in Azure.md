@@ -3,7 +3,8 @@ Exercise:
   title: 模块 01 - 第 4 单元 - 在 Azure 中设计和实现虚拟网络
   module: Module 01 - Introduction to Azure Virtual Networks
 ---
-# 模块 01 第 4 单元 - 在 Azure 中设计和实现虚拟网络
+
+# 模块 01 - 第 4 单元 - 在 Azure 中设计和实现虚拟网络
 
 ## 练习场景
 
@@ -56,104 +57,105 @@ Exercise:
 
 1. 转到 [Azure 门户](https://portal.azure.com/)。
 
-2. 在主页的“Azure 服务”下，选择“资源组”。  
+1. 在主页的“Azure 服务”下，选择“资源组”。  
 
-3. 在“资源组”中，选择“+ 创建”。
+1. 在“资源组”中，选择“+ 创建”。
 
-4. 使用下表中的信息创建资源组。
+1. 使用下表中的信息创建资源组。
 
-| Tab         | **选项**                                 | **值**            |
-| --------------- | ------------------------------------------ | -------------------- |
-| 基础          | 资源组                             | ContosoResourceGroup |
-|                 | 区域                                     | （美国）美国东部         |
-| 标记            | 无需更改                        |                      |
-| 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
+   | Tab         | **选项**                                 | **值**            |
+   | --------------- | ------------------------------------------ | -------------------- |
+   | 基础          | 资源组                             | ContosoResourceGroup |
+   |                 | 区域                                     | （美国）美国东部         |
+   | 标记            | 无需更改                        |                      |
+   | 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
 
-5. 在“资源组”中，验证 ContosoResourceGroup 是否显示在列表中。
+1. 在“资源组”中，验证 ContosoResourceGroup 是否显示在列表中。
 
 ## 任务 2：创建 CoreServicesVnet 虚拟网络和子网
 
 1. 在 Azure 门户主页上，导航到“全局搜索”栏，搜索“虚拟网络”，然后在“服务”下选择“虚拟网络”。  ![Azure 门户主页上“全局搜索”栏中有关虚拟网络的结果。](../media/global-search-bar.PNG)
-2. 在“虚拟网络”页上选择“创建”。  ![创建虚拟网络向导。](../media/create-virtual-network.png)
-3. 使用下表中的信息创建 CoreServicesVnet 虚拟网络。  
-   ‎删除或覆盖默认 IP 地址空间![Azure 虚拟网络部署的 IP 地址配置 ](../media/default-vnet-ip-address-range-annotated.png)
 
-| Tab      | **选项**         | **值**            |
-| ------------ | ------------------ | -------------------- |
-| 基础       | 资源组     | ContosoResourceGroup |
-|              | 名称               | CoreServicesVnet     |
-|              | 区域             | （美国）美国东部         |
-| IP 地址 | IPv4 地址空间 | 10.20.0.0/16         |
+1. 在“虚拟网络”页上选择“创建”。  ![创建虚拟网络向导。](../media/create-virtual-network.png)
+1. 使用下表中的信息创建 CoreServicesVnet 虚拟网络。  
+   删除或覆盖默认 IP 地址空间。 ![Azure 虚拟网络部署的 IP 地址配置 ](../media/default-vnet-ip-address-range-annotated.png)
 
- 4. 使用下表中的信息创建 CoreServicesVnet 子网。
+   | Tab      | **选项**         | **值**            |
+   | ------------ | ------------------ | -------------------- |
+   | 基础       | 资源组     | ContosoResourceGroup |
+   |              | 名称               | CoreServicesVnet     |
+   |              | 区域             | （美国）美国东部         |
+   | IP 地址 | IPv4 地址空间 | 10.20.0.0/16         |
 
- 5. 若要开始创建每个子网，请选择“+ 添加子网”。 若要完成创建每个子网，请选择“添加”。
+1. 使用下表中的信息创建 CoreServicesVnet 子网。
 
-| **子网**             | **选项**           | 值              |
-| ---------------------- | -------------------- | ---------------------- |
-| GatewaySubnet          | 子网名称          | GatewaySubnet          |
-|                        | 子网地址范围 | 10.20.0.0/27           |
-| SharedServicesSubnet   | 子网名称          | SharedServicesSubnet   |
-|                        | 子网地址范围 | 10.20.10.0/24          |
-| DatabaseSubnet         | 子网名称          | DatabaseSubnet         |
-|                        | 子网地址范围 | 10.20.20.0/24          |
-| PublicWebServiceSubnet | 子网名称          | PublicWebServiceSubnet |
-|                        | 子网地址范围 | 10.20.30.0/24          |
+1. 若要开始创建每个子网，请选择“+ 添加子网”。 若要完成创建每个子网，请选择“添加”。
 
- 6. 若要完成创建 CoreServicesVnet 及其关联的子网，请选择“审阅并创建”。
+   | **子网**             | **选项**           | 值              |
+   | ---------------------- | -------------------- | ---------------------- |
+   | GatewaySubnet          | 子网名称          | GatewaySubnet          |
+   |                        | 子网地址范围 | 10.20.0.0/27           |
+   | SharedServicesSubnet   | 子网名称          | SharedServicesSubnet   |
+   |                        | 子网地址范围 | 10.20.10.0/24          |
+   | DatabaseSubnet         | 子网名称          | DatabaseSubnet         |
+   |                        | 子网地址范围 | 10.20.20.0/24          |
+   | PublicWebServiceSubnet | 子网名称          | PublicWebServiceSubnet |
+   |                        | 子网地址范围 | 10.20.30.0/24          |
 
- 7. 验证配置是否通过验证，然后选择“创建”。
+1. 若要完成创建 CoreServicesVnet 及其关联的子网，请选择“审阅并创建”。
 
- 8. 根据下表对每个 VNet 重复步骤 1 - 8  
+1. 验证配置是否通过验证，然后选择“创建”。
+
+1. 根据下表对每个 VNet 重复步骤 1 - 8  
 
 ## 任务 3：创建 ManufacturingVnet 虚拟网络和子网
 
-| Tab      | **选项**         | **值**            |
-| ------------ | ------------------ | -------------------- |
-| 基础       | 资源组     | ContosoResourceGroup |
-|              | 名称               | ManufacturingVnet    |
-|              | 区域             | （欧洲）西欧 |
-| IP 地址 | IPv4 地址空间 | 10.30.0.0/16         |
+   | Tab      | **选项**         | **值**            |
+   | ------------ | ------------------ | -------------------- |
+   | 基础       | 资源组     | ContosoResourceGroup |
+   |              | 名称               | ManufacturingVnet    |
+   |              | 区域             | （欧洲）西欧 |
+   | IP 地址 | IPv4 地址空间 | 10.30.0.0/16         |
 
-| **子网**                | **选项**           | 值                 |
-| ------------------------- | -------------------- | ------------------------- |
-| ManufacturingSystemSubnet | 子网名称          | ManufacturingSystemSubnet |
-|                           | 子网地址范围 | 10.30.10.0/24             |
-| SensorSubnet1             | 子网名称          | SensorSubnet1             |
-|                           | 子网地址范围 | 10.30.20.0/24             |
-| SensorSubnet2             | 子网名称          | SensorSubnet2             |
-|                           | 子网地址范围 | 10.30.21.0/24             |
-| SensorSubnet3             | 子网名称          | SensorSubnet3             |
-|                           | 子网地址范围 | 10.30.22.0/24             |
+   | **子网**                | **选项**           | 值                 |
+   | ------------------------- | -------------------- | ------------------------- |
+   | ManufacturingSystemSubnet | 子网名称          | ManufacturingSystemSubnet |
+   |                           | 子网地址范围 | 10.30.10.0/24             |
+   | SensorSubnet1             | 子网名称          | SensorSubnet1             |
+   |                           | 子网地址范围 | 10.30.20.0/24             |
+   | SensorSubnet2             | 子网名称          | SensorSubnet2             |
+   |                           | 子网地址范围 | 10.30.21.0/24             |
+   | SensorSubnet3             | 子网名称          | SensorSubnet3             |
+   |                           | 子网地址范围 | 10.30.22.0/24             |
 
 ## 任务 4：创建 ResearchVnet 虚拟网络和子网
 
-| Tab      | **选项**         | **值**            |
-| ------------ | ------------------ | -------------------- |
-| 基础       | 资源组     | ContosoResourceGroup |
-|              | 名称               | ResearchVnet         |
-|              | 区域             | 东南亚       |
-| IP 地址 | IPv4 地址空间 | 10.40.0.0/16         |
+   | Tab      | **选项**         | **值**            |
+   | ------------ | ------------------ | -------------------- |
+   | 基础       | 资源组     | ContosoResourceGroup |
+   |              | 名称               | ResearchVnet         |
+   |              | 区域             | 东南亚       |
+   | IP 地址 | IPv4 地址空间 | 10.40.0.0/16         |
 
-| **子网**           | **选项**           | 值            |
-| -------------------- | -------------------- | -------------------- |
-| ResearchSystemSubnet | 子网名称          | ResearchSystemSubnet |
-|                      | 子网地址范围 | 10.40.0.0/24         |
+   | **子网**           | **选项**           | 值            |
+   | -------------------- | -------------------- | -------------------- |
+   | ResearchSystemSubnet | 子网名称          | ResearchSystemSubnet |
+   |                      | 子网地址范围 | 10.40.0.0/24         |
 
 ## 任务5：验证 VNet 和子网的创建
 
 1. 在 Azure 门户主页上，选择“所有资源”。
 
-2. 验证是否列出了 CoreServicesVnet、ManufacturingVnet 和 ResearchVnet。
+1. 验证是否列出了 CoreServicesVnet、ManufacturingVnet 和 ResearchVnet。
 
-3. 选择“CoreServicesVNet”。
+1. 选择“CoreServicesVNet”。
 
-4. 在“CoreServicesVnet”中的“设置”下，选择“子网”。
+1. 在“CoreServicesVnet”中的“设置”下，选择“子网”。
 
-5. 在“CoreServicesVnet | 子网”中，验证是否列出了已创建的子网，以及 IP 地址范围是否正确。
+1. 在“CoreServicesVnet \| 子网”中，验证是否列出了已创建的子网，以及 IP 地址范围是否正确。
 
    ![CoreServicesVnet 中的子网列表。](../media/verify-subnets-annotated.png)
 
-6. 对每个 VNet 重复步骤 3 - 5。
+1. 对每个 VNet 重复步骤 3 - 5。
 
 祝贺你！ 你已成功创建一个资源组、三个 VNet 及其关联的子网。

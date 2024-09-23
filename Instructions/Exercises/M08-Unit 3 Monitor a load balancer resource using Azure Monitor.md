@@ -180,9 +180,10 @@ Exercise:
 
 在本部分中，你将为负载均衡器的后端池创建三个 VM，将这些 VM 添加到后端池，然后在这三个 VM 上安装 IIS 以测试负载均衡器。
 
-1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
-
- > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
+1. 在 Azure 门户中，选择右上角的 Cloud Shell 图标。 如有必要，请配置 Shell。  
+    + 选择“PowerShell”****。
+    + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
+    + 等待终端创建并显示提示。 
 
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 azuredeploy.json 和 azuredeploy.parameters.json 文件从源文件夹 F:\Allfiles\Exercises\M08 逐个上传到 Cloud Shell 主目录。
 
