@@ -57,11 +57,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
    | SUBNETS       |                                    |
    | 子网名称       | 将“默认值”更改为“AGSubnet” |
    | 地址范围     | 10.0.0.0/24                        |
-   | 子网名称       | BackendSubnet                      |
-   | 地址范围     | 10.0.1.0/24                        |
 
-
->注意：如果 UI 没有添加其他子网的选项，请在创建网关后完成这些步骤并添加后端子网。 
 
 1. 选择“确定”以返回到“创建应用程序网关”的“基本信息”选项卡。
 
@@ -92,13 +88,14 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 1. 在“规则名称”框中，输入“RoutingRule” 。
 
+1. 对于“**优先级**”，请输入“**100**”。 
+
 1. 在“侦听器”选项卡上，输入或选择以下信息：
 
     | **设置**   | **值**         |
     | ------------- | ----------------- |
     | 侦听器名称 | 侦听器          |
-    | 优先级      | **100**           |
-    | 前端 IP   | 选择“公共” |
+    | 前端 IP   | 选择“**公共 IPv4**” |
 
 1. 接受“侦听器”选项卡上其他设置的默认值。
 
@@ -130,30 +127,59 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 1. 选择“创建”以创建虚拟网络、公共 IP 地址和应用程序网关。
 
-Azure 可能需要数分钟时间来创建应用程序网关。 请等待部署成功完成，然后再前进到下一部分。
+1. Azure 可能需要数分钟时间来创建应用程序网关。 等待部署成功完成。
+
+### 为后端服务器添加子网
+
+1. 搜索并选择“**ContosoVNet**”。 验证是否已创建 **AGSubnet**。 
+
+1. 要创建 **BackendSubnet**，请选择“**设置**”，然后选择“**子网**”。 完成后，请务必“**添加**”子网。
+   
+   | **设置**       | **值**                          |
+   | ----------------- | ---------------------------------- |
+   | 子网名称       | BackendSubnet                      |
+   | 地址范围     | 10.0.1.0/24                        |
 
 ## 任务 2：创建虚拟机
 
-1. 在 Azure 门户中，选择右上角的 Cloud Shell 图标。 如有必要，请配置 Shell。  
+1. 在 Azure 门户中，选择 Cloud Shell 图标（右上角）。 如有必要，请配置 Shell。  
     + 选择“PowerShell”****。
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。
       
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 backend.json 和 backend.parameters.json 从源文件夹 F:\Allfiles\Exercises\M05 逐个上传到 Cloud Shell 主目录    。
+1. 在 Cloud Shell 窗格的工具栏上，选择“**管理文件**”，然后选择“**上传**”。 上传以下文件：**backend.json**、**backend.parameters.json** 和 **install-iis.ps1**。可从存储库 **\Allfiles\Exercises\M05** 文件夹下载这些文件。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
->注意：系统会提示你提供管理员密码。
+>注意：系统会提示你提供管理员密码。 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile backend.json -TemplateParameterFile backend.parameters.json
    ```
-  
-1. 部署完成后，转到 Azure 门户主页，然后选择“虚拟机”。
+>**备注**：请花时间查看 **backend.json** 文件。 正在部署两个虚拟机。 这需要几分钟时间。 
 
-1. 验证是否已创建两个虚拟机。
+1. 命令应成功完成，并列出 **BackendVM1** 和 **BackendVM2**。
+
+### 在每台虚拟机上安装 IIS
+
+1. 每台后端服务器都需要安装 IIS。
+
+1. 在 PowerShell 提示符处继续操作，并使用提供的脚本在 **BackendVM1**上安装 IIS。
+
+   ```powershell
+   Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM1' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
+   ```
+
+>**备注**：等待时，请查看 PowerShell 脚本。 请注意，正在自定义 IIS 主页以提供虚拟机名称。
+
+1. 再次运行命令，这次针对 **BackendVM2**。
+
+   ```powershell
+   Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM2' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
+   ```
+>**备注：** 每个命令需要几分钟时间完成。
 
 ## 任务 3：将后端服务器添加到后端池
 
@@ -165,17 +191,19 @@ Azure 可能需要数分钟时间来创建应用程序网关。 请等待部署�
 
 1. 在“编辑后端池”页的“后端目标”下，在“目标类型”中，选择“虚拟机”。
 
-1. 在“目标”下，选择“BackendVM1”。
+1. 在“**目标**”下，选择 **BackendVM1-nic。**
 
 1. 在“目标类型”中，选择“虚拟机” 。
 
-1. 在“目标”下，选择“BackendVM2”。
+1. 在“**目标**”下，选择 **BackendVM2-nic。**
 
    ![在 Azure 门户中，将目标后端添加到后端池](../media/edit-backend-pool.png)
 
-1. 选择“保存”。
+1. 选择“**保存**”，等待添加目标。 
 
-等待部署完成之后再继续下一步。
+1. 检查以确保后端服务器正常运行。 选择“**监控**”，然后选择“**后端运行状况**”。 两个目标应为“正常”。 
+
+   ![在 Azure 门户中检查后端运行状况。](../media/contoso-backend-health.png)
 
 ## 任务 4：测试应用程序网关
 
@@ -194,5 +222,6 @@ Azure 可能需要数分钟时间来创建应用程序网关。 请等待部署�
    ![浏览器 - 显示 BackendVM1 或 BackendVM2，具体取决于响应请求的后端服务器。](../media/browse-to-backend.png)
 
 1. 多次刷新浏览器就会看到与 BackendVM1 和 BackendVM2 的连接。
+
 
 祝贺你！ 你已配置并测试了 Azure 应用程序网关。
