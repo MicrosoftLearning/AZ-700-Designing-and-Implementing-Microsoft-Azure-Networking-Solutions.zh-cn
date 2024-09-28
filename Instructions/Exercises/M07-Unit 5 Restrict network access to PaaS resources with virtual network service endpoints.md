@@ -249,7 +249,10 @@ Exercise:
 
 若要测试对存储帐户的网络访问，请向每个子网部署 VM。
 
-1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
+1. 在 Azure 门户中，选择右上角的 Cloud Shell 图标。 如有必要，请配置 Shell。  
+    + 选择“PowerShell”****。
+    + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
+    + 等待终端创建并显示提示。 
 
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 VMs.json 和 VMs.parameters.json 从源文件夹 F:\Allfiles\Exercises\M07 逐个上传到 Cloud Shell 主目录    。
 

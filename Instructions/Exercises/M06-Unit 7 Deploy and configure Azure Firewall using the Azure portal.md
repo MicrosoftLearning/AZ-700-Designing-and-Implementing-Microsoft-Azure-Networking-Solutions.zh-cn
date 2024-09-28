@@ -92,7 +92,10 @@ Exercise:
 
 在此任务中，将创建工作负载虚拟机，并将其放置在之前创建的 Workload-SN 子网中。
 
-1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
+1. 在 Azure 门户中，选择右上角的 Cloud Shell 图标。 如有必要，请配置 Shell。  
+    + 选择“PowerShell”****。
+    + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
+    + 等待终端创建并显示提示。 
 
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 firewall.json 和 firewall.parameters.json 从源文件夹 F:\Allfiles\Exercises\M06 逐个上传到 Cloud Shell 主目录    。
 

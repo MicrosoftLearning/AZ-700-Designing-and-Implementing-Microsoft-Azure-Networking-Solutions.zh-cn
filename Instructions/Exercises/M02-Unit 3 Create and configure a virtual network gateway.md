@@ -33,9 +33,10 @@ Exercise:
 
 ## 任务 1：创建 CoreServicesVnet 和 ManufacturingVnet
 
-1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
-
- > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
+1. 在 Azure 门户中，选择右上角的 Cloud Shell 图标。 如有必要，请配置 Shell。  
+    + 选择“PowerShell”****。
+    + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
+    + 等待终端创建并显示提示。 
 
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录
 
@@ -244,7 +245,7 @@ Exercise:
 
 ## 任务 10：验证连接是否成功
 
-1. 在“搜索资源、服务和文档(G+/)”中，输入“连接”，然后从结果中选择“连接”。
+1. 在“**搜索资源、服务和文档(G+/)**”中，输入“**VPN**”，然后从结果中选择“**连接**”。
 
 1. 等待，直到两个连接的状态都为“已连接”。 你可能需要刷新屏幕。
 

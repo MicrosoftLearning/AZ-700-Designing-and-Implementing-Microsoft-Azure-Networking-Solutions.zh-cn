@@ -3,7 +3,8 @@ Exercise:
   title: 模块 01 - 第 8 单元 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
   module: Module 01 - Introduction to Azure Virtual Networks
 ---
-# 模块 01 第 8 单元 - 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
+
+# 模块 01 - 第 8 单元 使用全局虚拟网络对等互连连接两个 Azure 虚拟网络
 
 ## 练习场景
 
@@ -30,8 +31,10 @@ Exercise:
 
 ### 创建 ManufacturingVM
 
-1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
-  > **注意：** 如果这是你首次打开 Cloud Shell，系统会提示你创建存储帐户。 选择“创建存储”。
+1. 在 Azure 门户中，选择右上角的 Cloud Shell 图标。 如有必要，请配置 Shell。  
+    + 选择“PowerShell”****。
+    + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
+    + 等待终端创建并显示提示。 
 
 1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录    。
 
@@ -57,7 +60,7 @@ Exercise:
 
 1. 在“ManufacturingVM”中，选择“连接”&gt;“RDP”。
 
-1. 在“ManufacturingVM | 连接”中，选择“下载 RDP 文件”。
+1. 在“ManufacturingVM \| 连接”中，选择“**下载 RDP 文件**”。
 
 1. 将 RDP 文件保存到桌面。
 
@@ -69,7 +72,7 @@ Exercise:
 
 1. 在 TestVM1 中，选择“连接”&gt;“RDP”。
 
-1. 在“TestVM1 | 连接”中，选择“下载 RDP 文件”。
+1. 在“TestVM1 \| 连接”中，选择“**下载 RDP 文件**”。
 
 1. 将 RDP 文件保存到桌面。
 
@@ -100,34 +103,34 @@ Exercise:
 1. 在 Azure 主页上，选择“虚拟网络”，然后选择“CoreServicesVnet”。
 
 1. 在“CoreServicesVnet”中的“设置”下，选择“对等互连”。
-   ![CoreServicesVnet 对等互连设置的屏幕截图](../media/create-peering-on-coreservicesvnet.png)
+   ![核心服务 Vnet 对等互连设置的屏幕截图](../media/create-peering-on-coreservicesvnet.png)
 
-1. 在“CoreServicesVnet”|“对等互连”上，选择“+ 添加”。
+1. 在“CoreServicesVnet”\|“对等互连”上，选择“+ 添加”****。
 
 1. 使用下表中的信息创建对等互连。
 
-| **节**                          | **选项**                                    | 值                             |
-| ------------------------------------ | --------------------------------------------- | ------------------------------------- |
-| 此虚拟网络                 |                                               |                                       |
-|                                      | 对等互连链接名称                             | 将 CoreServicesVnet 连接到 ManufacturingVnet |
-|                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
-|                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
-|                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
-| 远程虚拟网络               |                                               |                                       |
-|                                      | 对等互连链接名称                             | 将 ManufacturingVnet 连接到 CoreServicesVnet |
-|                                      | 虚拟网络部署模型              | 资源管理器                      |
-|                                      | 我知道我的资源 ID                         | 未选定                          |
-|                                      | 订阅                                  | 选择提供的订阅      |
-|                                      | 虚拟网络                               | ManufacturingVnet                     |
-|                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
-|                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
-|                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
-| 检查设置，然后选择“添加”。 |                                               |                                       |
-|                                      |                                               |                                       |
+   | **节**                          | **选项**                                    | 值                             |
+   | ------------------------------------ | --------------------------------------------- | ------------------------------------- |
+   | 此虚拟网络                 |                                               |                                       |
+   |                                      | 对等互连链接名称                             | 将 CoreServicesVnet 连接到 ManufacturingVnet |
+   |                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
+   |                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
+   |                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
+   | 远程虚拟网络               |                                               |                                       |
+   |                                      | 对等互连链接名称                             | 将 ManufacturingVnet 连接到 CoreServicesVnet |
+   |                                      | 虚拟网络部署模型              | 资源管理器                      |
+   |                                      | 我知道我的资源 ID                         | 未选定                          |
+   |                                      | 订阅                                  | 选择提供的订阅      |
+   |                                      | 虚拟网络                               | ManufacturingVnet                     |
+   |                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
+   |                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
+   |                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
+   | 检查设置，然后选择“添加”。 |                                               |                                       |
+   |                                      |                                               |                                       |
 
- >**注意**：如果你没有“MOC 订阅”，请使用之前一直使用的订阅。 这只是一个名称而已。
+   >**注意**：如果你没有“MOC 订阅”，请使用之前一直使用的订阅。
 
-1. 在“CoreServicesVnet”|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”对等互连。
+1. 在“CoreServicesVnet”\|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”**** 对等互连。
 
 1. 在“虚拟网络”下，选择“ManufacturingVnet”，然后验证是否列出了“将 ManufacturingVnet 连接到 CoreServicesVnet”对等互连。
 
@@ -157,4 +160,4 @@ Exercise:
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+   >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
