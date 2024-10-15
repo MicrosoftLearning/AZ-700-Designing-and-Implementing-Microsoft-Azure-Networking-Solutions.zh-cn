@@ -2,8 +2,8 @@
 
 ## 欢迎使用
 
-- [练习的链接（HTML 格式）](https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/)
-- 你是 MCT 吗？ - 请查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
+- **[练习和演示链接（HTML 格式）](https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/)**
+- **你是 MCT 吗？** - 请查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
 - 若要按自定进度的方式预览该课程，请查看我们提供的 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulations%20-%20Designing%20and%20implementing%20Microsoft%20Azure%20networking%20solutions)** 。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ## 我们要做什么？
