@@ -1,11 +1,13 @@
 ---
 demo:
-  title: 模块 05 - 应用程序网关
   module: Module 05 - Load balancing HTTPS traffic
+  title: 应用程序网关（模块 05）
 ---
 ## 配置 Azure 应用程序网关
 
 在此演示中，我们将了解如何创建 Azure 应用程序网关。 
+
+**模拟：**[部署 Azure 应用程序网关](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)
 
 **参考**：[快速入门：使用 Azure 应用程序网关定向 Web 流量 - Azure 门户](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
 

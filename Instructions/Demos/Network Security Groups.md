@@ -1,6 +1,6 @@
 ---
 demo:
-  title: 模块 06 - 网络安全组
+  title: 网络安全组（模块 06）
   module: Module 06 - Design and Implement Network Security
 ---
 ## 配置网络安全组

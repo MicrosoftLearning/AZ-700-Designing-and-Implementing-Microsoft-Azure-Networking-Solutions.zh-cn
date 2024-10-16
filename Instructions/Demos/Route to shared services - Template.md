@@ -1,6 +1,6 @@
 ---
 demo:
-  title: 路由到共享服务
+  title: 模块 02 - 路由到共享服务
   module: Module 02 - Design and implement hybrid networking
 ---
 请向学生展示以下内容： 

@@ -1,7 +1,7 @@
 ---
 demo:
   module: Module 01 - Introduction to Azure Virtual Networks
-  title: 模块 01 - 自定义路由
+  title: 自定义路由（模块 01）
 ---
 ## 配置网络路由和终结点
 

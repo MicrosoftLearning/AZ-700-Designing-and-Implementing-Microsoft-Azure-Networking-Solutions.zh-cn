@@ -1,14 +1,15 @@
 ---
 demo:
   module: Module 01 - Introduction to Azure Virtual Networks
-  title: 模块 01 - DNS 名称解析
+  title: DNS 名称解析（模块 01）
 ---
 ## 配置 Azure DNS
 
 在本演示中，你将探索 Azure DNS。
 
-参考：[教程：托管域和子域 - Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns)
+**参考：**[模拟：在 Azure 中配置 DNS 设置](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)
 
+参考：[教程：托管域和子域 - Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns)
 
 **创建 DNS 区域**
 
