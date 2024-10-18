@@ -36,7 +36,7 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M01 逐个上传到 Cloud Shell 主目录    。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **ManufacturingVMazuredeploy.json** 和 **ManufacturingVMazuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M01** 逐个上传到 Cloud Shell 主目录。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -107,29 +107,35 @@ Exercise:
 
 1. 在“CoreServicesVnet”\|“对等互连”上，选择“+ 添加”****。
 
-1. 使用下表中的信息创建对等互连。
+1. 使用此信息创建对等互连。 完成后，选择“添加”。**** 
 
-   | **节**                          | **选项**                                    | 值                             |
-   | ------------------------------------ | --------------------------------------------- | ------------------------------------- |
-   | 此虚拟网络                 |                                               |                                       |
-   |                                      | 对等互连链接名称                             | 将 CoreServicesVnet 连接到 ManufacturingVnet |
-   |                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
-   |                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
-   |                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
-   | 远程虚拟网络               |                                               |                                       |
-   |                                      | 对等互连链接名称                             | 将 ManufacturingVnet 连接到 CoreServicesVnet |
-   |                                      | 虚拟网络部署模型              | 资源管理器                      |
-   |                                      | 我知道我的资源 ID                         | 未选定                          |
-   |                                      | 订阅                                  | 选择提供的订阅      |
-   |                                      | 虚拟网络                               | ManufacturingVnet                     |
-   |                                      | 到远程虚拟网络的流量             | 允许（默认）                       |
-   |                                      | 从远程虚拟网络转接的流量 | 允许（默认）                       |
-   |                                      | 虚拟网络网关或路由服务器       | “无”（默认）                        |
-   | 检查设置，然后选择“添加”。 |                                               |                                       |
-   |                                      |                                               |                                       |
+   远程虚拟网络摘要****
 
-   >**注意**：如果你没有“MOC 订阅”，请使用之前一直使用的订阅。
+   | **选项**                                    | 值                             |
+   | ------------------------------------ | --------------------------------------------- | 
+   | 对等互连链接名称    | `CoreServicesVnet-to-ManufacturingVnet` |
+   | 虚拟网络 | ManufacturingVnet |
 
+    远程虚拟网络对等互连设置****
+   
+   | **选项**                                    | 值                             |
+   | ------------------------------------ | --------------------------------------------- | 
+   | 允许 'ManufacturingVnet' 访问 'CoreServicesVnet' | 已启用 |
+   |允许 'ManufacturingVnet' 接收来自 'CoreServicesVnet' 的转发流量 | 已启用 |
+ 
+    本地虚拟网络摘要****
+
+    | **选项**                                    | 值                             |
+    | ------------------------------------ | --------------------------------------------- | 
+    | 对等互连链接名称 | `CoreServicesVnet-to-ManufacturingVnet` |
+ 
+    远程虚拟网络对等互连设置****
+   
+    | **选项**                                    | 值                             |
+    | ------------------------------------ | --------------------------------------------- | 
+    | 允许 'CoreServicesVnet' 访问 'ManufacturingVnet' | 已启用
+    | 允许 'CoreServicesVnet' 接收来自 'ManufacturingVnet' 的转发流量 | 已启用 |
+ 
 1. 在“CoreServicesVnet”\|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”**** 对等互连。
 
 1. 在“虚拟网络”下，选择“ManufacturingVnet”，然后验证是否列出了“将 ManufacturingVnet 连接到 CoreServicesVnet”对等互连。

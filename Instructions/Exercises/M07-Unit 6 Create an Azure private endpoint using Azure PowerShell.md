@@ -31,7 +31,7 @@ Exercise:
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将 template.json 和 parameters.json文件逐个上传到 Cloud Shell 主目录中   。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将**template.json** 和 **parameters.json** 文件逐个上传到 Cloud Shell 主目录。
 
 如果选择在本地安装并使用 PowerShell，则本示例需要 Azure PowerShell 模块 5.4.1 或更高版本。 运行 ```Get-Module -ListAvailable Az``` 查找已安装的版本。 如果需要进行升级，请参阅 [Install Azure PowerShell module](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)（安装 Azure PowerShell 模块）。 如果在本地运行 PowerShell，则还需运行 ```Connect-AzAccount``` 以创建与 Azure 的连接。
 
