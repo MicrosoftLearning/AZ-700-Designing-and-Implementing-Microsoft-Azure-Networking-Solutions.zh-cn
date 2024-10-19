@@ -254,7 +254,7 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 VMs.json 和 VMs.parameters.json 从源文件夹 F:\Allfiles\Exercises\M07 逐个上传到 Cloud Shell 主目录    。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **VMs.json** 和 **VMs.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M06** 逐个上传到 Cloud Shell 主目录。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 

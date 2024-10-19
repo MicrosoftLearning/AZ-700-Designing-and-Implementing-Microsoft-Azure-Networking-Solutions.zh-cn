@@ -38,7 +38,7 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 azuredeploy.json 和 azuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **azuredeploy.json** 和 **azuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M02** 逐个上传到 Cloud Shell 主目录
 
 1. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
 
@@ -55,7 +55,7 @@ Exercise:
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 CoreServicesVMazuredeploy.json 和 CoreServicesVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录    。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **CoreServicesVMazuredeploy.json** 和 **CoreServicesVMazuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M02** 逐个上传到 Cloud Shell 主目录。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -75,7 +75,7 @@ Exercise:
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“上传/下载文件”图标，在下拉菜单中选择“上传”，将文件 ManufacturingVMazuredeploy.json 和 ManufacturingVMazuredeploy.parameters.json 从源文件夹 F:\Allfiles\Exercises\M02 逐个上传到 Cloud Shell 主目录    。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **ManufacturingVMazuredeploy.json** 和 **ManufacturingVMazuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M02** 逐个上传到 Cloud Shell 主目录。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
