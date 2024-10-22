@@ -36,7 +36,7 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **ManufacturingVMazuredeploy.json** 和 **ManufacturingVMazuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M01** 逐个上传到 Cloud Shell 主目录。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **ManufacturingVMazuredeploy.json** 和 **ManufacturingVMazuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M01** 上传到 Cloud Shell 主目录。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -136,9 +136,9 @@ Exercise:
     | 允许 'CoreServicesVnet' 访问 'ManufacturingVnet' | 已启用
     | 允许 'CoreServicesVnet' 接收来自 'ManufacturingVnet' 的转发流量 | 已启用 |
  
-1. 在“CoreServicesVnet”\|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”**** 对等互连。
+1. 在 CoreServicesVnet \| 对等互连中，验证 **CoreServicesVnet-to-ManufacturingVnet** 对等互连是否**已连接**。
 
-1. 在“虚拟网络”下，选择“ManufacturingVnet”，然后验证是否列出了“将 ManufacturingVnet 连接到 CoreServicesVnet”对等互连。
+1. 在“虚拟网络”下，选择 **ManufacturingVnet**，然后验证 **CoreServicesVnet-to-ManufacturingVnet **对等互连是否**已连接**。
 
 ## 任务 5：测试 VM 间的连接
 
