@@ -24,7 +24,7 @@ Exercise:
 + 任务 8：配置目标 NAT (DNAT) 规则
 + 任务 9：更改服务器网络接口的主要和辅助 DNS 地址
 + 任务 10：测试防火墙
-+ 任务 11：清理资源
+
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -364,7 +364,7 @@ Exercise:
 
     ![Srv-work 服务器上 RDP 会话 - 浏览器在 microsoft.com 上受阻](../media/remote-desktop-connection-3.png)
 
-## 任务 11：清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -376,4 +376,24 @@ Exercise:
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 为防火墙提供三种常见使用方案。 
++ 提供一个表，用于比较 Azure 防火墙 SKU 的功能。
++ 介绍可以为 Azure 防火墙创建的三种规则类型。
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure 防火墙简介](https://learn.microsoft.com/training/modules/introduction-azure-firewall/)。 在本模块中，你将了解 Azure 防火墙如何保护 Azure 虚拟网络资源，包括功能、规则和部署选项。
++ [Azure 防火墙管理器简介](https://learn.microsoft.com/training/modules/intro-to-azure-firewall-manager/)。 在本模块中，你将了解 Azure 防火墙管理器如何为基于云的安全外围提供集中安全策略和路由管理。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
++ 防火墙是位于受信任的网络和不受信任的网络（例如 Internet）之间的网络安全功能。 防火墙的工作是分析并允许或拒绝网络流量。
++ Azure 防火墙是一种基于云的防火墙服务。 在大多数配置中，Azure 防火墙在中心虚拟网络中进行预配。 进出辐射虚拟网络和本地网络的流量会定向到防火墙。
++ 防火墙规则评估网络流量。 Azure 防火墙有三种类型的规则：应用程序、网络和 NAT。 
++ Azure 防火墙提供三种 SKU：标准版、高级版和基本版。

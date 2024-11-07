@@ -19,7 +19,7 @@ Exercise:
 + 任务 1：创建 Web 应用的两个实例
 + 任务 2：为应用程序创建 Front Door
 + 任务 3：通过实际操作查看 Azure Front Door
-+ 任务 4：清理资源
+
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -131,9 +131,9 @@ Web 应用停止时可能有延迟。如果在浏览器中出现错误页面，�
 
    祝贺你！ 你已配置并测试了 Azure Front Door。
 
-## 任务 4：清理资源
+## 清理资源
 
-   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
@@ -145,4 +145,24 @@ Web 应用停止时可能有延迟。如果在浏览器中出现错误页面，�
 
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure 应用程序网关 和 Azure Front Door 之间有什么区别？ 提供使用每个产品的示例。
++ 提供配置 Azure Front Door 时要执行的操作的清单。
++ 什么是 Azure Front Door 中的源，它与终结点有何不同？
+
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure Front Door 简介](https://learn.microsoft.com/training/modules/intro-to-azure-front-door/)。 在本模块中，你将了解 Azure Front Door 如何保护应用程序。
++ [使用 Front Door 对 Web 服务流量进行负载均衡](https://learn.microsoft.com/training/modules/create-first-azure-front-door/)。 在本模块中，你将了解如何创建和配置 Azure Front Door。 
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
++ Azure Front Door 是一种基于云的服务，可在全球范围内提供应用程序。 
++ 它使用第 7 层负载均衡跨多个区域和终结点分配流量。
++ Azure Front Door 支持四种不同的流量路由方法，用于确定如何分配 HTTP/HTTPS 流量。 路由方法包括：延迟、优先级、加权和会话亲和性。 

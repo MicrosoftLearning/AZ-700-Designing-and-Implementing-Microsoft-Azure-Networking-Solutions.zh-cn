@@ -21,7 +21,7 @@ Exercise:
 + 任务 5：配置 DDoS 诊断日志
 + 任务 6：配置 DDoS 警报
 + 任务 7：使用模拟合作伙伴进行测试
-+ 任务 8：清理资源
+
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -228,7 +228,7 @@ Exercise:
 
    ![显示受 DDoS 攻击的资源的指标](../media/metrics-showing-resource-under-attack.png)
 
-## 任务 8：清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -240,4 +240,26 @@ Exercise:
    Remove-AzResourceGroup -Name 'MyResourceGroup' -Force -AsJob
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 什么是 DDoS 攻击？ DDoS 攻击如何分类，是否有缓解策略？
++ 提供汇总两个不同的 Azure DDoS 防护层的表。
++ DDoS 防护可以保护哪些 Azure 资源？
+
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure DDoS 防护简介](https://learn.microsoft.com/training/modules/introduction-azure-ddos-protection/)。 在本模块中，你将评估 Azure DDoS 防护及其功能和体系结构选项。
++ [设计和实现网络安全](https://learn.microsoft.com/training/modules/design-implement-network-security-monitoring/)。 在本模块中，你将了解和部署 Azure DDoS 防护。
+
+  
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
++ DDoS 攻击是一种恶意尝试，使应用程序的资源不堪重负，导致合法用户无法使用该应用程序。 
++ Azure DDoS 防护可防御 DDoS 攻击。 这种防护自动经过优化，可帮助保护虚拟网络中的特定 Azure 资源。 
++ Azure DDoS 防护功能包括：始终支持流量监视、自适应实时优化以及遥测和警报。  
++ Azure DDoS 防护支持两种层级类型：DDoS IP 保护和 DDoS 网络保护。
