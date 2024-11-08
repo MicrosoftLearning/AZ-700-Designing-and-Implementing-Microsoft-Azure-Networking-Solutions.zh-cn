@@ -276,7 +276,7 @@ Exercise:
 
 ## 清理资源
 
-   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
@@ -286,4 +286,25 @@ Exercise:
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure 公共和专用负载均衡器有何不同？ 提供每种类型的示例方案。
++ 提供一个表，用于比较 Azure 负载均衡器基本 SKU 和标准 SKU。
++ Azure 负载均衡器如何决定处理传入请求？
+
+
+## 通过自定进度的培训了解详细信息
++ [Azure 负载均衡器简介](https://learn.microsoft.com/training/modules/intro-to-azure-load-balancer/)。 本模块说明 Azure 负载均衡器的功能、工作原理以及何时应选择使用 Azure 负载均衡器作为解决方案来满足组织的需求。
++ [Azure 负载均衡器的入站网络连接故障排除](https://learn.microsoft.com/en-us/training/modules/troubleshoot-inbound-connectivity-azure-load-balancer/)。 在本模块中，你将识别常见 Azure 负载均衡器入站连接问题并进行故障排除。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
++ “负载均衡”是指在一组后端服务器或资源之间有效地分配传入的网络流量。
++ Azure 负载均衡器将来自负载均衡器前端的入站流分配到后端池实例。 这些流的分布依据为所配置的负载均衡规则和运行状况探测。 后端池实例可以是 Azure 虚拟机 (VM)，也可以是虚拟机规模集。
++ Azure 提供公共和专用负载均衡器。 公共负载均衡器非常适合面向 Internet 的应用程序、出站连接和 Web 应用程序。 专用负载均衡器更适用于内部应用程序、后端服务和混合方案。
+
+

@@ -20,7 +20,7 @@ Exercise:
 + 任务 1：创建和预配 ExpressRoute 线路
 + 任务 2：检索服务密钥
 + 任务 3：取消预配 ExpressRoute 线路
-+ 任务 4：清理资源
+
 
 ## 任务 1：创建和预配 ExpressRoute 线路
 
@@ -110,13 +110,13 @@ Exercise:
 >
 > 如果服务提供商已取消预配线路（服务提供商预配状态设置为“未预配”），则可以删除线路。 这样就会停止对线路的计费。
 
-## 任务 4：清理资源
+## 清理资源
 
 可以选择“删除”图标来删除 ExpressRoute 线路。 请先确保提供程序状态为“未预配”，然后再继续操作。
 
 ![Azure 门户 - 删除 ExpressRoute 线路](../media/expressroute-circuit-delete.png)
 
-   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
@@ -127,4 +127,23 @@ Exercise:
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
-   >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 哪些服务提供商可以提供 Azure ExpressRoute？
++ Azure ExpressRoute 最常见的配置问题是什么？ 出现这个问题该怎么办？
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure ExpressRoute 简介](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/)。 在本模块中，了解 Azure ExpressRoute 是什么及其提供的功能。
++ [设计和实现 ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/)。 在本模块中，了解如何设计和实现 Azure ExpressRoute、ExpressRoute Global Reach 和 ExpressRoute FastPath。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
++ 借助 Azure ExpressRoute，组织可以将其本地网络直接连接到 Microsoft Azure 和 Microsoft 365 云。 Azure ExpressRoute 使用由 Microsoft 合作伙伴提供的专用高带宽连接。
++ Microsoft 保证 ExpressRoute 专用连接的可用性至少为 99.95%。 连接是专用的，通过专线传输，第三方无法拦截流量。
++ 在本地网络和 Microsoft 云之间创建连接时，可以采用四种不同的方式：CloudExchange 归置、点到点以太网连接、任意位置之间的 (IPVPN) 连接 和 ExpressRoute Direct。
++ ExpressRoute 功能由 SKU 决定：本地版、标准版和高级版。 

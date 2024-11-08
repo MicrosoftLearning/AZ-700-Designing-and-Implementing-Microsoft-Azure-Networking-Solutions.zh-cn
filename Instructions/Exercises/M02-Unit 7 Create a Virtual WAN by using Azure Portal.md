@@ -17,7 +17,7 @@ Exercise:
 + 任务 1：创建虚拟 WAN
 + 任务 2：使用 Azure 门户创建中心
 + 任务 3：将 VNet 连接到虚拟中心
-+ 任务 4：清理资源
+
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -99,13 +99,11 @@ Exercise:
 
    + 关联路由表：默认
 
-1. 选择“创建” 。
+1. 选择**创建**。
 
-祝贺你！ 你已创建虚拟 WAN 和虚拟 WAN 中心，且已将 ResearchVNet 连接到中心。
+## 清理资源
 
-## 任务 4：清理资源
-
-   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
@@ -115,4 +113,34 @@ Exercise:
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure VWAN 使用哪种类型的网络体系结构？
++ Azure VWAN 基本与标准之间有何差别？ 提供示例。
++ 是否可以使用脚本工具创建 Azure VWAN？
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure 虚拟 WAN 简介](https://learn.microsoft.com/training/modules/introduction-azure-virtual-wan/)。 在本模块中，你将了解 Azure 虚拟 WAN 的功能和特性。 
++ [设计和实现混合网络。](https://learn.microsoft.com/training/modules/design-implement-hybrid-networking/) 在本模块中，你将了解如何设计和实现 Azure 虚拟 WAN。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
+
++ Azure 虚拟 WAN 是一种网络服务，其中整合了多种网络、安全和路由功能，提供单一操作界面
++ 虚拟 WAN 体系结构是一种内置了规模和性能的中心辐射型体系结构，适用于分支、用户、ExpressRoute 线路和虚拟网络。
++ 虚拟 WAN 有三个主要用例：站点到站点、点到站点和 ExpressRoute。 
++ 虚拟 WAN 分为两种类型：“基本”（仅站点到站点 VPN）和“标准”。
+
+
+
+
+
+
+
+
+
