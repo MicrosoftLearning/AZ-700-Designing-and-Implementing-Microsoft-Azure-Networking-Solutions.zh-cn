@@ -287,4 +287,26 @@ Exercise:
 
 1. 关闭远程桌面连接。
 
-祝贺你！ 你已使用虚拟网关配置了一个 VNet 到 VNet 连接。
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure VPN 网关的主要类型有哪些，每种类型的使用原因是什么？
++ 选择 Azure VPN 网关 SKU 时，应考虑哪些因素？ 提供示例。
++ 是否存在与 Azure VPN 网关相关的成本？
+
+
+## 通过自定进度的培训了解详细信息
+
++ [使用 VPN 网关将本地网络连接到 Azure](https://learn.microsoft.com/training/modules/connect-on-premises-network-with-vpn-gateway/)。 在本模块中，你将如何使用 CLI 来预配 VPN 网关。
++ [排查 Microsoft Azure 中 VPN 网关的问题](https://learn.microsoft.com/training/modules/troubleshoot-vpn-gateways/)。 在本模块中，你将了解如何监视和排查站点到站点以及点到站点 VPN 的问题。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
+
++ Azure VPN 网关是一项服务，用于提供本地网络与 Azure 虚拟网络之间的安全连接。
++ 站点到站点 (S2S) 连接用于通过 IPsec/IKE VPN 隧道将本地网络连接到 Azure 虚拟网络。 非常适合混合云方案。
++ 点到站点 (P2S) 连接用于将单个客户端连接到来自远程位置的 Azure 虚拟网络。 VPN 协议包括 OpenVPN、IKEv2 或 SSTP。 适用于远程工作者。
++ VNet 到 VNet 连接用于通过 IPsec/IKE VPN 隧道连接两个或多个 Azure 虚拟网络。 适用于多区域或多 VNet 部署。
++ 不同的 VPN 网关 SKU 提供不同级别的性能、吞吐量和功能。 
+

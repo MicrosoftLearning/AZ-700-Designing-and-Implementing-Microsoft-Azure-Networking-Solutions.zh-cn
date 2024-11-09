@@ -164,4 +164,22 @@ Exercise:
 
 1. 或者，可以输入命令 nslookup TestVM2.contoso.com，并验证是否收到成功的 VM2 名称解析记录
 
-祝贺你！ 你已经创建了一个专用 DNS 区域、添加了名称解析和自动注册链接，并在配置中测试了名称解析。
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure DNS 与 Azure 专用 DNS 有何区别？ 提供何时使用 Azure 专用 DNS 的示例。
++ 创建 Azure DNS 区域时自动注册的目的是什么？
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure DNS 简介](https://learn.microsoft.com/training/modules/intro-to-azure-dns/)。 本模块说明 Azure DNS 的功能、工作原理以及何时应选择使用 Azure DNS 作为解决方案来满足组织的需求。
++ [在 Azure DNS 上托管域](https://learn.microsoft.com/training/modules/host-domain-azure-dns/)。 在本模块中，你将创建一个 DNS 区域和 DNS 记录，以便将域映射到 IP 地址。 还需要进行测试，以确保域名会解析为 Web 服务器。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
+
++ Azure DNS 是一种云服务，可用于承载和管理域名系统 (DNS) 域，也称为 DNS 区域。 
++ Azure DNS 公用区域托管将由 Internet 上的任何主机来解析的记录的域名区域数据。
++ 借助 Azure 专用 DNS 区域，你可以为专用 Azure 资源配置专用 DNS 区域命名空间。
++ DNS 区域是 DNS 记录的集合。 DNS 记录提供关于域的信息。

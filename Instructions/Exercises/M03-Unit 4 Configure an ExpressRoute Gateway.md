@@ -62,9 +62,7 @@ Exercise:
 
 1. 确认 VNet 通过验证，然后选择“创建”。
 
-> [!Note]  
->
-> 如果使用的是双堆栈虚拟网络，并计划通过 ExpressRoute 使用基于 IPv6 的专用对等互连，请选择“添加 IPv6 地址空间”并输入 IPv6 地址范围值。
+>**备注：** 如果使用的是双堆栈虚拟网络，并计划通过 ExpressRoute 使用基于 IPv6 的专用对等互连，请选择“添加 IPv6 地址空间”并输入 IPv6 地址范围值。
 
 ## 任务 2：创建虚拟网络网关。
 
@@ -87,7 +85,6 @@ Exercise:
    | **公共 IP 地址**     |                            |
    | 公共 IP 地址         | 新建                 |
    | 公共 IP 地址名称    | CoreServicesVnetGateway-IP |
-   | 公用 IP 地址 SKU     | 基本                      |
    | 分配                | 不可配置           |
 
 1. 选择“查看 + 创建”  。
@@ -96,8 +93,25 @@ Exercise:
 
 1. 完成部署后，选择“转到资源”。
 
-> [!Note]
->
-> 部署网关可能需要 45 分钟。
+>**注：** 部署网关最多可能需要耗费 45 分钟。
 
-祝贺你！ 已成功创建虚拟网络、网关子网和 ExpressRoute 网关。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure ExpressRoute 与 虚拟 WAN 有何不同？ 你能否结合使用各种技术？ 提供示例。
++ 在 ExpressRoute 提供程序模型和 ExpressRoute Direct 之间进行选择时，应考虑哪些因素？
++ 创建汇总 Azure ExpressRoute SKU 及其功能的表。
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure ExpressRoute 简介](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/)。 在本模块中，了解 Azure ExpressRoute 是什么及其提供的功能。
++ [设计和实现 ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/)。 在本模块中，了解如何设计和实现 Azure ExpressRoute、ExpressRoute Global Reach 和 ExpressRoute FastPath。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
++ 借助 Azure ExpressRoute，组织可以将其本地网络直接连接到 Microsoft Azure 和 Microsoft 365 云。 Azure ExpressRoute 使用由 Microsoft 合作伙伴提供的专用高带宽连接。
++ Microsoft 保证 ExpressRoute 专用连接的可用性至少为 99.95%。 连接是专用的，通过专线传输，第三方无法拦截流量。
++ 在本地网络和 Microsoft 云之间创建连接时，可以采用四种不同的方式：CloudExchange 归置、点到点以太网连接、任意位置之间的 (IPVPN) 连接 和 ExpressRoute Direct。
++ ExpressRoute 功能由 SKU 决定：本地版、标准版和高级版。 

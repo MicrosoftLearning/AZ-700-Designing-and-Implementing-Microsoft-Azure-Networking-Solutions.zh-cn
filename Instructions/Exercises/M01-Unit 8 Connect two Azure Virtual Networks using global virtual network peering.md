@@ -19,7 +19,6 @@ Exercise:
 + 任务 3：测试 VM 间的连接
 + 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
 + 任务 5：测试 VM 间的连接
-+ 任务 6：清理资源
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -152,9 +151,8 @@ Exercise:
 
 1. 测试连接应成功，且你将看到如下所示的结果：![Test-NetConnection 10.20.20.4 - 端口 3389 显示 TCP 测试成功: true 的 Powershell 窗口](../media/test-connection-succeeded.png)
 
-祝贺你！ 通过添加对等互连，你已成功配置 VNet 之间的连接。
 
-## 任务 6：清理资源
+## 清理资源
 
    >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -165,5 +163,26 @@ Exercise:
    ```powershell
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
-
    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+   
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 配置 Azure 虚拟网络对等互连时最常见的错误是什么？
++ 在 Azure 中，如果我将 Vnet1 与 Vnet2 对等互连，然后将 Vnet2 与 Vnet3 对等互连，则 Vnet1 是否与 Vnet3 对等互连？
++ 防火墙和网关是否会影响 Azure 虚拟网络对等互连？
+
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure 虚拟网络的简介](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/)。 在本模块中，你将了解如何设计和实现 Azure 网络服务。 你将了解虚拟网络、公共和专用 IP、DNS、虚拟网络对等互连、路由和 Azure 虚拟 NAT。
++ [跨 Azure 虚拟网络分发服务并通过使用虚拟网络对等互连进行集成](https://learn.microsoft.com/training/modules/integrate-vnets-with-vnet-peering/)。 在本模块中，你将了解如何配置虚拟网络对等互连。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
+
++ 使用虚拟网络对等互连可以无缝连接两个 Azure 虚拟网络。 出于连接目的，两个虚拟网络会显示为一个。
++ Azure 支持在同一 Azure 区域内或跨 Azure 区域（全局）连接虚拟网络。
++ 对等互连虚拟网络中虚拟机之间的流量直接通过 Microsoft 主干基础结构路由，而不通过网关或公共 Internet 路由。
++ 可以调整对等互连的 Azure 虚拟网络的地址空间大小，而不会导致当前对等互连的地址空间出现任何故障。

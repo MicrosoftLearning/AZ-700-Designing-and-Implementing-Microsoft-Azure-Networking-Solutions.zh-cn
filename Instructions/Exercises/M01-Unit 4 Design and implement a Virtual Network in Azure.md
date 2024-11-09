@@ -157,5 +157,26 @@ Exercise:
    ![CoreServicesVnet 中的子网列表。](../media/verify-subnets-annotated.png)
 
 1. 对每个 VNet 重复步骤 3 - 5。
+   
+## 使用 Copilot 扩展学习
 
-祝贺你！ 你已成功创建一个资源组、三个 VNet 及其关联的子网。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 是否可以提供如何在实际方案中使用 10.30.0.0/16 IP 地址的示例？
++ 在东部（美国）区域中创建名为 CoreServicesVnet 的虚拟网络的 Azure PowerShell 命令是什么。 虚拟网络应使用 10.20.0.0/16 IP 地址空间。
++ 在西欧区域创建名为 ManufacturingVnet 的虚拟网络的 Azure CLI 命令是什么。 虚拟网络应使用 10.30.0.0/16 IP 地址空间。
+
+## 通过自定进度的培训了解详细信息
+
++ [为 Azure 部署设计 IP 寻址方案](https://learn.microsoft.com/en-us/training/modules/design-ip-addressing-for-azure/)。 在本模块中，了解 Azure 虚拟网络的公共和专用 IP 寻址功能。
++ [Azure 虚拟网络的简介](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/)。 在本模块中，你将了解如何设计和实现 Azure 网络服务。 你将了解虚拟网络、公共和专用 IP、DNS、虚拟网络对等互连、路由和 Azure 虚拟 NAT。
+
+## 关键结论
+
++ Azure 虚拟网络是为 Azure 中的专用网络提供基础构建基块的服务。 借助服务实例（虚拟网络），多种类型的 Azure 资源可相互之间并与 Internet 和本地网络安全通信。 确保地址空间不会重叠。 确保虚拟网络地址空间（CIDR 块）不会与组织的其他网络范围重叠。
++ 虚拟网络中的所有 Azure 资源都部署到虚拟网络内的子网中。 使用子网可将虚拟网络划分为一个或多个子网络，并向每个子网分配一部分虚拟网络地址空间。 子网不应涵盖虚拟网络的整个地址空间。 提前规划，为将来留出一些地址空间。
+
+
+
+
+
+

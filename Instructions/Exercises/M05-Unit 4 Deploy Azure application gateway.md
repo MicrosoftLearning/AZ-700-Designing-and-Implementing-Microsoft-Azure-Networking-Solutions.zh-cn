@@ -223,5 +223,37 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 1. 多次刷新浏览器就会看到与 BackendVM1 和 BackendVM2 的连接。
 
+## 清理资源
 
-祝贺你！ 你已配置并测试了 Azure 应用程序网关。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+
+1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
+
+1. 通过运行以下命令，删除在此模块的实验室中创建的所有资源组：
+
+   ```powershell
+   Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
+   ```
+
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure 应用程序网关如何路由请求？
++ Azure 应用程序网关包括哪些安全功能？
++ 比较 Azure 应用程序网关和 Azure 负载平衡器。 举例说明何时使用每种产品。
+
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure 应用程序网关简介](https://learn.microsoft.com/training/modules/intro-to-azure-application-gateway/)。 本模块说明 Azure 应用程序网关的功能、工作原理以及何时应选择使用 Azure 应用程序网关作为解决方案来满足组织的需求。
++ [使用应用程序网关对 Web 服务流量进行负载均衡](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/)。 在本模块中，你将了解如何使用基于 URL 路径的路由创建和配置应用程序网关。
++ [在 Azure 中对 HTTP 流量进行负载均衡](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/)。 在本模块中，你将了解如何设计和实现 Azure 应用程序网关。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
++ Azure 应用程序网关是一种 Web 流量（OSI 第 7 层）负载均衡器，可用于管理 Web 应用程序的流量。
++ 应用程序网关可以根据 HTTP 请求的其他属性（例如 URI 路径或主机头）进行路由决策。
++ 对于在单一区域托管的应用程序，以及需要基于 URL 的路由时，请使用应用程序网关。 

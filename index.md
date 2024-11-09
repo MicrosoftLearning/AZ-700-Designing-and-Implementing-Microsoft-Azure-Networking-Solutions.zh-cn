@@ -8,7 +8,7 @@ layout: home
 
 可在[此处下载](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/archive/master.zip)所需的练习文件
 
-向下滚动以查看演示。 
+向下滚动以获取演示。 
 
 ## 练习
 
