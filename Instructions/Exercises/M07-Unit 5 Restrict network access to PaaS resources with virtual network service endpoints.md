@@ -24,7 +24,7 @@ Exercise:
 + 任务 8：限制对子网的网络访问
 + 任务 9：创建虚拟机
 + 任务 10：确认对存储帐户的访问权限
-+ 任务 11：清理资源
+
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -329,9 +329,9 @@ Azure 文件共享已成功映射到驱动器 Z。
 
 结果：你已完成此实验室。
 
-## 任务 11：清理资源
+## 清理资源
 
-   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
@@ -341,4 +341,21 @@ Azure 文件共享已成功映射到驱动器 Z。
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ Azure 服务终结点和专用终结点有何区别？
++ 哪些 Azure 服务可以使用服务终结点？
++ 使用服务终结点限制对 Azure 存储的访问的步骤是什么？
+
+## 通过自定进度的培训了解详细信息
+
++ [使用网络安全组和服务终结点来保护和隔离对 Azure 资源的访问](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/)。 本模块介绍如何使用虚拟网络服务终结点控制传入和传出 Azure 服务的网络流量。
+
+## 关键结论
++ 虚拟网络服务终结点通过提供与 Azure 服务的直接连接来扩展 Azure 中的专用地址空间。
++ 使用服务终结点可以对 Azure 资源进行保护，使其只对你的虚拟网络开放。 服务流量将保留在 Azure 主干网上，不会转出至 Internet。
++ Azure 服务终结点可用于许多服务，例如：Azure 存储、Azure SQL 数据库 和 Azure Cosmos DB。
++ 默认情况下，无法通过本地网络访问虚拟网络服务终结点。 若要通过本地网络访问资源，请使用 NAT IP。

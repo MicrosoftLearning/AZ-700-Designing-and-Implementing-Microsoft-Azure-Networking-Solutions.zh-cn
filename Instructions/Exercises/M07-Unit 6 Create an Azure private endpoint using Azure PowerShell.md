@@ -43,7 +43,6 @@ Exercise:
 - 任务 4：创建专用终结点
 - 任务 5：配置专用 DNS 区域
 - 任务 6：测试与专用终结点的连接
-- 任务 7：清理资源
 
 ## 任务 1：创建资源组并部署必备 Web 应用
 
@@ -401,13 +400,29 @@ New-AzPrivateDnsZoneGroup @parameters4
 
 1. 在到 myVM 的堡垒连接中，打开 Internet Explorer。
 1. 输入 Web 应用的 URL，&lt;&gt;。
-1. 如果尚未部署应用程序，将收到默认 Web 应用页：![ Azure 中的页面的屏幕截图，指示应用服务已启动并正在运行](../media/web-app-default-page.png)
+1. 如果尚未部署应用程序，将收到默认 Web 应用页面：![Azure 中指示应用服务已启动并运行的页面屏幕截图](../media/web-app-default-page.png)
 1. 关闭到 **myVM** 的连接。
 
-## 任务 7：清理资源
+## 清理资源
 
 用完专用终结点和 VM 后，请使用 [Remove-AzResourceGroup](https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-azresourcegroup) 删除资源组和组内所有资源：
 
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 提供何时使用专用终结点而不是服务终结点的示例。
++ 如何对专用终结点连接问题进行故障排除？
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure 专用链接简介](https://learn.microsoft.com/training/modules/introduction-azure-private-link/)。 本模块介绍 Azure 专用链接如何实现与 Azure 服务的专用连接，包括其功能、工作原理及用例。
++ [设计和实现对 Azure 服务的专用访问](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/)。 本模块介绍如何使用 Azure 专用链接和虚拟网络服务终结点设计和实现对 Azure 服务的专用访问。
+
+## 关键结论
+
++ 使用 Azure 专用链接，可以通过虚拟网络中的专用终结点访问 Azure PaaS 服务（例如，Azure 存储和 SQL 数据库）和 Azure 托管的客户拥有的服务/合作伙伴服务。
++ 专用终结点是使用虚拟网络中的专用 IP 地址的网络接口。 此网络接口以私密且安全的方式将你连接到由 Azure 专用链接提供支持的服务。 

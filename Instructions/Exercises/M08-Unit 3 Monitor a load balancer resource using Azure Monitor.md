@@ -29,7 +29,7 @@ Exercise:
 + 任务 11：查看详细指标
 + 任务 12：查看资源运行状况
 + 任务 13：配置诊断设置
-+ 任务 14：清理资源
+
 
 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -397,7 +397,7 @@ Exercise:
 
    ![负载均衡器的“诊断设置”页](../media/diagnostic-settings-2.png)
 
-## 任务 14：清理资源
+## 清理资源
 
    >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -409,4 +409,26 @@ Exercise:
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+>**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+    
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 汇总可用于监视虚拟网络的 Azure 工具。
++ 可以使用哪些 Azure 网络观察程序监视工具？
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure Monitor 简介](https://learn.microsoft.com/training/modules/intro-to-azure-monitor/)。 本模块介绍如何使用 Azure Monitor 提供对 Azure 资源性能和操作的见解。
++ [使用网络监视工具监视端到端 Azure 网络基础结构并对其进行故障排除](https://learn.microsoft.com/training/modules/troubleshoot-azure-network-infrastructure/)。 本模块介绍如何使用 Azure 网络观察程序工具、诊断和日志帮助查找并修复 Azure 基础结构中的网络问题。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
+
++ Azure Monitor 提供的功能和工具用于从所有 Azure、其他云和本地资源收集、管理和分析 IT 数据。
++ 指标是显示应用程序或资源性能快照的定量度量。 指标通常是可以在一段时间内进行测量的数值。
++ 日志是资源或应用程序中发生的事件、操作和消息的文本记录。 
++ Azure Monitor 见解、可视化效果和仪表板可以使用和传输有关应用程序的监视信息。
++ 警报会向你发送有关关键情况的通知并采取纠正措施。 警报规则可以基于指标或日志数据。+ 
+    
