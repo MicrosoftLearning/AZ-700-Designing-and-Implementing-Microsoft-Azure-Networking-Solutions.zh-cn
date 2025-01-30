@@ -9,7 +9,7 @@ Exercise:
 
 在本练习中，你将使用 Azure 门户和 Azure 资源管理器部署模型创建 ExpressRoute 线路。
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 预计用时：15 分钟
 
@@ -26,9 +26,7 @@ Exercise:
 
 1. 从浏览器导航到 [Azure 门户](https://portal.azure.com/)并使用 Azure 帐户登录。
 
-   > [!Important]
-   >
-   > 从发布服务密钥的那一刻起，将对 ExpressRoute 线路进行计费。 确保连接服务提供商准备好预配线路后就执行此操作。
+   >**重要说明**：从发布服务密钥之时起将对 ExpressRoute 线路进行计费。 确保连接服务提供商准备好预配线路后就执行此操作。
 
 1. 在 Azure 门户菜单中，选择“+ 创建资源”****。 选择“网络”，然后选择“ExpressRoute”，如下图所示。 如果列表中未显示 ExpressRoute，请使用“搜索市场”对其进行搜索：
 
@@ -55,9 +53,7 @@ Exercise:
 
 + **SKU** 确定是启用 ExpressRoute 本地版、ExpressRoute 标准版还是 ExpressRoute 高级版加载项。 可以指定“本地”以获取本地 SKU，指定“标准”以获取标准 SKU，或指定“高级”以获取高级版加载项  。 可以更改 SKU 以启用高级版加载项。
 
-> [!Important]
->
-> 不能将 SKU 从“标准”/“高级”更改为“本地” 。
+   >**重要说明**：不能将 SKU 从“标准”/“高级”更改为“本地”。
 
 + **计费模型**确定计费类型。 可以指定“Metered”**** 以获取数据流量套餐，指定“Unlimited”**** 以获取无限制流量套餐。 可以将计费类型从“按流量计费”更改为“不限流量” 。
 
@@ -104,11 +100,7 @@ Exercise:
 
 如果 ExpressRoute 线路服务提供商预配状态为“正在预配”或“已预配”，则必须与服务提供商合作，在他们那一端取消预配线路。 在服务提供商取消对线路的预配并向我们发送通知之前，Microsoft 将继续保留资源并向你收费。
 
-> [!Note]
->
-> 在取消预配前，必须取消所有虚拟网络与 ExpressRoute 线路的链接。 如果此操作失败，请检查是否有虚拟网络链接到了该线路。
->
-> 如果服务提供商已取消预配线路（服务提供商预配状态设置为“未预配”），则可以删除线路。 这样就会停止对线路的计费。
+   >**备注**：在取消预配前，必须取消所有虚拟网络与 ExpressRoute 线路的链接。 如果此操作失败，请检查是否有虚拟网络链接到了该线路。 如果服务提供商已取消预配线路（服务提供商预配状态设置为“未预配”），则可以删除线路。 这样就会停止对线路的计费。
 
 ## 清理资源
 
@@ -116,7 +108,7 @@ Exercise:
 
 ![Azure 门户 - 删除 ExpressRoute 线路](../media/expressroute-circuit-delete.png)
 
->**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
@@ -127,7 +119,7 @@ Exercise:
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
->**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+   >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
 ## 使用 Copilot 扩展学习
 

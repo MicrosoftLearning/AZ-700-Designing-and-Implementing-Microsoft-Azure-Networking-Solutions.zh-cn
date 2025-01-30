@@ -13,7 +13,7 @@ Exercise:
 ![专用终结点体系结构示意图。](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 估计时间：45 分钟
 
@@ -79,6 +79,7 @@ New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 - New-AzBastion
 
 ```PowerShell
+
 ## Create backend subnet config. ##
 
 $subnetConfig = New-AzVirtualNetworkSubnetConfig -Name myBackendSubnet -AddressPrefix 10.0.0.0/24

@@ -13,7 +13,7 @@ Exercise:
 ![应用程序网关体系结构的示意图。](../media/4-exercise-deploy-azure-application-gateway.png)
 
 
->**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 预计用时：25 分钟
 
@@ -151,14 +151,14 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
->注意：系统会提示你提供管理员密码。 
+   >注意：系统会提示你提供管理员密码。 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile backend.json -TemplateParameterFile backend.parameters.json
    ```
->**备注**：请花时间查看 **backend.json** 文件。 正在部署两个虚拟机。 这需要几分钟时间。 
+   >**备注**：请花时间查看 **backend.json** 文件。 正在部署两个虚拟机。 这需要几分钟时间。 
 
 1. 命令应成功完成，并列出 **BackendVM1** 和 **BackendVM2**。
 
@@ -172,14 +172,14 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
    Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM1' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
    ```
 
->**备注**：等待时，请查看 PowerShell 脚本。 请注意，正在自定义 IIS 主页以提供虚拟机名称。
+   >**备注**：等待时，请查看 PowerShell 脚本。 请注意，正在自定义 IIS 主页以提供虚拟机名称。
 
 1. 再次运行命令，这次针对 **BackendVM2**。
 
    ```powershell
    Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM2' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
    ```
->**备注：** 每个命令需要几分钟时间完成。
+   >**备注：** 每个命令需要几分钟时间完成。
 
 ## 任务 3：将后端服务器添加到后端池
 
@@ -225,7 +225,7 @@ Azure 需要一个虚拟网络才能在创建的资源之间通信。 可以创�
 
 ## 清理资源
 
->**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
