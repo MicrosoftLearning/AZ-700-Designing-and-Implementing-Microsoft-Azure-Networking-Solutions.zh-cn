@@ -26,7 +26,7 @@ Exercise:
 + 任务 10：测试防火墙
 
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 估计时间：60 分钟
 
@@ -113,8 +113,6 @@ Exercise:
 
 1. 验证是否已创建虚拟机。
 
-1. VM 部署完成后，单击“转到资源”。
-
 1. 在“Srv-Work”的“概述”页右侧的“网络”下，记下此 VM 的“专用 IP 地址”（例如 10.0.2.4）。
 
 ## 任务 4：部署防火墙和防火墙策略
@@ -146,13 +144,15 @@ Exercise:
 
    ![将公共 IP 地址添加到防火墙](../media/assign-public-ip-to-firewall.png)
 
-1. 检查所有设置，确保它们与下面的屏幕截图匹配。
+1. 我们不使用防火墙管理器，因此请取消选中“**启用防火墙管理 NIC**”框。 
+
+1. 复查你的设置。 
 
    ![“创建防火墙”-“审阅”设置](../media/review-all-configurations-for-firewall.png)
 
-1. 选择“查看 + 创建”。
+1. 转到“**查看 + 创建**”，然后转到“**创建**”。
 
-1. 选择“创建”并等待防火墙部署完成。
+1. 等待防火墙部署完成。
 
 1. 完成防火墙部署后，选择“转到资源”。
 
@@ -366,7 +366,7 @@ Exercise:
 
 ## 清理资源
 
->**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
@@ -376,7 +376,7 @@ Exercise:
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
->**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+   >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
 ## 使用 Copilot 扩展学习
 

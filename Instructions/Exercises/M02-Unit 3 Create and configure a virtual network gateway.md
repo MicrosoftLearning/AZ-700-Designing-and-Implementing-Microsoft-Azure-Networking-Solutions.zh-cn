@@ -11,6 +11,8 @@ Exercise:
 
 在本练习中，配置一个虚拟网关以连接 Contoso Core Services VNet 和 Manufacturing VNet。
 
+   >**重要说明**：仔细查看此设计。 你是否注意到 CoreServicesSubnet 与 GatewaySubnet 重叠？ 最佳做法是，应隔离这些子网，以避免潜在的连接问题。 
+
 ![虚拟网络网关图示。](../media/3-exercise-create-configure-local-network-gateway.png)
 
 通过学习本练习，你将能够：
@@ -27,7 +29,7 @@ Exercise:
 + 任务 10：验证连接是否成功
 + 任务 11：测试 VM 间的连接
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 预计用时：70 分钟（包括约 45 分钟的部署等待时间）
 
@@ -49,7 +51,7 @@ Exercise:
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
- > **注意：** 目前，“西欧”区域存在一个影响网关部署的未解决问题。 作为解决方法，已将 ManufacturingVnet 区域更改为“北欧”以便进行此部署。
+   >**注意：** 目前，“西欧”区域存在一个影响网关部署的未解决问题。 作为解决方法，已将 ManufacturingVnet 区域更改为“北欧”以便进行此部署。
 
 ## 任务 2：创建 CoreServicesVM
 
@@ -94,20 +96,35 @@ Exercise:
 ## 任务 4：使用 RDP 连接到 VM
 
 1. 在 Azure 门户主页上，选择“虚拟机”。
+
 1. 选择“ManufacturingVM”。
-1. 在“ManufacturingVM”中，选择“连接”&gt;“RDP” 。
-1. 在“ManufacturingVM | 连接”中，选择“下载 RDP 文件” 。
+
+1. 在“**ManufacturingVM**”上，选择“**连接**”，然后选择“**RDP**”。
+
+1. 选择“下载 RDP 文件”。
+
 1. 将 RDP 文件保存到桌面。
+
 1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 ManufacturingVM。******** 连接后，最小化 RDP 会话。
+
 1. 在 Azure 门户主页上，选择“虚拟机”。
+
 1. 选择 CoreServicesVM。
-1. 在“CoreServicesTestVM”中，选择“连接”&gt;“RDP” 。
-1. 在“CoreServicesTestVM | 连接”中，选择“下载 RDP 文件” 。
+
+1. 在“**CoreServicesVM**”上，选择“**连接**”，然后选择“**RDP**”。
+
+1. 选择“下载 RDP 文件”。
+
 1. 将 RDP 文件保存到桌面。
+
 1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 CoreServicesVM。********
+
 1. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
+
 1. 在这两个 VM 上的“网络”中，选择“是”。
+
 1. 在 CoreServicesVM 上，打开 PowerShell 并运行以下命令：ipconfig****
+
 1. 记录 IPv4 地址。
 
 ## 任务 5：测试 VM 间的连接
@@ -152,15 +169,13 @@ Exercise:
    |                 |                   | 配置 BGP                               | 已禁用                     |
    | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |
 
-   > [!NOTE]
-   >
-   > 创建虚拟网络网关可能最多需要 15-30 分钟。 无需等待部署完成。 继续创建下一个网关。 
+   >**备注**：创建虚拟网络网关可能最多需要 15-30 分钟。 无需等待部署完成。 继续创建下一个网关。 
 
 ## 任务 7：创建 ManufacturingVnet 网关
 
 ### 创建 GatewaySubnet
 
-**备注：** 模板为 CoreServicesVnet 创建了 GatewaySubnet。 在此处手动创建子网。 
+   >**备注：** 模板为 CoreServicesVnet 创建了 GatewaySubnet。 在此处手动创建子网。 
 
 1. 搜索并选择 **ManufacturingVnet**。
 
@@ -168,7 +183,7 @@ Exercise:
 
     | 参数 | 值 |
     | --------------- | ----------------- | 
-    | 子网用途 | **** 虚拟网络网关 |
+    | 子网用途 | **虚拟网络网关** |
     | 大小 | **/27（32 个地址）** |
 
 1. 选择 **添加** 。 
@@ -200,9 +215,7 @@ Exercise:
    |                 |                   | 配置 BGP                               | 已禁用                     |
    | 查看 + 创建 |                   | 检查设置，然后选择“创建”。 |                              |
 
-   > [!NOTE]
-   >
-   > 创建虚拟网络网关可能最多需要 15-30 分钟。
+   >**备注**：创建虚拟网络网关可能最多需要 15-30 分钟。
 
 ## 任务 8：将 CoreServicesVnet 连接到 ManufacturingVnet
 
@@ -212,9 +225,7 @@ Exercise:
 
 1. 在“CoreServicesGateway”中，选择“连接”，然后选择“+ 添加”。
 
-   > [!NOTE]
-   >
-   >  在完全部署虚拟网关后，才能完成此配置。
+   >**备注**：完全部署虚拟网络网关之前，将无法完成此配置。
 
 1. 使用此信息和“**设置**”选项卡创建虚拟网络网关。 
 

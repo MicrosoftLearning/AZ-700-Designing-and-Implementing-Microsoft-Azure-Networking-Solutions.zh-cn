@@ -20,13 +20,13 @@ Exercise:
 + 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
 + 任务 5：测试 VM 间的连接
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 预计用时：20 分钟
 
 ## 任务 1：创建虚拟机以测试配置
 
-在本部分中，你将在 Manufacturing VNet 上创建一个测试 VM，用来测试是否可以从 ManufacturingVnet 访问另一个 Azure 虚拟网络中的资源。
+在本部分中，你将在 VNet 上创建一个测试 VM，用来测试是否可以从 Vnet 访问另一个 Azure 虚拟网络中的资源。
 
 ### 创建 ManufacturingVM
 
@@ -112,7 +112,7 @@ Exercise:
 
    | **选项**                                    | 值                             |
    | ------------------------------------ | --------------------------------------------- | 
-   | 对等互连链接名称    | `CoreServicesVnet-to-ManufacturingVnet` |
+   | 对等互连链接名称    | `ManufacturingVnet-to-CoreServicesVnet` |
    | 虚拟网络 | ManufacturingVnet |
 
     远程虚拟网络对等互连设置****

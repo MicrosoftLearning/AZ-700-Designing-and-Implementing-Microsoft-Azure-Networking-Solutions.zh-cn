@@ -12,7 +12,7 @@ Exercise:
 
 假设有一家虚构的组织 Contoso Ltd，它正在将基础结构和应用程序迁移到 Azure。 如果你担任网络工程师一职，则必须计划并实现三个虚拟网络和子网，以支持这些虚拟网络中的资源。
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 预计用时：20 分钟
 
@@ -77,6 +77,7 @@ Exercise:
 1. 在 Azure 门户主页上，导航到“全局搜索”栏，搜索“虚拟网络”，然后在“服务”下选择“虚拟网络”。  ![Azure 门户主页上“全局搜索”栏中有关虚拟网络的结果。](../media/global-search-bar.PNG)
 
 1. 在“虚拟网络”页上选择“创建”。  ![创建虚拟网络向导。](../media/create-virtual-network.png)
+   
 1. 使用下表中的信息创建 CoreServicesVnet 虚拟网络。  
    删除或覆盖默认 IP 地址空间。 ![Azure 虚拟网络部署的 IP 地址配置 ](../media/default-vnet-ip-address-range-annotated.png)
 

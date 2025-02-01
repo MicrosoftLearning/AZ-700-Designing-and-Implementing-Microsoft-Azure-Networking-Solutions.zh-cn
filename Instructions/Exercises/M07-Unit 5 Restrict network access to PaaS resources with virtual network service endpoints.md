@@ -26,7 +26,7 @@ Exercise:
 + 任务 10：确认对存储帐户的访问权限
 
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 预计用时：35 分钟
 
@@ -325,7 +325,7 @@ Azure 文件共享已成功映射到驱动器 Z。
 
  访问被拒绝，因为计算机不在 CoreServicesVNet 虚拟网络的“专用”子网中。
 
-> **警告**：在继续之前，应删除用于此实验室的所有资源。 为此，在 Azure 门户中，选择“资源组”。 选择已创建的任何资源组。 在“资源组”边栏选项卡上，选择“删除资源组”，输入资源组名称，然后选择“删除”。 对可能创建的任何其他资源组重复此过程。 未执行以上操作可能会导致其他实验室问题。
+   >**警告**：在继续之前，应删除用于此实验室的所有资源。 为此，在 Azure 门户中，选择“资源组”。 选择已创建的任何资源组。 在“资源组”边栏选项卡上，选择“删除资源组”，输入资源组名称，然后选择“删除”。 对可能创建的任何其他资源组重复此过程。 未执行以上操作可能会导致其他实验室问题。
 
 结果：你已完成此实验室。
 
@@ -341,7 +341,7 @@ Azure 文件共享已成功映射到驱动器 Z。
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
->**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+   >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
 ## 使用 Copilot 扩展学习
 
