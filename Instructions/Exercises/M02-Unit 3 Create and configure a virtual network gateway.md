@@ -201,7 +201,7 @@ Exercise:
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | ManufacturingVnet            |
-   |                 |                   | 子网                                      | GatewaySubnet |
+   |                 |                   | 子网                                      | GatewaySubnet (10.30.0.0/27) |
    |                 |                   | 公共 IP 地址类型                      | 标准                     |
    |                 | 公共 IP 地址 | 公共 IP 地址                           | 新建                   |
    |                 |                   | 公共 IP 地址名称                      | ManufacturingVnetGateway-ip  |
