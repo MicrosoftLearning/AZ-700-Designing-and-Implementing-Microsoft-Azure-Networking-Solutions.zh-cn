@@ -11,8 +11,6 @@ Exercise:
 
 在本练习中，配置一个虚拟网关以连接 Contoso Core Services VNet 和 Manufacturing VNet。
 
-   >**重要说明**：仔细查看此设计。 你是否注意到 CoreServicesSubnet 与 GatewaySubnet 重叠？ 最佳做法是，应隔离这些子网，以避免潜在的连接问题。 
-
 ![虚拟网络网关图示。](../media/3-exercise-create-configure-local-network-gateway.png)
 
 通过学习本练习，你将能够：
@@ -50,9 +48,7 @@ Exercise:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
-
-   >**注意：** 目前，“西欧”区域存在一个影响网关部署的未解决问题。 作为解决方法，已将 ManufacturingVnet 区域更改为“北欧”以便进行此部署。
-
+   
 ## 任务 2：创建 CoreServicesVM
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
@@ -157,7 +153,6 @@ Exercise:
    |                 | 实例详细信息  | 名称                                        | CoreServicesVnetGateway      |
    |                 |                   | 区域                                      | 美国东部                      |
    |                 |                   | 网关类型                                | VPN                          |
-   |                 |                   | VPN 类型                                    | 基于路由                  |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | CoreServicesVnet             |
@@ -201,13 +196,12 @@ Exercise:
    | 基本信息          | 项目详细信息   | 订阅                                | 无需更改          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | 实例详细信息  | 名称                                        | ManufacturingVnetGateway     |
-   |                 |                   | 区域                                      | 北欧                  |
+   |                 |                   | 区域                                      | 北欧                 |
    |                 |                   | 网关类型                                | VPN                          |
-   |                 |                   | VPN 类型                                    | 基于路由                  |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | ManufacturingVnet            |
-   |                 |                   | 子网                                      | GatewaySubnet (10.30.0.0/27) |
+   |                 |                   | 子网                                      | GatewaySubnet |
    |                 |                   | 公共 IP 地址类型                      | 标准                     |
    |                 | 公共 IP 地址 | 公共 IP 地址                           | 新建                   |
    |                 |                   | 公共 IP 地址名称                      | ManufacturingVnetGateway-ip  |
@@ -261,7 +255,7 @@ Exercise:
    | ------------------------------ | --------------------------------- |
    | 名称                           | ManufacturingGW-to-CoreServicesGW |
    | 连接类型                | VNet 到 VNet                      |
-   | 位置                       | 西欧                       |
+   | 位置                       | 北欧                      |
    | 第一个虚拟网关  | ManufacturingVnetGateway          |
    | 第二个虚拟网关 | CoreServicesVnetGateway           |
    | 共享密钥 (PSK)               | abc123                            |

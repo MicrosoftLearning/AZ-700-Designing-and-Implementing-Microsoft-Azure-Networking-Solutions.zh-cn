@@ -92,16 +92,17 @@ Exercise:
 
 1. 若要开始创建每个子网，请选择“+ 添加子网”。 若要完成创建每个子网，请选择“添加”。
 
-   | **子网**             | **选项**           | 值              |
-   | ---------------------- | -------------------- | ---------------------- |
-   | GatewaySubnet          | 子网名称          | GatewaySubnet          |
-   |                        | 子网地址范围 | 10.20.0.0/27           |
-   | SharedServicesSubnet   | 子网名称          | SharedServicesSubnet   |
-   |                        | 子网地址范围 | 10.20.10.0/24          |
-   | DatabaseSubnet         | 子网名称          | DatabaseSubnet         |
-   |                        | 子网地址范围 | 10.20.20.0/24          |
-   | PublicWebServiceSubnet | 子网名称          | PublicWebServiceSubnet |
-   |                        | 子网地址范围 | 10.20.30.0/24          |
+   | **子网**             | **选项**           | 值               |
+   | ---------------------- | -------------------- | ----------------------- |
+   | GatewaySubnet          | 子网用途       | 虚拟网络网关 |
+   |                        | 子网名称          | GatewaySubnet           |
+   |                        | 子网地址范围 | 10.20.0.0/27            |
+   | SharedServicesSubnet   | 子网名称          | SharedServicesSubnet    |
+   |                        | 子网地址范围 | 10.20.10.0/24           |
+   | DatabaseSubnet         | 子网名称          | DatabaseSubnet          |
+   |                        | 子网地址范围 | 10.20.20.0/24           |
+   | PublicWebServiceSubnet | 子网名称          | PublicWebServiceSubnet  |
+   |                        | 子网地址范围 | 10.20.30.0/24           |
 
 1. 若要完成创建 CoreServicesVnet 及其关联的子网，请选择“审阅并创建”。
 
