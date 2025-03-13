@@ -32,9 +32,9 @@ Exercise:
 
    ![Azure 门户 - 创建 ExpressRoute 线路菜单](../media/create-expressroute-circuit-menu.png)
 
-1. 在“创建 ExpressRoute”页上，使用以下项提供线路的“资源组”、“区域”和“名称”   。ExpressRouteResourceGroup、美国东部 2、TestERCircuit。 然后选择“下一步: 配置 &gt;”。
+1. 在“**创建 ExpressRoute**”页上，以 ExpressRouteResourceGroup 的形式提供“**资源组**”。 然后选择“**标准复原能力**”以获取“**复原能力**”
 
-1. 在此页上填写值时，对于此示例，请确保指定正确的 SKU 层（标准）数据计量计费模型（按流量计费）提供程序 (Equinix) 对等互连位置 (Seattle) 和带宽 (50Mbps)    。
+1. 对于***线路详细信息**，请确保指定正确的区域（**美国东部 2**）、线路名称（**TestERCircuit**）、对等互连位置（**西雅图**）、提供程序（**Equinix**）、带宽（**50Mbps**）、SKU 层（**标准**）和数据计量计费模型（**按流量计费**）。
 
 1. 选择“查看 + 创建”  。
 
