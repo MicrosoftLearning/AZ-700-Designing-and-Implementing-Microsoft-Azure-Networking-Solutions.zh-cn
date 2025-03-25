@@ -43,7 +43,7 @@ Exercise:
    | 资源组   | 选择资源组 ContosoResourceGroup               |
    | 名称             | 输入 Web 应用的唯一名称。 本示例使用 WebAppContoso-1。 |
    | 发布          | 选择“代码”。                                             |
-   | 运行时堆栈    | 选择 .NET 6 (LTS)。                                     |
+   | 运行时堆栈    | 选择 **.NET 8 (LTS)**。                                     |
    | 操作系统 | 选择“Windows”。                                          |
    | 区域           | 选择“美国中部”。                                       |
    | Windows 计划     | 选择“新建”，然后在文本框中输入“myAppServicePlanCentralUS”。 |
@@ -64,7 +64,7 @@ Exercise:
    | 资源组   | 选择资源组 ContosoResourceGroup               |
    | 名称             | 输入 Web 应用的唯一名称。 本示例使用 WebAppContoso-2。 |
    | 发布          | 选择“代码”。                                             |
-   | 运行时堆栈    | 选择 .NET 6 (LTS)。                                     |
+   | 运行时堆栈    | 选择 **.NET 8 (LTS)**。                                     |
    | 操作系统 | 选择“Windows”。                                          |
    | 区域           | 选择“美国东部”。                                          |
    | Windows 计划     | 选择“新建”，然后在文本框中输入 myAppServicePlanEastUS。 |
