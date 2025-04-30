@@ -214,19 +214,9 @@ Exercise:
 
 ## 任务 7：使用模拟合作伙伴进行测试
 
-1. 查看 [Azure DDoS 模拟测试策略](https://learn.microsoft.com/azure/ddos-protection/test-through-simulations#azure-ddos-simulation-testing-policy)
+1. 查看“[Azure DDoS 模拟测试策略](https://learn.microsoft.com/en-us/azure/ddos-protection/test-through-simulations#configure-a-ddos-attack-simulation)”页。 
 
-1. 使用经批准的测试合作伙伴配置 DDoS 测试攻击。 如果使用 BreakingPoint Cloud 进行测试，请使用以下屏幕截图中的设置（可能需要使用试用帐户选择 100k pps 测试大小），但在“目标 IP 地址”框中指定自己的“MyPublicIPAddress”资源的 IP 地址（例如 51.140.137.219）![DDOSAttack](https://user-images.githubusercontent.com/46939028/138599420-58bef33a-2597-4fa2-919f-bf1614037bc3.JPG)
-
-1. 在 Azure 门户主页上，选择“所有资源”。
-
-1. 在资源列表中，选择“MyPublicIPAddress”资源，然后在“监视”下选择“指标”。
-
-1. 在“指标”框中，从列表中选择“是否受到 DDoS 攻击”。
-
-1. 现在可以看到发生的 DDoS 攻击。 请注意，可能需要整整 10 分钟才能看到结果。
-
-   ![显示受 DDoS 攻击的资源的指标](../media/metrics-showing-resource-under-attack.png)
+1. 请注意，有几个测试合作伙伴。 如果有时间，请配置 DDoS 攻击模拟。 对于 BreakingPoint Cloud，必须先创建 BreakingPoint Cloud 帐户。
 
 ## 清理资源
 
