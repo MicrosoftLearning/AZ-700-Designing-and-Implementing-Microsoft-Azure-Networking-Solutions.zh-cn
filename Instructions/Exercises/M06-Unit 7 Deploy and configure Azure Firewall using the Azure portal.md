@@ -97,7 +97,9 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **firewall.json** 和 **firewall.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M06** 逐个上传到 Cloud Shell 主目录。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **firewall.json** 和 **firewall.parameters.json** 文件上传到 Cloud Shell 主目录。
+
+    > **备注：** 如果在自己的订阅中工作，则[模板文件](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises)在 GitHub 实验室存储库中可用。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 

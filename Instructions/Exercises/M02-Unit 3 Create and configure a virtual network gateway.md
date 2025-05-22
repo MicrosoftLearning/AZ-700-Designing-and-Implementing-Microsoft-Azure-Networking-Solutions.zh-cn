@@ -38,7 +38,9 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **azuredeploy.json** 和 **azuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M02** 逐个上传到 Cloud Shell 主目录
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **azuredeploy.json** 和 **azuredeploy.parameters.json** 文件上传到 Cloud Shell 主目录。
+
+        Note:: If you are working in your own subscription the [template files](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) are available in the GitHub lab repository.
 
 1. 部署以下 ARM 模板来创建本练习所需的虚拟网络和子网：
 
@@ -201,7 +203,7 @@ Exercise:
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | 第 1 代                  |
    |                 |                   | 虚拟网络                             | ManufacturingVnet            |
-   |                 |                   | 子网                                      | GatewaySubnet (10.30.0.0/27) |
+   |                 |                   | 子网                                      | GatewaySubnet |
    |                 |                   | 公共 IP 地址类型                      | 标准                     |
    |                 | 公共 IP 地址 | 公共 IP 地址                           | 新建                   |
    |                 |                   | 公共 IP 地址名称                      | ManufacturingVnetGateway-ip  |

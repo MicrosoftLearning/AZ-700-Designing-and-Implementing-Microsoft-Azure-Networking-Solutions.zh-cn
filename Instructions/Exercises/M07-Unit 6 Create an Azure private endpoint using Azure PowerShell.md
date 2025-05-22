@@ -31,7 +31,9 @@ Exercise:
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话 。
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将**template.json** 和 **parameters.json** 文件逐个上传到 Cloud Shell 主目录。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **template.json** 和 **parameters.json** 文件上传到 Cloud Shell 主目录。
+
+    > **备注：** 如果在自己的订阅中工作，则[模板文件](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises)在 GitHub 实验室存储库中可用。
 
 如果选择在本地安装并使用 PowerShell，则本示例需要 Azure PowerShell 模块 5.4.1 或更高版本。 运行 ```Get-Module -ListAvailable Az``` 查找已安装的版本。 如果需要进行升级，请参阅 [Install Azure PowerShell module](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)（安装 Azure PowerShell 模块）。 如果在本地运行 PowerShell，则还需运行 ```Connect-AzAccount``` 以创建与 Azure 的连接。
 
@@ -423,7 +425,7 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + [Azure 专用链接简介](https://learn.microsoft.com/training/modules/introduction-azure-private-link/)。 本模块介绍 Azure 专用链接如何实现与 Azure 服务的专用连接，包括其功能、工作原理及用例。
 + [设计和实现对 Azure 服务的专用访问](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/)。 本模块介绍如何使用 Azure 专用链接和虚拟网络服务终结点设计和实现对 Azure 服务的专用访问。
 
-## 关键结论
+## 关键要点
 
 + 使用 Azure 专用链接，可以通过虚拟网络中的专用终结点访问 Azure PaaS 服务（例如，Azure 存储和 SQL 数据库）和 Azure 托管的客户拥有的服务/合作伙伴服务。
 + 专用终结点是使用虚拟网络中的专用 IP 地址的网络接口。 此网络接口以私密且安全的方式将你连接到由 Azure 专用链接提供支持的服务。 

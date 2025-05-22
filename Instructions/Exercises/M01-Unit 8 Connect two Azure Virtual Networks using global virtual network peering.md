@@ -35,7 +35,9 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **ManufacturingVMazuredeploy.json** 和 **ManufacturingVMazuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M01** 上传到 Cloud Shell 主目录。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，上传下列文件：**ManufacturingVMazuredeploy.json** 和 **ManufacturingVMazuredeploy.parameters.json**。
+
+    >**备注：** 如果在自己的订阅中工作，则[模板文件](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises)在 GitHub 实验室存储库中可用。
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -106,7 +108,7 @@ Exercise:
 
 1. 在“CoreServicesVnet”\|“对等互连”上，选择“+ 添加”****。
 
-1. 使用此信息创建对等互连。 完成后，选择“添加”。**** 
+1. 使用此信息创建对等互连。 完成后，选择“添加”****。 
 
    远程虚拟网络摘要****
 
@@ -182,7 +184,7 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 
 恭喜你完成本实验室的内容。 下面是本实验室的主要重点。 
 
-+ 使用虚拟网络对等互连可以无缝连接两个 Azure 虚拟网络。 出于连接目的，两个虚拟网络会显示为一个。
++ 借助虚拟网络对等互连，你可以无缝连接两个 Azure 虚拟网络。 出于连接目的，两个虚拟网络会显示为一个。
 + Azure 支持在同一 Azure 区域内或跨 Azure 区域（全局）连接虚拟网络。
 + 对等互连虚拟网络中虚拟机之间的流量直接通过 Microsoft 主干基础结构路由，而不通过网关或公共 Internet 路由。
 + 可以调整对等互连的 Azure 虚拟网络的地址空间大小，而不会导致当前对等互连的地址空间出现任何故障。
