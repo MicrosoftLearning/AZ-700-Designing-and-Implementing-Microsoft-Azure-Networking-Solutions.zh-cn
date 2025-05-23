@@ -23,6 +23,8 @@ Exercise:
 
 ### 预计用时：25 分钟
 
+**重要说明：** 本练习需要上一个实验室中的虚拟网络。 这可以使用 [template](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises/M01/template.json) 文件进行安装。 将安装所有虚拟网络，但只需要 CoreServicesVNet。 
+
 ## 任务 1：创建专用 DNS 区域
 
 1. 转到 [Azure 门户](https://portal.azure.com/)。
@@ -36,9 +38,8 @@ Exercise:
 
     | Tab         | **选项**                             | **值**            |
     | --------------- | -------------------------------------- | -------------------- |
-    | 基础          | 资源组                         | ContosoResourceGroup |
-    |                 | 名称                                   | Contoso.com          |
-    | Tags            | 无需更改                    |                      |
+    | 基础          | 资源组（如有需要可新建） | `ContosoResourceGroup` |
+    |                 | 名称                                   | `Contoso.com`          |
     | 审阅 + 创建 | 检查设置，然后选择“创建” |                      |
 
 1. 等待部署完成，然后选择“转到资源”。
@@ -57,7 +58,7 @@ Exercise:
 
     | **选项**                          | 值                               |
     | ----------------------------------- | --------------------------------------- |
-    | 链接名称                           | CoreServicesVnetLink                    |
+    | 链接名称                           | `CoreServicesVnetLink`                   |
     | 订阅                        | 无需更改                     |
     | 虚拟网络                     | CoreServicesVnet (ContosoResourceGroup) |
     | 启用自动注册            | 选定                                |
@@ -66,34 +67,6 @@ Exercise:
 1. 选择“刷新”。
 
 1. 验证是否已创建 CoreServicesVnetLink，以及是否已启用自动注册。
-
-1. 使用下表中的信息，对 ManufacturingVnet 重复步骤 2 - 5：
-
-    | **选项**                          | 值                                |
-    | ----------------------------------- | ---------------------------------------- |
-    | 链接名称                           | ManufacturingVnetLink                    |
-    | 订阅                        | 无需更改                      |
-    | 虚拟网络                     | ManufacturingVnet (ContosoResourceGroup) |
-    | 启用自动注册            | 选定                                 |
-    | 检查设置，然后选择“确定”。 |                                          |
-
-1. 选择“刷新”。
-
-1. 验证是否已创建 ManufacturingVnetLink，以及是否已启用自动注册。
-
-1. 使用下表中的信息，对 ResearchVnet 重复步骤 2 - 5：
-
-    | **选项**                          | 值                           |
-    | ----------------------------------- | ----------------------------------- |
-    | 链接名称                           | ResearchVnetLink                    |
-    | 订阅                        | 无需更改                 |
-    | 虚拟网络                     | ResearchVnet (ContosoResourceGroup) |
-    | 启用自动注册            | 选定                            |
-    | 检查设置，然后选择“确定”。 |                                     |
-
-1. 选择“刷新”。
-
-1. 验证是否已创建 ResearchVnetLink，以及是否已启用自动注册。
 
 ## 任务 3：创建虚拟机以测试配置
 
@@ -104,11 +77,13 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **azuredeploy.json** 和 **azuredeploy.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M01** 逐个上传到 Cloud Shell 主目录。
+1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”并上传模板文件：**azuredeploy.json** 和 **azuredeploy.parameters.json**。
 
+   >**备注：** 如果是使用自己的订阅进行操作，可从 GitHub 实验室存储库获取[模板文件](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises)。
+   
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
-   >注意：系统会提示你提供管理员密码。
+   >注意：系统会提示你提供管理员密码。 在稍后的步骤中需要用到此密码。 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
@@ -132,37 +107,27 @@ Exercise:
 
 1. 记下 VM 的名称和 IP 地址。
 
-### 使用 RDP 连接到测试 VM
+### 连接到 VM 以测试名称解析
 
 1. 在 Azure 门户主页上，选择“虚拟机”。
 
 1. 选择“TestVM1”。
 
-1. 在 TestVM1 上，选择“连接”&gt;“RDP”，然后下载 RDP 文件。
+1. 在 TestVM1 上，选择“**连接 &gt; 连接**”，然后下载 RDP 文件。 确保文件下载成功。
 
-    ![突出显示了“连接”和“RDP”的 TestVM1。](../media/connect-to-am.png)
+1. 找到 RDP 文件，然后双击以执行该文件。
 
-1. 将 RDP 文件保存到桌面。
+1. 选择“**连接**”并提供模板部署期间提供的 **TestUser** 密码。
 
-1. 对 TestVM2 执行相同的步骤
-
-1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 TestVM1。
-
-1. 使用 RDP 文件和用户名 TestUser 以及部署期间提供的密码连接到 TestVM2。
-
-1. 在这两个 VM 上的“选择设备的隐私设置”中，选择“接受”。
-
-1. 在两个 VM 上，如果出现提示，请在“网络”中选择“是” 。
+1. 选择“**确定**”，然后在警告页上选择“**是**”。
 
 1. 在 TestVM1 上，打开命令提示符并输入命令 `ipconfig /all`。
 
-1. 验证 IP 地址是否与在 DNS 区域中记下的地址相同。
+1. 注意 IP 地址是否与 DNS 区域中的地址相同。
 
-1. 输入命令 ping TestVM2.contoso.com。
+1. 输入命令 `ping TestVM2.contoso.com`。 由于 VM 上启用了 Windows 防火墙，命令将超时。
 
-1. 验证 FQDN 是否解析为你在专用 DNS 区域中记下的 IP 地址。 由于 VM 上启用了 Windows 防火墙，ping 本身将超时。
-
-1. 或者，可以输入命令 nslookup TestVM2.contoso.com，并验证是否收到成功的 VM2 名称解析记录
+1. 请改用 `nslookup TestVM2.contoso.com` 命令来验证是否收到 VM2 的成功名称解析记录。 这演示了专用区域名称解析。 
 
 ## 使用 Copilot 扩展学习
 
