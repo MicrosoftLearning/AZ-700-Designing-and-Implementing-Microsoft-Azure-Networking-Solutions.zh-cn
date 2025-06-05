@@ -12,15 +12,17 @@ Exercise:
 
 ![虚拟网络 WAN 体系结构示意图。](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
 
+### 工作技能
 通过学习本练习，你将能够：
 
 + 任务 1：创建虚拟 WAN
 + 任务 2：使用 Azure 门户创建中心
 + 任务 3：将 VNet 连接到虚拟中心
 
+### 交互式实验室模拟
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
-
+>**注意**：此前提供的实验室模拟已停用。
+>
 ### 预计用时：65 分钟（包括约 45 分钟的部署等待时间）
 
 ## 任务 1：创建虚拟 WAN

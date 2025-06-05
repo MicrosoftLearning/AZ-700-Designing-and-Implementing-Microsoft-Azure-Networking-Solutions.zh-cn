@@ -14,14 +14,17 @@ Exercise:
 
 ![Azure Front Door 的网络配置。](../media/6-exercise-create-front-door-for-highly-available.png)
 
+### 工作技能
+
 通过学习本练习，你将能够：
 
 + 任务 1：创建 Web 应用的两个实例
 + 任务 2：为应用程序创建 Front Door
 + 任务 3：通过实际操作查看 Azure Front Door
 
+### 交互式实验室模拟
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+>**注意**：此前提供的实验室模拟已停用。
 
 ### 预计用时：30 分钟
 

@@ -9,11 +9,15 @@ Exercise:
 
 在本练习中，你将使用 Azure 门户和 Azure 资源管理器部署模型创建 ExpressRoute 线路。
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+### 交互式实验室模拟
+
+>**备注**：之前提供的实验室模拟环境已停止使用。
 
 ### 预计用时：15 分钟
 
 ![用于练习的 ExpressRoute 线路布局示意图](../media/5-exercise-provision-expressroute-circuit.png)
+
+### 工作技能
 
 通过学习本练习，你将能够：
 
@@ -28,11 +32,9 @@ Exercise:
 
    >**重要说明**：从发布服务密钥之时起将对 ExpressRoute 线路进行计费。 确保连接服务提供商准备好预配线路后就执行此操作。
 
-1. 在 Azure 门户菜单中，选择“+ 创建资源”****。 选择“网络”，然后选择“ExpressRoute”，如下图所示。 如果列表中未显示 ExpressRoute，请使用“搜索市场”对其进行搜索：
+1. 在Azure 门户菜单中，搜索并选择 “**ExpressRoute 电路**”。
 
-   ![Azure 门户 - 创建 ExpressRoute 线路菜单](../media/create-expressroute-circuit-menu.png)
-
-1. 在“**创建 ExpressRoute**”页上，以 ExpressRouteResourceGroup 的形式提供“**资源组**”。 然后选择“**标准复原能力**”以获取“**复原能力**”
+1. 在**创建 ExpressRoute** 页面上，将**资源组**指定为 `ExpressRouteResourceGroup`。 然后选择“**标准复原能力**”以获取“**复原能力**”
 
 1. 对于***线路详细信息**，请确保指定正确的区域（**美国东部 2**）、线路名称（**TestERCircuit**）、对等互连位置（**西雅图**）、提供程序（**Equinix**）、带宽（**50Mbps**）、SKU 层（**标准**）和数据计量计费模型（**按流量计费**）。
 
