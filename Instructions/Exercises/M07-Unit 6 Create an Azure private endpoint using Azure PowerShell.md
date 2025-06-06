@@ -12,8 +12,9 @@ Exercise:
 
 ![专用终结点体系结构示意图。](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
+### 交互式实验室模拟
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+>**注意**：此前提供的实验室模拟已停用。
 
 ### 估计时间：45 分钟
 
@@ -36,6 +37,8 @@ Exercise:
     > **备注：** 如果在自己的订阅中工作，则[模板文件](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises)在 GitHub 实验室存储库中可用。
 
 如果选择在本地安装并使用 PowerShell，则本示例需要 Azure PowerShell 模块 5.4.1 或更高版本。 运行 ```Get-Module -ListAvailable Az``` 查找已安装的版本。 如果需要进行升级，请参阅 [Install Azure PowerShell module](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)（安装 Azure PowerShell 模块）。 如果在本地运行 PowerShell，则还需运行 ```Connect-AzAccount``` 以创建与 Azure 的连接。
+
+### 工作技能
 
 通过学习本练习，你将能够：
 

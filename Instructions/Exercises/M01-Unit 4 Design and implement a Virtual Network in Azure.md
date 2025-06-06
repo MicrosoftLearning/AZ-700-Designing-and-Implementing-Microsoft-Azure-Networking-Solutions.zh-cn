@@ -12,7 +12,9 @@ Exercise:
 
 假设有一家虚构的组织 Contoso Ltd，它正在将基础结构和应用程序迁移到 Azure。 如果你担任网络工程师一职，则必须计划并实现三个虚拟网络和子网，以支持这些虚拟网络中的资源。
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+### 交互式实验室模拟
+
+>**注意**：此前提供的实验室模拟已停用。
 
 ### 预计用时：20 分钟
 
@@ -44,6 +46,8 @@ Exercise:
 |                     |                |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
 
 这些虚拟网络和子网以一种既可容纳现有资源，又允许预计增长的方式构建。 让我们来创建这些虚拟网络和子网，为网络基础结构奠定基础。
+
+### 工作技能
 
 通过学习本练习，你将能够：
 
@@ -172,7 +176,7 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + [为 Azure 部署设计 IP 寻址方案](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/)。 在本模块中，识别 Azure 虚拟网络的公共和专用 IP 寻址功能。
 + [Azure 虚拟网络的简介](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/)。 在本模块中，你将了解如何设计和实现 Azure 网络服务。 你将了解虚拟网络、公共和专用 IP、DNS、虚拟网络对等互连、路由和 Azure 虚拟 NAT。
 
-## 关键结论
+## 关键要点
 
 + Azure 虚拟网络是为 Azure 中的专用网络提供基础构建基块的服务。 借助服务实例（虚拟网络），多种类型的 Azure 资源可相互之间并与 Internet 和本地网络安全通信。 确保地址空间不会重叠。 确保虚拟网络地址空间（CIDR 块）不会与组织的其他网络范围重叠。
 + 虚拟网络中的所有 Azure 资源都部署到虚拟网络内的子网中。 使用子网可将虚拟网络划分为一个或多个子网络，并向每个子网分配一部分虚拟网络的地址空间。 子网不应涵盖虚拟网络的整个地址空间。 提前规划，为将来留出一些地址空间。

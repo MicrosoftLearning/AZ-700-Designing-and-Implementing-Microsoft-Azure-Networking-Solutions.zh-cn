@@ -12,6 +12,8 @@ Exercise:
 
 ![DDoS 体系结构图。](../media/4-exercise-configure-ddos-protection-virtual-network-using-azure-portal.png)
 
+### 工作技能
+
 通过学习本练习，你将能够：
 
 + 任务 1：创建资源组
@@ -21,10 +23,10 @@ Exercise:
 + 任务 5：配置 DDoS 诊断日志
 + 任务 6：配置 DDoS 警报
 + 任务 7：使用模拟合作伙伴进行测试
+  
+### 交互式实验室模拟
 
-
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
-
+>**备注**：之前提供的实验室模拟环境已停止使用。
 ### 估计时间：40 分钟
 
 ## 任务 1：创建资源组

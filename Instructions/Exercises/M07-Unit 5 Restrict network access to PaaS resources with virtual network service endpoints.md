@@ -12,6 +12,8 @@ Exercise:
 
 ![服务终结点体系结构示意图。](../media/5-exercise-restrict-network-paas-resources-virtual-network-service-endpoints.png)
 
+### 工作技能
+
 通过学习本练习，你将能够：
 
 + 任务 1：创建虚拟网络
@@ -26,7 +28,9 @@ Exercise:
 + 任务 10：确认对存储帐户的访问权限
 
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+### 交互式实验室模拟
+
+>**注意**：此前提供的实验室模拟已停用。
 
 ### 预计用时：35 分钟
 
@@ -124,7 +128,7 @@ Exercise:
    | 服务                 | 自定义                    |
    | 目标端口范围 | *                         |
    | 协议                | Any                       |
-   | 操作                  | Allow                     |
+   | 操作                  | 允许                     |
    | 优先级                | 100                       |
    | 名称                    | Allow-Storage-All         |
 
@@ -166,13 +170,13 @@ Exercise:
 
    | 设置             | **值**                 |
    | ----------------------- | ------------------------- |
-   | 源                  | 任意                       |
+   | 源                  | Any                       |
    | 源端口范围      | *                         |
    | 目标             | 选择“VirtualNetwork” |
    | 服务                 | 自定义                    |
    | 目标端口范围 | 3389                      |
    | 协议                | Any                       |
-   | 操作                  | Allow                     |
+   | 操作                  | 允许                     |
    | 优先级                | 120                       |
    | 名称                    | Allow-RDP-All             |
 
@@ -354,7 +358,7 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 
 + [使用网络安全组和服务终结点来保护和隔离对 Azure 资源的访问](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/)。 本模块介绍如何使用虚拟网络服务终结点控制传入和传出 Azure 服务的网络流量。
 
-## 关键结论
+## 关键要点
 + 虚拟网络服务终结点通过提供与 Azure 服务的直接连接来扩展 Azure 中的专用地址空间。
 + 使用服务终结点可以对 Azure 资源进行保护，使其只对你的虚拟网络开放。 服务流量将保留在 Azure 主干网上，不会转出至 Internet。
 + Azure 服务终结点可用于许多服务，例如：Azure 存储、Azure SQL 数据库 和 Azure Cosmos DB。

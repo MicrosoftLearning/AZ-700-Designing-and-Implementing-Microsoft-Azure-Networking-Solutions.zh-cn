@@ -14,6 +14,8 @@ Exercise:
 
 ![展示将在练习中创建的负载均衡器体系结构的示意图 - 包括负载均衡器、VNet、子网、Bastionsubnet 和 VM](../media/3-exercise-monitor-load-balancer-resource-using-azure-monitor.png)
 
+### 工作技能
+
  通过学习本练习，你将能够：
 
 + 任务 1：创建虚拟网络
@@ -30,11 +32,9 @@ Exercise:
 + 任务 12：查看资源运行状况
 + 任务 13：配置诊断设置
 
+### 交互式实验室模拟
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
-
-> [!Note]  
-> 你可能会发现说明和 Azure 门户界面之间存在细微差异，但核心概念是相同的。
+>**注意**：此前提供的实验室模拟已停用。
 
 ### 预计用时：55 分钟
 

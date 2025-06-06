@@ -12,15 +12,19 @@ Exercise:
 
 ![虚拟网络对等互连的示意图。](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
-在本单元中，你将学习以下内容：
+### 工作技能
 
-+ 任务 1：创建虚拟机以测试配置
+通过学习本练习，你将能够：
+
++ 任务 1：创建虚拟机来测试配置
 + 任务 2：使用 RDP 连接到测试 VM
 + 任务 3：测试 VM 间的连接
 + 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
 + 任务 5：测试 VM 间的连接
 
-   >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+### 交互式实验室模拟
+
+>**注意**：此前提供的实验室模拟已停用。
 
 ### 预计用时：20 分钟
 
