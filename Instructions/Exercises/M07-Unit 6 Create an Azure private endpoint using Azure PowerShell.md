@@ -4,7 +4,9 @@ Exercise:
   module: Module 07 - Design and implement private access to Azure Services
 ---
 
-# 模块 07 - 第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点
+# 模块 07 - 第 6 单元 使用 Azure PowerShell 创建 Azure 专用终结点（可选）
+
+> **备注**：此实验是可选的。 上一个实验室，*使用虚拟网络服务终结点限制对 PaaS 资源的网络访问*，涵盖了此功能。 将来，此实验室将停用。 
 
 ## 练习场景
 
@@ -144,6 +146,7 @@ $parameters3 = @{
 }
 
 New-AzBastion @parameters3
+
 ```
 
 ## 任务 3：创建测试虚拟机
