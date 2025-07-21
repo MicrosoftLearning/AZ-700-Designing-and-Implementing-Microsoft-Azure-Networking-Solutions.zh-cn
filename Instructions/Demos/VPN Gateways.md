@@ -4,8 +4,6 @@ demo:
   module: Module 02 - Design and implement hybrid networking
 ---
 
-**模拟：**[创建并配置虚拟网络网关](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)
-
 在本演示中，我们将探索虚拟网络网关。
 
 **注意：** 此演示最适用于两个具有子网的虚拟网络。

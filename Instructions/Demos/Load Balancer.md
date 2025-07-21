@@ -7,8 +7,6 @@ demo:
 
 在此演示中，我们将了解如何创建公共负载均衡器。 
 
-**模拟：**[创建并配置 Azure 负载均衡器](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)
-
 **参考**：[快速入门：使用 Azure 门户创建公共负载均衡器，以便对 VM 进行负载均衡](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal)
 
 注意：本演示需要一个具有至少一个子网的虚拟网络。  

@@ -7,8 +7,6 @@ demo:
 
 注意：在本演示中，你将需要两个虚拟网络。 
 
-**模拟：**[使用 Azure 对等互连连接两个虚拟网络](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)
-
 参考：[使用 VNet 对等互连连接虚拟网络 - 教程](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal)
 
 **配置第一个虚拟网络的 VNet 对等互连**
