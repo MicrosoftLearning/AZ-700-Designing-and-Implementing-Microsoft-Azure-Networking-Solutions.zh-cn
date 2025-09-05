@@ -13,7 +13,7 @@ Exercise:
 
 ### 交互式实验室模拟
 
->**注意**：此前提供的实验室模拟已停用。
+>**备注**：之前提供的实验室模拟环境已停止使用。
 
 ### 预计用时：60 分钟（包括约 45 分钟的部署等待时间）
 
@@ -88,11 +88,8 @@ Exercise:
    | 网关类型              | ExpressRoute               |
    | SKU                       | 标准                   |
    | 虚拟网络           | CoreServicesVnet           |
-   | **公共 IP 地址**     |                            |
-   | 公共 IP 地址         | 新建                 |
-   | 公共 IP 地址名称    | CoreServicesVnetGateway-IP |
-   | 分配                | 不可配置           |
-
+   | 子网                    | GatewaySubnet              |
+   
 1. 选择“查看 + 创建”  。
 
 1. 确认网关配置通过验证，然后选择“创建”。
@@ -121,3 +118,4 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + Microsoft 保证 ExpressRoute 专用连接的可用性至少为 99.95%。 连接是专用的，通过专线传输，第三方无法拦截流量。
 + 在本地网络和 Microsoft 云之间创建连接时，可以采用四种不同的方式：CloudExchange 归置、点到点以太网连接、任意位置之间的 (IPVPN) 连接 和 ExpressRoute Direct。
 + ExpressRoute 功能由 SKU 决定：本地版、标准版和高级版。 
+
