@@ -140,6 +140,8 @@ Exercise:
     | ------------------------------------ | --------------------------------------------- | 
     | 允许 'CoreServicesVnet' 访问 'ManufacturingVnet' | 已启用
     | 允许 'CoreServicesVnet' 接收来自 'ManufacturingVnet' 的转发流量 | 已启用 |
+
+1. 选中“CoreServicesVnet-to-ManufacturingVnet”**** 左侧的框，然后选择“同步”****
  
 1. 在 CoreServicesVnet \| 对等互连中，验证 **CoreServicesVnet-to-ManufacturingVnet** 对等互连是否**已连接**。
 
