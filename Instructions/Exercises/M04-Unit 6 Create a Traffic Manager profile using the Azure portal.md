@@ -100,7 +100,7 @@ Exercise:
    | 资源组          | Contoso-RG-TM1       |
    | 资源组位置 | **美国东部**              |
 
-1. 选择“创建”。
+1. 选择“查看 + 创建”，然后选择“创建” 。
 
 ## 任务 3：添加流量管理器终结点
 
@@ -160,13 +160,13 @@ Exercise:
 
 1. 若要测试故障转移终结点是否正常工作，需要禁用主站点。
 
-1. 在“Contoso-TMProfile”页上，在“概述”屏幕上选择“myPrimaryEndpoint”。
+1. 在 Contoso-TMProfile 页上的概述屏幕上，选择终结点右侧的数字 2************。
 
-1. 在“myPrimaryEndpoint”页的“状态”下，选择“已禁用”，然后选择“保存”。
+1. 选择“myPrimaryEndpoint”的“编辑”按钮（铅笔图标）****。
 
-   ![图 25](../media/disable-primary-endpoint-1.png)
+1. 在“myPrimaryEndpoint”边栏选项卡上的“状态”下，清除“启用终结点”复选框，然后选择“保存”****************。
 
-1. 关闭“myPrimaryEndpoint”页（选择页面右上角的“X”）。
+1. 如果需要，关闭“myPrimaryEndpoint”边栏选项卡（选择页面右上角的“X”）********。
 
 1. 在“Contoso-TMProfile”页上，“myPrimaryEndpoint”的“监视器状态”现在应为“已禁用”。
 
