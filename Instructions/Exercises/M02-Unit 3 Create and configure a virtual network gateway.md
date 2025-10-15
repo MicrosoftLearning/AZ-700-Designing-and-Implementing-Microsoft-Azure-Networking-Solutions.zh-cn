@@ -202,7 +202,7 @@ Exercise:
    | 基本信息          | 项目详细信息   | 订阅                                | 无需更改          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | 实例详细信息  | 名称                                        | ManufacturingVnetGateway     |
-   |                 |                   | 区域                                      | 北欧                 |
+   |                 |                   | 区域                                      | 西欧                  |
    |                 |                   | 网关类型                                | VPN                          |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | 第 1 代                  |
