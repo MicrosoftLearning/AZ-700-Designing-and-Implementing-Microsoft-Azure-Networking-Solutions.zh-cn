@@ -38,7 +38,7 @@ Exercise:
 
 1. 登录到 Azure 门户。
 
-1. 在 Azure 主页上搜索虚拟网络，然后从结果中选择“虚拟网络”。
+1. 在 Azure 主页上搜索 `virtual network`，然后从结果中选择“虚拟网络”****。
 
 1. 选择“+ 创建”。
 
@@ -51,14 +51,6 @@ Exercise:
    | 名称           | CoreServicesVnet                              |
    | 位置       | 选择“美国东部”                            |
 
-1. 选择“IP 地址”选项卡并输入以下值（选择“默认值”更改子网名称） ：![图形用户界面、文本、应用程序、电子邮件 自动生成的描述](../media/create-virtual-network-ip.png)
-
-   | 设置          | **值**   |
-   | -------------------- | ----------- |
-   | 地址空间        | 10.0.0.0/16 |
-   | 子网名称          | 公共      |
-   | 子网地址范围 | 10.0.0.0/24 |
-
 1. 选择“安全”选项卡并输入以下值：![图形用户界面、文本、应用程序、电子邮件 自动生成的描述](../media/ create-virtual-network-security.png)
 
    | 设置             | **值** |
@@ -66,6 +58,14 @@ Exercise:
    | BastionHost             | 已禁用  |
    | DDoS 网络保护 | 已禁用  |
    | 防火墙                | 已禁用  |
+
+1. 选择“IP 地址”选项卡并输入以下值（选择“默认值”更改子网名称） ：![图形用户界面、文本、应用程序、电子邮件 自动生成的描述](../media/create-virtual-network-ip.png)
+
+   | 设置          | **值**   |
+   | -------------------- | ----------- |
+   | 地址空间        | 10.0.0.0/16 |
+   | 子网名称          | 公共      |
+   | 子网地址范围 | 10.0.0.0/24 |
 
 1. 选择“查看 + 创建”  。 验证资源后，选择“创建”。
 
@@ -85,7 +85,7 @@ Exercise:
    | 地址范围               | 10.0.1.0/24                  |
    | 服务终结点：服务 | 选择“Microsoft.Storage” |
 
-1. 选择“保存”。
+1. 选择 **添加** 。
 
 你现在应该配置了两个子网：
 
@@ -130,9 +130,9 @@ Exercise:
    | 协议                | Any                       |
    | 操作                  | 允许                     |
    | 优先级                | 100                       |
-   | 名称                    | Allow-Storage-All         |
+   | 名称                    | `Allow-Storage-All`         |
 
-1. 选择“添加”：
+1. 选择“添加”****：
 
 ## 任务 4：添加其他出站规则
 
@@ -154,7 +154,7 @@ Exercise:
    | 协议                | Any                       |
    | 操作                  | 拒绝                      |
    | 优先级                | 110                       |
-   | 名称                    | Deny-Internet-All         |
+   | 名称                    | `Deny-Internet-All`         |
 
 1. 选择 **添加** 。
 
@@ -172,13 +172,13 @@ Exercise:
    | ----------------------- | ------------------------- |
    | 源                  | 任意                       |
    | 源端口范围      | *                         |
-   | 目标             | 选择“VirtualNetwork” |
+   | 目的地             | 任意                       |
    | 服务                 | 自定义                    |
    | 目标端口范围 | 3389                      |
    | 协议                | Any                       |
    | 操作                  | 允许                     |
    | 优先级                | 120                       |
-   | 名称                    | Allow-RDP-All             |
+   | 名称                    | `Allow-RDP-All`            |
 
 1. 然后选择“添加”。
 
@@ -196,9 +196,9 @@ Exercise:
 
 对于通过为服务终结点启用的 Azure 服务创建的资源，限制对其的网络访问时所需的步骤因服务而异。 请参阅各个服务的文档来了解适用于每个服务的具体步骤。 例如，本练习的其余部分包括限制对 Azure 存储帐户的网络访问的步骤。
 
-1. 在 Azure 门户中，选择“存储帐户”。
+1. 在 Azure 门户中，搜索并选择`Storage accounts`。
 
-1. 选择 + 创建。
+1. 选择**创建**。
 
 1. 输入或选择以下信息并接受其余默认值：
 
@@ -207,20 +207,25 @@ Exercise:
    | 订阅   | 选择订阅                                     |
    | 资源组 | myResourceGroup                                              |
    | 名称           | 输入 contostoragewestxx（其中 xx 是你的姓名首字母，以使其具有唯一性） |
+   | 主服务 | Azure 文件                                                |
    | 性能    | 标准 StorageV2（常规用途 V2）                      |
    | 位置       | 选择“美国东部”                                               |
    | 复制    | 本地冗余存储 (LRS)                              |
 
-1. 选择“查看”，然后选择“创建” 。
+1. 选择“查看”，然后选择“创建”********。
+
+1. 在存储帐户成功部署后，请选择“转到资源”****。 
 
 ## 任务 7：在存储帐户中创建文件共享
 
-1. 创建存储帐户后，在门户顶部的“搜索资源、服务和文档”框中输入该存储帐户的名称。 该存储帐户的名称出现在搜索结果中时，请选择它。
-1. 选择“文件共享”，如下图所示：![图形用户界面，应用程序 自动生成的描述](../media/new-file-share-2.png)
-1. 选择“+ 文件共享”。
-1. 在“名称”下输入“市场营销”，然后选择“下一步: 备份”。
-   ![图形用户界面，应用程序 自动生成的描述](../media/new-file-share-basics.png)
-1. 取消选择“启用备份”，如下图所示：![图形用户界面，应用程序 自动生成的描述](../media/new-file-share-backup.png)
+1. 在“存储帐户”的“数据存储”边栏选项卡中，选择“文件共享”********。
+
+1. 选择“+ 文件共享”。**** 
+
+1. 对于“名称”，输入“marketing”，然后选择“下一步: ************ 备份”。
+
+1. 取消选择“启用备份”，如下图所示：**** 
+
 1. 选择“查看 + 创建”  。 验证资源后，选择“创建”。
 
 ## 任务 8：限制对子网的网络访问
@@ -229,25 +234,23 @@ Exercise:
 
 1. 在存储帐户的“安全 + 网络”下，选择“网络”。
 
-1. 选择“已从所选虚拟网络和 IP 地址启用”。
+1. 在“公用网络访问”部分中，选择“管理”。********
 
-1. 选择“+添加现有虚拟网络”。
+1 在“公共访问范围”部分中，选择“已从所选网络启用”********。
 
-1. 在“添加网络”下，选择以下值：![图形用户界面，应用程序 自动生成的描述](../media/add-network-access.png)
+1. 选择“+ 添加现有虚拟网络”，然后选择“添加现有虚拟网络”。******** 
 
-   | 设置      | 值                    |
+   | **设置**      | 值                    |
    | ---------------- | ---------------------------- |
    | 订阅     | 选择订阅。    |
-   | 虚拟网络 | 选择 CoreServicesVNet。 |
-   | 子网          | 选择“专用”****。          |
+   | 虚拟网络 | CoreServicesVNet**** |
+   | 子网          | **Private**。          |
 
-1. 选择“添加”  。
-
-1. 选择“保存” 。
+1. 选择“添加”，然后选择“保存”。********
 
 1. 在存储帐户的“安全和网络”下，选择“访问密钥”。
 
-1. 选择“显示密钥”。 记下“密钥”值，因为在后续步骤中将文件共享映射到 VM 中的驱动器号时，需要手动输入该值。
+1. 对 Key1 值使用“显示”********。 复制此值，稍后将用到它。 
 
 ## 任务 9：创建虚拟机
 
@@ -258,7 +261,7 @@ Exercise:
     + 选择“**不需要存储帐户**”和“**订阅**”，然后选择“**应用**”。
     + 等待终端创建并显示提示。 
 
-1. 在 Cloud Shell 窗格的工具栏中，选择“**管理文件**”图标，在下拉菜单中选择“**上传**”，将 **VMs.json** 和 **VMs.parameters.json** 文件从源文件夹 **F:\Allfiles\Exercises\M06** 逐个上传到 Cloud Shell 主目录。
+1. 在 Cloud Shell 窗格的工具栏中，选择“管理文件”图标，在下拉菜单中选择“上传”，将下面的 VMs.json 和 VMs.parameters.json 文件上传到 Cloud Shell 主目录。**************** 本模块 07，练习 05。 
 
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
@@ -274,64 +277,38 @@ Exercise:
 
 ## 任务 10：确认对存储帐户的访问权限
 
-1. ContosoWestPrivate VM 创建完成后，选择“转到资源”，打开 VM 的边栏选项卡。 选择“连接”按钮，然后选择“RDP”。
-   ![图形用户界面，应用程序 自动生成的描述](../media/private-virtual-machine-connect.png)
-1. 选择“连接”按钮和 RDP 后，选择“下载 RDP 文件”按钮。 此时会创建远程桌面协议 (.rdp) 文件，并下载到计算机。
-1. 打开下载的 rdp 文件。 出现提示时，选择“连接”。 输入在创建 VM 时指定的用户名和密码。 可能需要选择“更多选择”  ，然后选择“使用其他帐户”  ，以指定在创建 VM 时输入的凭据。
-1. 选择“确定”。
-1. 你可能会在登录过程中收到证书警告。 如果收到警告，请选择“是”或“继续”以继续连接。
-1. 在 ContosoWestPrivate VM 上，使用 PowerShell 将 Azure 文件共享映射到驱动器 Z。 在运行以下命令之前，将 <storage-account-key>、<storage-account-name>（即 contosostoragexx）和 my-file-share（即 marketing）替换为你在“创建存储帐户”任务中提供和检索的值。
+1. 在门户中，搜索并选择 ContosoPrivate 虚拟机****。
 
-```azurecli
-$acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -Force
+1. 依次选择“连接”、“连接”，然后选择“下载 RDP 文件”************。 如果系统提示，请确认下载。
 
-$credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\<storage-account-name>", $acctKey
+1. 在“下载”**** 文件夹中，打开 ContosoPrivate.rdp 文件。
 
-New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.core.windows.net\marketing" -Credential $credential
+1. 选择“连接”**** 并提供虚拟机密码。 选择“确定”，并在出现证书警告时选择“是”********。 
 
-```
+1. 使用 PowerShell 创建文件共享。 将 <storage-account-key1-value>，<storage-account-name>（即 contosostoragexx）替换为创建存储帐户时设置的值。 
+    ```powershell
+    $acctKey = ConvertTo-SecureString -String "<storage-account-key1-value>" -AsPlainText -Force
 
-Azure 文件共享已成功映射到驱动器 Z。
+    $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\<storage-account-name>", $acctKey
 
-1. 通过命令提示符确认 VM 没有与 Internet 建立出站连接：
+    New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.core.windows.net\marketing" -Credential $credential
 
- ping bing.com
+    ```
+1. 确认 VM 没有出站连接。 你不会收到回复，因为关联到“专用”子网的网络安全组不允许与 Internet 建立出站访问。
 
-你不会收到回复，因为关联到“专用”子网的网络安全组不允许与 Internet 建立出站访问。
+    ```ping bing.com```
 
 1. 关闭与 ContosoWestPrivate VM 的远程桌面会话。
 
 ### 确认已拒绝对存储帐户的访问
 
-1. 在门户顶部的“搜索资源、服务和文档”框中，输入 ContosoPublic。
+1. 返回到 Azure 门户。
 
-1. 当 ContosoPublic 出现在搜索结果中时，请将其选中。
+1. 导航到存储帐户，选择“文件共享”，然后选择“marketing”文件共享。******** 
 
-1. 完成 ContosoPublic VM 的“确认访问存储帐户”任务中的步骤 1-6。  
-
-   ‎短暂等待后，你会收到“New-PSDrive：访问被拒绝”的错误消息。 访问被拒绝，因为 ContosoPublic VM 部署在公共子网中。 “公共”子网没有为 Azure 存储启用服务终结点。 存储帐户仅允许从“专用”子网访问网络，而不允许从“公共”子网访问。
-
-1. 从命令提示符确认公共 VM 确实具有到 Internet 的出站连接：
-
- ping bing.com
-
-1. 关闭与 ContosoPublic VM 的远程桌面会话。
-
-1. 在计算机上浏览到 Azure 门户。
-
-1. 在“搜索资源、服务和文档”框中输入创建的存储帐户的名称。 该存储帐户的名称出现在搜索结果中时，请选择它。
-
-1. 选择“文件共享”，然后选择“市场营销”文件共享 。
-
-1. 你会收到如以下屏幕截图中所示的错误：
+1. 选择“浏览”，会注意到出现“访问被拒绝”错误。**** 错误提示可能会有所不同。  访问被拒绝，因为计算机不在 CoreServicesVNet 虚拟网络的“专用”子网中。
 
     ![图形用户界面、文本、应用程序、电子邮件 描述自动生成](../media/no-access.png)
-
- 访问被拒绝，因为计算机不在 CoreServicesVNet 虚拟网络的“专用”子网中。
-
-   >**警告**：在继续之前，应删除用于此实验室的所有资源。 为此，在 Azure 门户中，选择“资源组”。 选择已创建的任何资源组。 在“资源组”边栏选项卡上，选择“删除资源组”，输入资源组名称，然后选择“删除”。 对可能创建的任何其他资源组重复此过程。 未执行以上操作可能会导致其他实验室问题。
-
-结果：你已完成此实验室。
 
 ## 清理资源
 
