@@ -176,7 +176,7 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + [为 Azure 部署设计 IP 寻址方案](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/)。 在本模块中，识别 Azure 虚拟网络的公共和专用 IP 寻址功能。
 + [Azure 虚拟网络的简介](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/)。 在本模块中，你将了解如何设计和实现 Azure 网络服务。 你将了解虚拟网络、公共和专用 IP、DNS、虚拟网络对等互连、路由和 Azure 虚拟 NAT。
 
-## 关键要点
+## 关键结论
 
 + Azure 虚拟网络是为 Azure 中的专用网络提供基础构建基块的服务。 借助服务实例（虚拟网络），多种类型的 Azure 资源可相互之间并与 Internet 和本地网络安全通信。 确保地址空间不会重叠。 确保虚拟网络地址空间（CIDR 块）不会与组织的其他网络范围重叠。
 + 虚拟网络中的所有 Azure 资源都部署到虚拟网络内的子网中。 使用子网可将虚拟网络划分为一个或多个子网络，并向每个子网分配一部分虚拟网络的地址空间。 子网不应涵盖虚拟网络的整个地址空间。 提前规划，为将来留出一些地址空间。
