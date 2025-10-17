@@ -10,7 +10,7 @@ Exercise:
 
 作为 Contoso 的网络安全团队的成员，下一个任务是创建防火墙规则以允许/拒绝对某些网站的访问。 以下步骤将引导你创建资源组、虚拟网络和子网，以及将虚拟机作为环境准备任务，然后部署防火墙和防火墙策略、配置默认路由和应用程序、网络和 DNAT 规则，最后测试防火墙。
 
-![具有Azure 防火墙体系结构的网络示意图。](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
+![具有 Azure 防火墙体系结构的虚拟网络关系图。](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
 
 ### 工作技能
 
@@ -401,4 +401,4 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + 防火墙是位于受信任的网络和不受信任的网络（例如 Internet）之间的网络安全功能。 防火墙的工作是分析并允许或拒绝网络流量。
 + Azure 防火墙是一种基于云的防火墙服务。 在大多数配置中，Azure 防火墙在中心虚拟网络中进行预配。 进出辐射虚拟网络和本地网络的流量会定向到防火墙。
 + 防火墙规则评估网络流量。 Azure 防火墙有三种类型的规则：应用程序、网络和 NAT。 
-+ Azure 防火墙提供三种 SKU：标准版、高级版和基本版。
++ Azure 防火墙提供三个 SKU：标准、高级和基本。

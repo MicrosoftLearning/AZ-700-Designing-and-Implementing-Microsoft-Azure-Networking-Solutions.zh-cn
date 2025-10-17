@@ -86,7 +86,7 @@ Exercise:
    
 1. 部署以下 ARM 模板以创建此练习所需的 VM：
 
-   >注意：系统会提示你提供管理员密码。 在稍后的步骤中需要用到此密码。 
+   >注意：系统会提示你提供管理员密码。 后续步骤中会用到此密码。 
 
    ```powershell
    $RGName = "ContosoResourceGroup"

@@ -254,4 +254,4 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + DDoS 攻击是一种恶意尝试，使应用程序的资源不堪重负，导致合法用户无法使用该应用程序。 
 + Azure DDoS 防护可防御 DDoS 攻击。 这种防护自动经过优化，可帮助保护虚拟网络中的特定 Azure 资源。 
 + Azure DDoS 防护功能包括：始终支持流量监视、自适应实时优化以及遥测和警报。  
-+ Azure DDoS 防护支持两种层级类型：DDoS IP 保护和 DDoS 网络保护。
++ Azure DDoS 防护支持两种层类型：DDoS IP 保护和 DDoS 网络保护。
