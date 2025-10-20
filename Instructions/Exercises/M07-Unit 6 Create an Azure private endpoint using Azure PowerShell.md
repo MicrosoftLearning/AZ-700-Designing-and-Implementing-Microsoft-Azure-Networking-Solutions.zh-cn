@@ -14,10 +14,6 @@ Exercise:
 
 ![专用终结点体系结构示意图。](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
-### 交互式实验室模拟
-
->**注意**：此前提供的实验室模拟已停用。
-
 ### 估计时间：45 分钟
 
 你将创建 Azure Web 应用的专用终结点，并部署虚拟机以测试专用连接。

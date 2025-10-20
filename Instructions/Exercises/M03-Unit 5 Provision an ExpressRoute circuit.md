@@ -9,10 +9,6 @@ Exercise:
 
 在本练习中，你将使用 Azure 门户和 Azure 资源管理器部署模型创建 ExpressRoute 线路。
 
-### 交互式实验室模拟
-
->**备注**：之前提供的实验室模拟环境已停止使用。
-
 ### 预计用时：15 分钟
 
 ![用于练习的 ExpressRoute 线路布局示意图](../media/5-exercise-provision-expressroute-circuit.png)
@@ -141,4 +137,5 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + Microsoft 保证 ExpressRoute 专用连接的可用性至少为 99.95%。 连接是专用的，通过专线传输，第三方无法拦截流量。
 + 在本地网络和 Microsoft 云之间创建连接时，可以采用四种不同的方式：CloudExchange 归置、点到点以太网连接、任意位置之间的 (IPVPN) 连接 和 ExpressRoute Direct。
 + ExpressRoute 功能由 SKU 决定：本地版、标准版和高级版。 
+
 
