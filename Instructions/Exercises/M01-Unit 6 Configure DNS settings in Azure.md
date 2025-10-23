@@ -20,10 +20,6 @@ Exercise:
 + 任务 3：创建虚拟机以测试配置
 + 任务 4：验证 DNS 区域中是否存在记录
 
-### 交互式实验室模拟
-
->**注意**：此前提供的实验室模拟已停用。
-
 ### 预计用时：25 分钟
 
 **重要说明：** 本练习需要上一个实验室中的虚拟网络。 这可以使用 [template](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises/M01/template.json) 文件进行安装。 将安装所有虚拟网络，但只需要 CoreServicesVNet。 

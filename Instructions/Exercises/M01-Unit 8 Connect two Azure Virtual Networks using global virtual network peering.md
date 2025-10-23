@@ -22,10 +22,6 @@ Exercise:
 + 任务 4：在 CoreServicesVnet 和 ManufacturingVnet 之间创建 VNet 对等互连
 + 任务 5：测试 VM 间的连接
 
-### 交互式实验室模拟
-
->**注意**：此前提供的实验室模拟已停用。
-
 ### 预计用时：20 分钟
 
 ## 任务 1：创建虚拟机以测试配置
