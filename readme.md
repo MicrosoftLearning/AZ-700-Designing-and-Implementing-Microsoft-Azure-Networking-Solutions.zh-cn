@@ -1,3 +1,5 @@
+**⚠️ This GitHub repo will retire on 28th November 2025.**
+
 # AZ-700：设计和实现 Microsoft Azure 网络解决方案 
 
 ## 欢迎使用
